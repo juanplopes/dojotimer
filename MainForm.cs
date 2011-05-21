@@ -16,6 +16,7 @@ namespace DojoTimer
     {
         Options options;
         Stopwatch stopwatch = new Stopwatch();
+        KeyboardHook hook = new KeyboardHook();
 
         public MainForm() : this(new Options()) { }
         public MainForm(Options options)
@@ -23,7 +24,6 @@ namespace DojoTimer
             InitializeComponent();
             this.options = options;
             SetTime();
-            var hook = new KeyboardHook();
             hook.KeyPressed += new EventHandler<KeyPressedEventArgs>(hook_KeyPressed);
             hook.RegisterHotKey(DojoTimer.ModifierKeys.Alt | DojoTimer.ModifierKeys.Control | DojoTimer.ModifierKeys.Win, Keys.T);
         }
@@ -106,8 +106,9 @@ namespace DojoTimer
             var output = new OutputWindow();
             output.Clear();
             options.Write += s => output.Write(s);
-            output.Show(this);
-            
+            output.Show();
+            output.Activate();
+
             this.BackColor = options.Run() ? Color.Green : Color.Red;
             output.ShowText();
 
