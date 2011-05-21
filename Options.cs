@@ -35,6 +35,7 @@ namespace DojoTimer
             psi.RedirectStandardError = true;
             psi.RedirectStandardOutput = true;
             psi.WindowStyle = ProcessWindowStyle.Hidden;
+            psi.WorkingDirectory = WorkingDir;
             var process = new Process();
             process.OutputDataReceived += (obj, e) => { if (Write != null) Write(e.Data); };
             process.ErrorDataReceived += (obj, e) => { if (Write != null) Write(e.Data); };
