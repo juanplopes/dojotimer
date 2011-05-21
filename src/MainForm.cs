@@ -63,7 +63,7 @@ namespace DojoTimer
 
         private void MainTimer_Tick(object sender, EventArgs e)
         {
-            SetTransparency();
+            SetTransparency(false);
             if (stopwatch.Elapsed < options.Period)
             {
                 SetTime();
@@ -76,7 +76,7 @@ namespace DojoTimer
             }
         }
 
-        private void SetTransparency(bool force = false)
+        private void SetTransparency(bool force)
         {
             foreach(Control control in this.Controls)
                 control.ForeColor = force || inside ? Color.White : this.BackColor;
