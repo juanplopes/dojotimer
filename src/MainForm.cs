@@ -23,9 +23,10 @@ namespace DojoTimer
         {
             InitializeComponent();
             this.options = options;
-            SetTime();
             hook.KeyPressed += new EventHandler<KeyPressedEventArgs>(hook_KeyPressed);
             hook.RegisterHotKey(DojoTimer.ModifierKeys.Alt | DojoTimer.ModifierKeys.Control | DojoTimer.ModifierKeys.Win, Keys.T);
+            SetTime();
+            Stop();
         }
 
         void hook_KeyPressed(object sender, KeyPressedEventArgs e)
@@ -50,15 +51,20 @@ namespace DojoTimer
 
         private void Start()
         {
-            stopwatch.Reset();
+            if (stopwatch.Elapsed >= options.Period)
+                stopwatch.Reset();
             stopwatch.Start();
             MainTimer.Enabled = true;
+            StartButton.Text = char.ConvertFromUtf32(9632);
+            StartButton.Font = new Font(StartButton.Font.FontFamily, 17);
         }
 
         private void Stop()
         {
             stopwatch.Stop();
             MainTimer.Enabled = false;
+            StartButton.Text = char.ConvertFromUtf32(9658);
+            StartButton.Font = new Font(StartButton.Font.FontFamily, 26);
         }
 
         private void MainTimer_Tick(object sender, EventArgs e)
@@ -78,7 +84,7 @@ namespace DojoTimer
 
         private void SetTransparency(bool force)
         {
-            foreach(Control control in this.Controls)
+            foreach (Control control in this.Controls)
                 control.ForeColor = force || inside ? Color.White : this.BackColor;
         }
 
@@ -89,7 +95,7 @@ namespace DojoTimer
 
         private void Reset()
         {
-            stopwatch.Stop();
+            stopwatch.Reset();
             MainTimer.Enabled = false;
             SetTime();
             SetTransparency(true);

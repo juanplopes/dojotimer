@@ -38,22 +38,24 @@
             // StartButton
             // 
             this.StartButton.BackColor = System.Drawing.Color.Transparent;
-            this.StartButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.StartButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StartButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartButton.ForeColor = System.Drawing.Color.White;
             this.StartButton.Location = new System.Drawing.Point(150, 9);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(48, 47);
             this.StartButton.TabIndex = 1;
-            this.StartButton.Text = "S";
+            this.StartButton.Text = "►";
             this.StartButton.UseVisualStyleBackColor = false;
             this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
             // ResetButton
             // 
             this.ResetButton.BackColor = System.Drawing.Color.Transparent;
-            this.ResetButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.ResetButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ResetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ResetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ResetButton.ForeColor = System.Drawing.Color.White;
             this.ResetButton.Location = new System.Drawing.Point(204, 9);
             this.ResetButton.Name = "ResetButton";
@@ -71,6 +73,7 @@
             // TimeLabel
             // 
             this.TimeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.TimeLabel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.TimeLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TimeLabel.ForeColor = System.Drawing.Color.Transparent;
@@ -91,7 +94,7 @@
             this.Controls.Add(this.TimeLabel);
             this.Controls.Add(this.ResetButton);
             this.Controls.Add(this.StartButton);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
