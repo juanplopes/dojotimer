@@ -6,13 +6,12 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Reflection;
 
 namespace DojoTimer
 {
     public class Options
     {
-        public const string DefaultRunFile = "run.cmd";
-
         public TimeSpan Period { get; set; }
         public string Script { get; set; }
         public Keys Shortcut { get; set; }
@@ -33,42 +32,65 @@ namespace DojoTimer
         {
             Period = TimeSpan.FromMinutes(5);
             Shortcut = Keys.Control | Keys.Space;
+            var myDir = Environment.CurrentDirectory;
+            Script = string.Format("@cd \"{0}\"\r\n@echo There is no script.", myDir);
         }
 
         public event Action<string> Write;
 
         public bool Run()
         {
-            try
-            {
-                var processes = Process.GetProcesses();
+            var temp = Path.GetTempFileName();
+                var file = temp + ".cmd";
+                try
+                {
 
-                if (Script == null) return true;
+                    var script = Script.Replace("\r\n", "\r\n@if errorlevel 1 exit /b %errorlevel%\r\n");
+                    File.WriteAllText(file, script);
 
-                var psi = new ProcessStartInfo();
-                psi.UseShellExecute = false;
-                psi.FileName = Script;
-                psi.RedirectStandardError = true;
-                psi.RedirectStandardOutput = true;
-                psi.WindowStyle = ProcessWindowStyle.Hidden;
-                psi.WorkingDirectory = Path.GetDirectoryName(Script);
-                var process = new Process();
-                process.OutputDataReceived += (obj, e) => { if (Write != null) Write(e.Data); };
-                process.ErrorDataReceived += (obj, e) => { if (Write != null) Write(e.Data); };
+                    var processes = Process.GetProcesses();
 
-                process.StartInfo = psi;
-                process.Start();
-                process.BeginErrorReadLine();
-                process.BeginOutputReadLine();
+                    var psi = MakeParams(file);
+                    var process = MakeProcess(psi);
+                    process.Start();
+                    process.BeginErrorReadLine();
+                    process.BeginOutputReadLine();
 
-                process.WaitForExit();
-                return process.ExitCode == 0;
-            }
-            catch (Exception e)
-            {
-                Write(string.Format("Error: {0}", e.Message));
-                return false;
-            }
+                    process.WaitForExit();
+                   
+                    return process.ExitCode == 0;
+                }
+                catch (Exception e)
+                {
+                    Write(string.Format("Error: {0}", e.Message));
+                    return false;
+                }
+                finally
+                {
+                    File.Delete(temp);
+                    File.Delete(file);
+                }
+        }
+
+        private Process MakeProcess(ProcessStartInfo psi)
+        {
+            var process = new Process();
+            process.OutputDataReceived += (obj, e) => { if (Write != null) Write(e.Data); };
+            process.ErrorDataReceived += (obj, e) => { if (Write != null) Write(e.Data); };
+
+            process.StartInfo = psi;
+            return process;
+        }
+
+        private static ProcessStartInfo MakeParams(string file)
+        {
+            var psi = new ProcessStartInfo();
+            psi.UseShellExecute = false;
+            psi.FileName = file;
+            psi.RedirectStandardError = true;
+            psi.RedirectStandardOutput = true;
+            psi.WindowStyle = ProcessWindowStyle.Hidden;
+            return psi;
         }
 
 

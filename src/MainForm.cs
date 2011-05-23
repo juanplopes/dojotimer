@@ -27,6 +27,7 @@ namespace DojoTimer
             Stop();
             this.Left = Screen.PrimaryScreen.Bounds.Right - Width;
             this.Top = Screen.PrimaryScreen.Bounds.Top + 2* SystemInformation.CaptionHeight;
+            this.Icon = Icons.Green;
         }
 
         void hook_KeyPressed(object sender, KeyPressedEventArgs e)
@@ -83,7 +84,7 @@ namespace DojoTimer
             }
             else
             {
-                Reset();
+                Stop();
                 this.Activate();
                 using (var alarm = Resources.alarm)
                     new SoundPlayer(alarm).Play();
@@ -140,6 +141,7 @@ namespace DojoTimer
             var run = options.Run();
             output.Activate();
             this.BackColor = run ? Color.Green : Color.Red;
+            this.Icon = run ? Icons.Green : Icons.Red;
             output.ShowText(run);
 
         }

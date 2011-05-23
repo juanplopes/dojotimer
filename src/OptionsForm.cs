@@ -19,8 +19,8 @@ namespace DojoTimer
             this.options = options;
             MinutesInput.Text = ((int)options.Period.TotalMinutes).ToString("00");
             SecondsInput.Text = options.Period.Seconds.ToString("00");
-            ShortcutInput.Text = options.Shortcut.ToString();
-            RefreshConfig(options.Script);
+            ShortcutInput.Text = (ShortcutInput.Tag = options.Shortcut).ToString();
+            ScriptInput.Text = options.Script;
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -28,37 +28,24 @@ namespace DojoTimer
             this.Close();
         }
 
-        private void DirectoryButton_Click(object sender, EventArgs e)
-        {
-            if (OpenFile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                options.Script = OpenFile.FileName;
-                RefreshConfig(OpenFile.FileName);
-            }
-        }
-
-        private void RefreshConfig(string newpath)
-        {
-            DirectoryButton.Text = Path.GetFileName(newpath);
-            OpenFile.FileName = newpath;
-        }
-
         private void ShortcutInput_KeyDown(object sender, KeyEventArgs e)
         {
-            ShortcutInput.Text = e.KeyData.ToString();
-            if (e.Modifiers > 0)
-                options.Shortcut = e.KeyData;
+            ShortcutInput.Text = (ShortcutInput.Tag = e.KeyData).ToString();
+
             e.SuppressKeyPress = true;
         }
 
         private void ShortcutInput_Leave(object sender, EventArgs e)
         {
-            ShortcutInput.Text = options.Shortcut.ToString();
+            if ((((Keys)ShortcutInput.Tag) & Keys.Modifiers) == 0)
+                 ShortcutInput.Text = (ShortcutInput.Tag = options.Shortcut).ToString();
         }
 
         private void OptionsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             options.Period = TimeSpan.FromSeconds(int.Parse(MinutesInput.Text) * 60 + int.Parse(SecondsInput.Text));
+            options.Shortcut = (Keys)ShortcutInput.Tag;
+            options.Script = ScriptInput.Text;
         }
     }
 }
