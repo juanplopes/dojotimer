@@ -41,35 +41,36 @@ namespace DojoTimer
         public bool Run()
         {
             var temp = Path.GetTempFileName();
-                var file = temp + ".cmd";
-                try
-                {
+            var file = temp + ".cmd";
+            try
+            {
 
-                    var script = Script.Replace("\r\n", "\r\n@if errorlevel 1 exit /b %errorlevel%\r\n");
-                    File.WriteAllText(file, script);
+                var script = Script.Replace("\r\n", "\r\n@if errorlevel 1 exit /b %errorlevel%\r\n");
+                script = "@chcp 28591\r\n" + script;
+                File.WriteAllText(file, script, Encoding.GetEncoding(28591));
 
-                    var processes = Process.GetProcesses();
+                var processes = Process.GetProcesses();
 
-                    var psi = MakeParams(file);
-                    var process = MakeProcess(psi);
-                    process.Start();
-                    process.BeginErrorReadLine();
-                    process.BeginOutputReadLine();
+                var psi = MakeParams(file);
+                var process = MakeProcess(psi);
+                process.Start();
+                process.BeginErrorReadLine();
+                process.BeginOutputReadLine();
 
-                    process.WaitForExit();
-                   
-                    return process.ExitCode == 0;
-                }
-                catch (Exception e)
-                {
-                    Write(string.Format("Error: {0}", e.Message));
-                    return false;
-                }
-                finally
-                {
-                    File.Delete(temp);
-                    File.Delete(file);
-                }
+                process.WaitForExit();
+
+                return process.ExitCode == 0;
+            }
+            catch (Exception e)
+            {
+                Write(string.Format("Error: {0}", e.Message));
+                return false;
+            }
+            finally
+            {
+                File.Delete(temp);
+                File.Delete(file);
+            }
         }
 
         private Process MakeProcess(ProcessStartInfo psi)

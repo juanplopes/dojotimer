@@ -27,7 +27,7 @@ namespace DojoTimer
             BindHotKey();
             Stop();
             this.Left = Screen.PrimaryScreen.Bounds.Right - Width;
-            this.Top = Screen.PrimaryScreen.Bounds.Top + 2* SystemInformation.CaptionHeight;
+            this.Top = Screen.PrimaryScreen.Bounds.Top + 2 * SystemInformation.CaptionHeight;
             this.Icon = Icons.Green;
         }
 
@@ -65,7 +65,7 @@ namespace DojoTimer
             stopwatch.Stop();
             MainTimer.Enabled = false;
             StartButton.Text = "4";
-            SetTransparency(true);
+            SetTransparency();
             SetTime();
         }
 
@@ -78,7 +78,7 @@ namespace DojoTimer
 
         private void MainTimer_Tick(object sender, EventArgs e)
         {
-            SetTransparency(false);
+            SetTransparency();
             if (stopwatch.Elapsed < options.Period)
             {
                 SetTime();
@@ -92,7 +92,7 @@ namespace DojoTimer
             }
         }
 
-        private void SetTransparency(bool force)
+        private void SetTransparency()
         {
             foreach (var button in this.Controls)
             {
@@ -107,7 +107,7 @@ namespace DojoTimer
 
             var control = TimeLabel;
             control.FlatAppearance.MouseOverBackColor = Color.FromArgb(inside ? 150 : 225, Color.White);
-            control.ForeColor = force || inside ? Color.White : this.BackColor;
+            control.ForeColor = inside || !MainTimer.Enabled ? Color.White : this.BackColor;
         }
 
         private void ResetButton_Click(object sender, EventArgs e)
@@ -145,6 +145,7 @@ namespace DojoTimer
             output.Activate();
             this.BackColor = run ? Color.Green : Color.Red;
             this.Icon = run ? Icons.Green : Icons.Red;
+            this.SetTransparency();
             output.ShowText(run);
 
         }
