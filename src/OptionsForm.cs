@@ -17,7 +17,7 @@ namespace DojoTimer
         {
             InitializeComponent();
             this.options = options;
-            MinutesInput.Text = options.Period.Minutes.ToString("00");
+            MinutesInput.Text = ((int)options.Period.TotalMinutes).ToString("00");
             SecondsInput.Text = options.Period.Seconds.ToString("00");
             ShortcutInput.Text = options.Shortcut.ToString();
             RefreshConfig(options.Script);
