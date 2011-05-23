@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
+
 using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
@@ -92,11 +92,14 @@ namespace DojoTimer
 
         private void SetTransparency(bool force)
         {
-            foreach (var button in this.Controls.OfType<ButtonBase>())
+            foreach (var button in this.Controls)
             {
-                button.FlatAppearance.CheckedBackColor = Color.FromArgb(150, Color.White);
-                button.FlatAppearance.MouseOverBackColor = Color.FromArgb(150, Color.White);
-                button.FlatAppearance.MouseDownBackColor = Color.FromArgb(200, Color.White);
+                if (button is ButtonBase)
+                {
+                    (button as ButtonBase).FlatAppearance.CheckedBackColor = Color.FromArgb(150, Color.White);
+                    (button as ButtonBase).FlatAppearance.MouseOverBackColor = Color.FromArgb(150, Color.White);
+                    (button as ButtonBase).FlatAppearance.MouseDownBackColor = Color.FromArgb(200, Color.White);
+                }
             }
 
             var control = TimeLabel;
@@ -126,7 +129,10 @@ namespace DojoTimer
         }
         private void RunButton_Click(object sender, EventArgs e)
         {
-            Application.OpenForms.OfType<OutputWindow>().ToList().ForEach(x => x.Close());
+            foreach (Form form in Application.OpenForms)
+                if (form is OutputWindow)
+                    form.Close();
+
             var output = new OutputWindow();
             output.Clear();
             options.Write += s => output.Write(s);
