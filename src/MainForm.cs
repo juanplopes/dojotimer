@@ -136,10 +136,9 @@ namespace DojoTimer
             var output = new OutputWindow();
             output.Clear();
             options.Write += s => output.Write(s);
-            output.Show();
-            output.Activate();
-
+            output.Show(this);
             var run = options.Run();
+            output.Activate();
             this.BackColor = run ? Color.Green : Color.Red;
             output.ShowText(run);
 
