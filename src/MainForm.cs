@@ -64,14 +64,14 @@ namespace DojoTimer
             MainTimer.Enabled = false;
             StartButton.Text = char.ConvertFromUtf32(9658);
             StartButton.Font = new Font(StartButton.Font.FontFamily, 26);
+            SetTransparency(true);
         }
 
         private void Reset()
         {
+            stopwatch.Reset(); 
             Stop();
-            stopwatch.Reset();
             SetTime();
-            SetTransparency(true);
         }
 
 
@@ -122,7 +122,7 @@ namespace DojoTimer
             var output = new OutputWindow();
             output.Clear();
             options.Write += s => output.Write(s);
-            output.Show(this);
+            output.Show();
             output.Activate();
 
             var run = options.Run();

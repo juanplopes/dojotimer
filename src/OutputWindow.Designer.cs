@@ -67,7 +67,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(772, 39);
+            this.panel1.Size = new System.Drawing.Size(772, 55);
             this.panel1.TabIndex = 2;
             // 
             // OutputWindow
@@ -76,9 +76,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(772, 466);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.panel1);
             this.Name = "OutputWindow";
             this.Text = "OutputWindow";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
