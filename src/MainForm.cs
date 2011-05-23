@@ -23,8 +23,7 @@ namespace DojoTimer
         {
             InitializeComponent();
             this.options = options;
-            hook.KeyPressed += new EventHandler<KeyPressedEventArgs>(hook_KeyPressed);
-            hook.RegisterHotKey(DojoTimer.ModifierKeys.Alt | DojoTimer.ModifierKeys.Control | DojoTimer.ModifierKeys.Win, Keys.T);
+            BindHotKey();
             SetTime();
             Stop();
         }
@@ -67,6 +66,15 @@ namespace DojoTimer
             StartButton.Font = new Font(StartButton.Font.FontFamily, 26);
         }
 
+        private void Reset()
+        {
+            Stop();
+            stopwatch.Reset();
+            SetTime();
+            SetTransparency(true);
+        }
+
+
         private void MainTimer_Tick(object sender, EventArgs e)
         {
             SetTransparency(false);
@@ -93,18 +101,20 @@ namespace DojoTimer
             Reset();
         }
 
-        private void Reset()
-        {
-            stopwatch.Reset();
-            MainTimer.Enabled = false;
-            SetTime();
-            SetTransparency(true);
-        }
 
         private void TimeLabel_Click(object sender, EventArgs e)
         {
+            hook.Dispose();
             new ConfigForm(options).ShowDialog(this);
+            BindHotKey();
             SetTime();
+        }
+
+        private void BindHotKey()
+        {
+            hook = new KeyboardHook();
+            hook.KeyPressed += new EventHandler<KeyPressedEventArgs>(hook_KeyPressed);
+            hook.RegisterHotKey(options.ShortcutModifiers, options.ShortcutKey);
         }
         private void RunButton_Click(object sender, EventArgs e)
         {
@@ -112,11 +122,12 @@ namespace DojoTimer
             var output = new OutputWindow();
             output.Clear();
             options.Write += s => output.Write(s);
-            output.Show();
+            output.Show(this);
             output.Activate();
 
-            this.BackColor = options.Run() ? Color.Green : Color.Red;
-            output.ShowText();
+            var run = options.Run();
+            this.BackColor = run ? Color.Green : Color.Red;
+            output.ShowText(run);
 
         }
 

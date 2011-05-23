@@ -98,6 +98,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Timer";
             this.TopMost = true;
             this.Activated += new System.EventHandler(this.MainForm_Activated);

@@ -28,11 +28,12 @@ namespace DojoTimer
             text += data + "\r\n";
         }
 
-        public void ShowText()
+        public void ShowText(bool result)
         {
             textBox1.Text = text;
             textBox1.SelectionStart = textBox1.TextLength;
             textBox1.ScrollToCaret();
+            panel1.BackColor = result ? Color.Green : Color.Red;
         }
 
         private void button1_Click(object sender, EventArgs e)

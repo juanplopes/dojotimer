@@ -19,10 +19,11 @@ namespace DojoTimer
             this.options = options;
             MinutesInput.Text = options.Period.Minutes.ToString("00");
             SecondsInput.Text = options.Period.Seconds.ToString("00");
-            RefreshConfig(options.WorkingDir);
+            ShortcutInput.Text = options.Shortcut.ToString();
+            RefreshConfig(options.Script);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void CloseButton_Click(object sender, EventArgs e)
         {
             options.Period = TimeSpan.FromSeconds(int.Parse(MinutesInput.Text) * 60 + int.Parse(SecondsInput.Text));
             this.Close();
@@ -30,25 +31,30 @@ namespace DojoTimer
 
         private void DirectoryButton_Click(object sender, EventArgs e)
         {
-            if (FolderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (OpenFile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                var newpath = FolderDialog.SelectedPath;
-                if (File.Exists(Path.Combine(newpath, Options.DefaultRunFile)))
-                {
-                    options.WorkingDir = newpath;
-                    RefreshConfig(newpath);
-                }
-                else
-                {
-                    MessageBox.Show("O diretório não possui um arquivo run.cmd. Faça um agora!");
-                }
+                options.Script = OpenFile.FileName;
+                RefreshConfig(OpenFile.FileName);
             }
         }
 
         private void RefreshConfig(string newpath)
         {
             DirectoryButton.Text = Path.GetFileName(newpath);
-            FolderDialog.SelectedPath = newpath;
+            OpenFile.FileName = newpath;
+        }
+
+        private void ShortcutInput_KeyDown(object sender, KeyEventArgs e)
+        {
+            ShortcutInput.Text = e.KeyData.ToString();
+            if (e.Modifiers > 0)
+                options.Shortcut = e.KeyData;
+            e.SuppressKeyPress = true;
+        }
+
+        private void ShortcutInput_Leave(object sender, EventArgs e)
+        {
+            ShortcutInput.Text = options.Shortcut.ToString();
         }
     }
 }

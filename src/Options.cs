@@ -14,11 +14,25 @@ namespace DojoTimer
         public const string DefaultRunFile = "run.cmd";
 
         public TimeSpan Period { get; set; }
-        public string WorkingDir { get; set; }
+        public string Script { get; set; }
+        public Keys Shortcut { get; set; }
+        public Keys ShortcutKey { get { return Shortcut & Keys.KeyCode; } }
+        public ModifierKeys ShortcutModifiers
+        {
+            get
+            {
+                ModifierKeys mods = 0;
+                if ((Shortcut & Keys.Alt) > 0) mods |= ModifierKeys.Alt;
+                if ((Shortcut & Keys.Control) > 0) mods |= ModifierKeys.Control;
+                if ((Shortcut & Keys.Shift) > 0) mods |= ModifierKeys.Shift;
+                return mods;
+            }
+        }
 
         public Options()
         {
             Period = TimeSpan.FromMinutes(5);
+            Shortcut = Keys.Control | Keys.Alt | Keys.M;
         }
 
         public event Action<string> Write;
@@ -27,15 +41,15 @@ namespace DojoTimer
         {
             var processes = Process.GetProcesses();
 
-            if (WorkingDir == null) return true;
+            if (Script == null) return true;
 
             var psi = new ProcessStartInfo();
             psi.UseShellExecute = false;
-            psi.FileName = Path.Combine(WorkingDir, DefaultRunFile);
+            psi.FileName = Script;
             psi.RedirectStandardError = true;
             psi.RedirectStandardOutput = true;
             psi.WindowStyle = ProcessWindowStyle.Hidden;
-            psi.WorkingDirectory = WorkingDir;
+            psi.WorkingDirectory = Path.GetDirectoryName(Script);
             var process = new Process();
             process.OutputDataReceived += (obj, e) => { if (Write != null) Write(e.Data); };
             process.ErrorDataReceived += (obj, e) => { if (Write != null) Write(e.Data); };
@@ -44,11 +58,11 @@ namespace DojoTimer
             process.Start();
             process.BeginErrorReadLine();
             process.BeginOutputReadLine();
-            
+
             process.WaitForExit();
             return process.ExitCode == 0;
         }
 
-      
+
     }
 }
