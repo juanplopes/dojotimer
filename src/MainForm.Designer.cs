@@ -39,6 +39,7 @@
             // StartButton
             // 
             this.StartButton.BackColor = System.Drawing.Color.Transparent;
+            this.StartButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.StartButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StartButton.Font = new System.Drawing.Font("Webdings", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
@@ -54,6 +55,7 @@
             // ResetButton
             // 
             this.ResetButton.BackColor = System.Drawing.Color.Transparent;
+            this.ResetButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.ResetButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ResetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ResetButton.Font = new System.Drawing.Font("Webdings", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
@@ -74,6 +76,7 @@
             // TimeLabel
             // 
             this.TimeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.TimeLabel.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.TimeLabel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.TimeLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -92,6 +95,7 @@
             this.TopMostCheck.BackColor = System.Drawing.Color.Transparent;
             this.TopMostCheck.Checked = true;
             this.TopMostCheck.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.TopMostCheck.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.TopMostCheck.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.TopMostCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TopMostCheck.Font = new System.Drawing.Font("Webdings", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));

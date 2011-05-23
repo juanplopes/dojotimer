@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Media;
 using System.IO;
+using System.Collections;
 
 namespace DojoTimer
 {
@@ -97,6 +98,7 @@ namespace DojoTimer
             {
                 if (button is ButtonBase)
                 {
+                    (button as ButtonBase).FlatAppearance.BorderColor = this.BackColor;
                     (button as ButtonBase).FlatAppearance.CheckedBackColor = Color.FromArgb(150, Color.White);
                     (button as ButtonBase).FlatAppearance.MouseOverBackColor = Color.FromArgb(150, Color.White);
                     (button as ButtonBase).FlatAppearance.MouseDownBackColor = Color.FromArgb(200, Color.White);
@@ -130,8 +132,9 @@ namespace DojoTimer
         }
         private void RunButton_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
-                if (form is OutputWindow)
+            var list = new ArrayList(Application.OpenForms);
+            foreach (Form form in list)
+                if (form is OutputWindow && !form.IsDisposed)
                     form.Close();
 
             var output = new OutputWindow();
