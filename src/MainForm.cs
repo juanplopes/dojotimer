@@ -26,7 +26,7 @@ namespace DojoTimer
             BindHotKey();
             Stop();
             this.Left = Screen.PrimaryScreen.Bounds.Right - Width;
-            this.Top = Screen.PrimaryScreen.Bounds.Top;
+            this.Top = Screen.PrimaryScreen.Bounds.Top + 2* SystemInformation.CaptionHeight;
         }
 
         void hook_KeyPressed(object sender, KeyPressedEventArgs e)
