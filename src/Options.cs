@@ -32,35 +32,43 @@ namespace DojoTimer
         public Options()
         {
             Period = TimeSpan.FromMinutes(5);
-            Shortcut = Keys.Control | Keys.Alt | Keys.M;
+            Shortcut = Keys.Control | Keys.Space;
         }
 
         public event Action<string> Write;
 
         public bool Run()
         {
-            var processes = Process.GetProcesses();
+            try
+            {
+                var processes = Process.GetProcesses();
 
-            if (Script == null) return true;
+                if (Script == null) return true;
 
-            var psi = new ProcessStartInfo();
-            psi.UseShellExecute = false;
-            psi.FileName = Script;
-            psi.RedirectStandardError = true;
-            psi.RedirectStandardOutput = true;
-            psi.WindowStyle = ProcessWindowStyle.Hidden;
-            psi.WorkingDirectory = Path.GetDirectoryName(Script);
-            var process = new Process();
-            process.OutputDataReceived += (obj, e) => { if (Write != null) Write(e.Data); };
-            process.ErrorDataReceived += (obj, e) => { if (Write != null) Write(e.Data); };
+                var psi = new ProcessStartInfo();
+                psi.UseShellExecute = false;
+                psi.FileName = Script;
+                psi.RedirectStandardError = true;
+                psi.RedirectStandardOutput = true;
+                psi.WindowStyle = ProcessWindowStyle.Hidden;
+                psi.WorkingDirectory = Path.GetDirectoryName(Script);
+                var process = new Process();
+                process.OutputDataReceived += (obj, e) => { if (Write != null) Write(e.Data); };
+                process.ErrorDataReceived += (obj, e) => { if (Write != null) Write(e.Data); };
 
-            process.StartInfo = psi;
-            process.Start();
-            process.BeginErrorReadLine();
-            process.BeginOutputReadLine();
+                process.StartInfo = psi;
+                process.Start();
+                process.BeginErrorReadLine();
+                process.BeginOutputReadLine();
 
-            process.WaitForExit();
-            return process.ExitCode == 0;
+                process.WaitForExit();
+                return process.ExitCode == 0;
+            }
+            catch (Exception e)
+            {
+                Write(string.Format("Error: {0}", e.Message));
+                return false;
+            }
         }
 
 

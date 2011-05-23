@@ -24,8 +24,9 @@ namespace DojoTimer
             InitializeComponent();
             this.options = options;
             BindHotKey();
-            SetTime();
             Stop();
+            this.Left = Screen.PrimaryScreen.Bounds.Right - Width;
+            this.Top = Screen.PrimaryScreen.Bounds.Top;
         }
 
         void hook_KeyPressed(object sender, KeyPressedEventArgs e)
@@ -37,7 +38,7 @@ namespace DojoTimer
         private void SetTime()
         {
             var remaining = options.Period - stopwatch.Elapsed;
-            TimeLabel.Text = string.Format("{0:00}:{1:00}", remaining.Minutes, remaining.Seconds);
+            TimeLabel.Text = string.Format("{0:00}:{1:00}", (int)remaining.TotalMinutes, remaining.Seconds);
         }
 
         private void StartButton_Click(object sender, EventArgs e)
@@ -54,24 +55,22 @@ namespace DojoTimer
                 stopwatch.Reset();
             stopwatch.Start();
             MainTimer.Enabled = true;
-            StartButton.Text = char.ConvertFromUtf32(9632);
-            StartButton.Font = new Font(StartButton.Font.FontFamily, 17);
+            StartButton.Text = "<";
         }
 
         private void Stop()
         {
             stopwatch.Stop();
             MainTimer.Enabled = false;
-            StartButton.Text = char.ConvertFromUtf32(9658);
-            StartButton.Font = new Font(StartButton.Font.FontFamily, 26);
+            StartButton.Text = "4";
             SetTransparency(true);
+            SetTime();
         }
 
         private void Reset()
         {
-            stopwatch.Reset(); 
+            stopwatch.Reset();
             Stop();
-            SetTime();
         }
 
 
@@ -85,6 +84,7 @@ namespace DojoTimer
             else
             {
                 Reset();
+                this.Activate();
                 using (var alarm = Resources.alarm)
                     new SoundPlayer(alarm).Play();
             }
@@ -92,8 +92,16 @@ namespace DojoTimer
 
         private void SetTransparency(bool force)
         {
-            foreach (Control control in this.Controls)
-                control.ForeColor = force || inside ? Color.White : this.BackColor;
+            foreach (var button in this.Controls.OfType<ButtonBase>())
+            {
+                button.FlatAppearance.CheckedBackColor = Color.FromArgb(150, Color.White);
+                button.FlatAppearance.MouseOverBackColor = Color.FromArgb(150, Color.White);
+                button.FlatAppearance.MouseDownBackColor = Color.FromArgb(200, Color.White);
+            }
+
+            var control = TimeLabel;
+            control.FlatAppearance.MouseOverBackColor = Color.FromArgb(inside ? 150 : 225, Color.White);
+            control.ForeColor = force || inside ? Color.White : this.BackColor;
         }
 
         private void ResetButton_Click(object sender, EventArgs e)
@@ -105,7 +113,7 @@ namespace DojoTimer
         private void TimeLabel_Click(object sender, EventArgs e)
         {
             hook.Dispose();
-            new ConfigForm(options).ShowDialog(this);
+            new OptionsForm(options).ShowDialog(this);
             BindHotKey();
             SetTime();
         }
@@ -132,7 +140,6 @@ namespace DojoTimer
         }
 
         bool inside = true;
-
         private void MainForm_Activated(object sender, EventArgs e)
         {
             inside = true;
@@ -141,6 +148,11 @@ namespace DojoTimer
         private void MainForm_Deactivate(object sender, EventArgs e)
         {
             inside = false;
+        }
+
+        private void TopMostCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            this.TopMost = TopMostCheck.Checked;
         }
 
     }

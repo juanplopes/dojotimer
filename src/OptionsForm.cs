@@ -10,10 +10,10 @@ using System.IO;
 
 namespace DojoTimer
 {
-    public partial class ConfigForm : Form
+    public partial class OptionsForm : Form
     {
         Options options;
-        public ConfigForm(Options options)
+        public OptionsForm(Options options)
         {
             InitializeComponent();
             this.options = options;
@@ -25,7 +25,6 @@ namespace DojoTimer
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
-            options.Period = TimeSpan.FromSeconds(int.Parse(MinutesInput.Text) * 60 + int.Parse(SecondsInput.Text));
             this.Close();
         }
 
@@ -55,6 +54,11 @@ namespace DojoTimer
         private void ShortcutInput_Leave(object sender, EventArgs e)
         {
             ShortcutInput.Text = options.Shortcut.ToString();
+        }
+
+        private void OptionsForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            options.Period = TimeSpan.FromSeconds(int.Parse(MinutesInput.Text) * 60 + int.Parse(SecondsInput.Text));
         }
     }
 }
