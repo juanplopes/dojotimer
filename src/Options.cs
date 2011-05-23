@@ -33,7 +33,7 @@ namespace DojoTimer
             Period = TimeSpan.FromMinutes(5);
             Shortcut = Keys.Control | Keys.Space;
             var myDir = Environment.CurrentDirectory;
-            Script = string.Format("@cd \"{0}\"\r\n@echo There is no script.", myDir);
+            Script = string.Format("@cd /D \"{0}\"\r\n@echo There is no script.", myDir);
         }
 
         public event Action<string> Write;
