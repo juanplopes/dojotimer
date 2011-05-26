@@ -40,6 +40,7 @@ namespace DojoTimer
         private void SetTime()
         {
             var remaining = options.Period - stopwatch.Elapsed;
+            if (remaining.Ticks < 0) remaining = TimeSpan.Zero;
             TimeLabel.Text = string.Format("{0:00}:{1:00}", (int)remaining.TotalMinutes, remaining.Seconds);
         }
 
@@ -138,16 +139,20 @@ namespace DojoTimer
                     form.Close();
 
             var output = new OutputWindow();
-            output.Clear();
             options.Write += s => output.Write(s);
-            output.Show(this);
+            RunAndShow(output);
+
+        }
+
+        private void RunAndShow(OutputWindow output)
+        {
             var run = options.Run();
+            output.Show();
             output.Activate();
             this.BackColor = run ? Color.Green : Color.Red;
             this.Icon = run ? Icons.Green : Icons.Red;
             this.SetTransparency();
             output.ShowText(run);
-
         }
 
         bool inside = true;
