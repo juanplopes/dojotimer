@@ -37,7 +37,7 @@
     <StartupObject>DojoTimer.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Green.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Green.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -80,6 +80,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ToastyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToastyForm.Designer.cs">
+      <DependentUpon>ToastyForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Icons.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Icons.Designer.cs</LastGenOutput>
@@ -107,6 +113,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ToastyForm.resx">
+      <DependentUpon>ToastyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
@@ -121,9 +130,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="alarm.wav" />
-    <Content Include="Green.ico" />
-    <Content Include="Red.ico" />
+    <Content Include="Resources\alarm.wav" />
+    <Content Include="Resources\Green.ico" />
+    <Content Include="Resources\Red.ico" />
+    <Content Include="Resources\toasty.png" />
+    <Content Include="Resources\toasty.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

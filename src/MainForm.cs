@@ -18,6 +18,9 @@ namespace DojoTimer
         Options options;
         Stopwatch stopwatch = new Stopwatch();
         KeyboardHook hook = new KeyboardHook();
+        KeyboardHook toastyHook = new KeyboardHook();
+        bool lastStatus = true;
+        Random random = new Random();
 
         public MainForm() : this(new Options()) { }
         public MainForm(Options options)
@@ -25,10 +28,19 @@ namespace DojoTimer
             InitializeComponent();
             this.options = options;
             BindHotKey();
+            BindToastyHotKey();
+         
             Stop();
-            this.Left = Screen.PrimaryScreen.Bounds.Right - Width;
-            this.Top = Screen.PrimaryScreen.Bounds.Top + 2 * SystemInformation.CaptionHeight;
+            this.Left = Screen.PrimaryScreen.WorkingArea.Right - Width;
+            this.Top = Screen.PrimaryScreen.WorkingArea.Top + 2 * SystemInformation.CaptionHeight;
             this.Icon = Icons.Green;
+
+        }
+
+        private void BindToastyHotKey()
+        {
+            toastyHook.KeyPressed += (o, e) => ToastyForm.MakeMeLaugh();
+            toastyHook.RegisterHotKey(DojoTimer.ModifierKeys.Control | DojoTimer.ModifierKeys.Alt | DojoTimer.ModifierKeys.Win, Keys.T);
         }
 
         void hook_KeyPressed(object sender, KeyPressedEventArgs e)
@@ -128,10 +140,16 @@ namespace DojoTimer
         private void BindHotKey()
         {
             hook = new KeyboardHook();
-            hook.KeyPressed += new EventHandler<KeyPressedEventArgs>(hook_KeyPressed);
+            hook.KeyPressed += hook_KeyPressed;
             hook.RegisterHotKey(options.ShortcutModifiers, options.ShortcutKey);
         }
         private void RunButton_Click(object sender, EventArgs e)
+        {
+            Run();
+
+        }
+
+        private void Run()
         {
             var list = new ArrayList(Application.OpenForms);
             foreach (Form form in list)
@@ -141,18 +159,22 @@ namespace DojoTimer
             var output = new OutputWindow();
             options.Write += s => output.Write(s);
             RunAndShow(output);
-
         }
 
         private void RunAndShow(OutputWindow output)
         {
             var run = options.Run();
+
             output.Show();
             output.Activate();
             this.BackColor = run ? Color.Green : Color.Red;
             this.Icon = run ? Icons.Green : Icons.Red;
             this.SetTransparency();
             output.ShowText(run);
+
+            if (run && !lastStatus && random.Next(3) == 0)
+                ToastyForm.MakeMeLaugh();
+            lastStatus = run;
         }
 
         bool inside = true;

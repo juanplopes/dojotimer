@@ -65,5 +65,11 @@ namespace DojoTimer {
                 return ResourceManager.GetStream("alarm", resourceCulture);
             }
         }
+        
+        internal static System.IO.UnmanagedMemoryStream toasty {
+            get {
+                return ResourceManager.GetStream("toasty", resourceCulture);
+            }
+        }
     }
 }
