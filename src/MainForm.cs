@@ -48,14 +48,6 @@ namespace DojoTimer
             RunButton_Click(this, e);
         }
 
-
-        private void SetTime()
-        {
-            var remaining = options.Period - stopwatch.Elapsed;
-            if (remaining.Ticks < 0) remaining = TimeSpan.Zero;
-            TimeLabel.Text = string.Format("{0:00}:{1:00}", (int)remaining.TotalMinutes, remaining.Seconds);
-        }
-
         private void StartButton_Click(object sender, EventArgs e)
         {
             if (stopwatch.IsRunning)
@@ -63,31 +55,6 @@ namespace DojoTimer
             else
                 Start();
         }
-
-        private void Start()
-        {
-            if (stopwatch.Elapsed >= options.Period)
-                stopwatch.Reset();
-            stopwatch.Start();
-            MainTimer.Enabled = true;
-            StartButton.Text = "<";
-        }
-
-        private void Stop()
-        {
-            stopwatch.Stop();
-            MainTimer.Enabled = false;
-            StartButton.Text = "4";
-            SetTransparency();
-            SetTime();
-        }
-
-        private void Reset()
-        {
-            stopwatch.Reset();
-            Stop();
-        }
-
 
         private void MainTimer_Tick(object sender, EventArgs e)
         {
@@ -147,6 +114,37 @@ namespace DojoTimer
         {
             Run();
 
+        }
+
+        private void SetTime()
+        {
+            var remaining = options.Period - stopwatch.Elapsed;
+            if (remaining.Ticks < 0) remaining = TimeSpan.Zero;
+            TimeLabel.Text = string.Format("{0:00}:{1:00}", (int)remaining.TotalMinutes, remaining.Seconds);
+        }
+
+        private void Start()
+        {
+            if (stopwatch.Elapsed >= options.Period)
+                stopwatch.Reset();
+            stopwatch.Start();
+            MainTimer.Enabled = true;
+            StartButton.Text = "<";
+        }
+
+        private void Stop()
+        {
+            stopwatch.Stop();
+            MainTimer.Enabled = false;
+            StartButton.Text = "4";
+            SetTransparency();
+            SetTime();
+        }
+
+        private void Reset()
+        {
+            stopwatch.Reset();
+            Stop();
         }
 
         private void Run()
