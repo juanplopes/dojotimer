@@ -21,6 +21,10 @@ namespace DojoTimer
             SecondsInput.Text = options.Period.Seconds.ToString("00");
             ShortcutInput.Text = (ShortcutInput.Tag = options.Shortcut).ToString();
             ScriptInput.Text = options.Script;
+
+            ParticipantsInput.Lines = options.Participants;
+            KeepTrackInput.Checked = options.KeepTrack;
+            CommitScript.Text = options.CommitScript;
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -46,6 +50,10 @@ namespace DojoTimer
             options.Period = TimeSpan.FromSeconds(int.Parse(MinutesInput.Text) * 60 + int.Parse(SecondsInput.Text));
             options.Shortcut = (Keys)ShortcutInput.Tag;
             options.Script = ScriptInput.Text;
+
+            options.Participants = ParticipantsInput.Lines;
+            options.KeepTrack = KeepTrackInput.Checked;
+            options.CommitScript = CommitScript.Text;
         }
     }
 }

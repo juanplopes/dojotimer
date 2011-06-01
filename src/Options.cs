@@ -7,15 +7,23 @@ using System.IO;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Reflection;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace DojoTimer
 {
+    [Serializable]
     public class Options
     {
         public TimeSpan Period { get; set; }
         public string Script { get; set; }
         public Keys Shortcut { get; set; }
+
+        public bool KeepTrack { get; set; }
+        public string[] Participants { get; set; }
+        public string CommitScript { get; set; }
+
         public Keys ShortcutKey { get { return Shortcut & Keys.KeyCode; } }
+
         public ModifierKeys ShortcutModifiers
         {
             get
@@ -34,64 +42,50 @@ namespace DojoTimer
             Shortcut = Keys.Control | Keys.Space;
             var myDir = Environment.CurrentDirectory;
             Script = string.Format("@cd /D \"{0}\"\r\n@echo There is no script.", myDir);
+            CommitScript = string.Format("@cd /D \"{0}\"\r\n@echo Dojo today with %1 and %2.", myDir);
+            Participants = new string[0];
         }
 
         public event Action<string> Write;
 
         public bool Run()
         {
-            var temp = Path.GetTempFileName();
-            var file = temp + ".cmd";
+            var runner = new ProcessRunner(Script);
+            runner.Write += s => { if (Write != null) Write(s); };
+            return runner.Run();
+        }
+
+        public static Options Load()
+        {
+            if (!File.Exists("dojotimer.options")) return new Options();
             try
             {
-
-                var script = Script.Replace("\r\n", "\r\n@if errorlevel 1 exit /b %errorlevel%\r\n");
-                script = "@chcp 28591\r\n" + script;
-                File.WriteAllText(file, script, Encoding.GetEncoding(28591));
-
-                var processes = Process.GetProcesses();
-
-                var psi = MakeParams(file);
-                var process = MakeProcess(psi);
-                process.Start();
-                process.BeginErrorReadLine();
-                process.BeginOutputReadLine();
-
-                process.WaitForExit();
-
-                return process.ExitCode == 0;
+                using (var stream = File.OpenRead("dojotimer.options"))
+                    return (Options)new BinaryFormatter().Deserialize(stream);
             }
-            catch (Exception e)
-            {
-                Write(string.Format("Error: {0}", e.Message));
-                return false;
-            }
-            finally
-            {
-                File.Delete(temp);
-                File.Delete(file);
-            }
+            catch { return new Options(); }
         }
 
-        private Process MakeProcess(ProcessStartInfo psi)
+        public void Save()
         {
-            var process = new Process();
-            process.OutputDataReceived += (obj, e) => { if (Write != null) Write(e.Data); };
-            process.ErrorDataReceived += (obj, e) => { if (Write != null) Write(e.Data); };
-
-            process.StartInfo = psi;
-            return process;
+            using (var stream = File.OpenWrite("dojotimer.options"))
+                new BinaryFormatter().Serialize(stream, this);
         }
 
-        private static ProcessStartInfo MakeParams(string file)
+        public void MarkFinish(bool commit, string person1, string person2)
         {
-            var psi = new ProcessStartInfo();
-            psi.UseShellExecute = false;
-            psi.FileName = file;
-            psi.RedirectStandardError = true;
-            psi.RedirectStandardOutput = true;
-            psi.WindowStyle = ProcessWindowStyle.Hidden;
-            return psi;
+            if (commit)
+                new ProcessRunner(CommitScript).Run(person1, person2);
+
+            var list = new List<string>(Participants);
+            list.RemoveAll(x => StringComparer.InvariantCultureIgnoreCase.Equals(x, person2));
+            list.Add(person2);
+            list.RemoveAll(x => StringComparer.InvariantCultureIgnoreCase.Equals(x, person1));
+            list.Add(person1);
+
+            list.RemoveAll(string.IsNullOrEmpty);
+
+            Participants = list.ToArray();
         }
 
 

@@ -18,17 +18,13 @@ namespace DojoTimer
         Options options;
         Stopwatch stopwatch = new Stopwatch();
         KeyboardHook hook = new KeyboardHook();
-        KeyboardHook toastyHook = new KeyboardHook();
-        bool lastStatus = true;
-        Random random = new Random();
 
-        public MainForm() : this(new Options()) { }
+        public MainForm() : this(Options.Load()) { }
         public MainForm(Options options)
         {
             InitializeComponent();
             this.options = options;
             BindHotKey();
-            BindToastyHotKey();
          
             Stop();
             this.Left = Screen.PrimaryScreen.WorkingArea.Right - Width;
@@ -37,12 +33,7 @@ namespace DojoTimer
 
         }
 
-        private void BindToastyHotKey()
-        {
-            toastyHook.KeyPressed += (o, e) => ToastyForm.MakeMeLaugh();
-            toastyHook.RegisterHotKey(DojoTimer.ModifierKeys.Control | DojoTimer.ModifierKeys.Alt | DojoTimer.ModifierKeys.Win, Keys.T);
-        }
-
+        
         void hook_KeyPressed(object sender, KeyPressedEventArgs e)
         {
             RunButton_Click(this, e);
@@ -67,9 +58,16 @@ namespace DojoTimer
             {
                 Stop();
                 this.Activate();
-                using (var alarm = Resources.alarm)
+                using (var alarm = Sounds.alarm)
                     new SoundPlayer(alarm).Play();
+                HandleFinish();
             }
+        }
+
+        private void HandleFinish()
+        {
+            if (options.KeepTrack)
+                new WhoWasHereForm(options).ShowDialog(this);
         }
 
         private void SetTransparency()
@@ -100,6 +98,7 @@ namespace DojoTimer
         {
             hook.Dispose();
             new OptionsForm(options).ShowDialog(this);
+            options.Save();
             BindHotKey();
             SetTime();
         }
@@ -113,7 +112,6 @@ namespace DojoTimer
         private void RunButton_Click(object sender, EventArgs e)
         {
             Run();
-
         }
 
         private void SetTime()
@@ -169,10 +167,6 @@ namespace DojoTimer
             this.Icon = run ? Icons.Green : Icons.Red;
             this.SetTransparency();
             output.ShowText(run);
-
-            if (run && !lastStatus && random.Next(3) == 0)
-                ToastyForm.MakeMeLaugh();
-            lastStatus = run;
         }
 
         bool inside = true;
@@ -189,6 +183,11 @@ namespace DojoTimer
         private void TopMostCheck_CheckedChanged(object sender, EventArgs e)
         {
             this.TopMost = TopMostCheck.Checked;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
 
     }

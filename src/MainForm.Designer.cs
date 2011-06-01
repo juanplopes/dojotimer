@@ -44,7 +44,7 @@
             this.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StartButton.Font = new System.Drawing.Font("Webdings", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.StartButton.ForeColor = System.Drawing.Color.White;
-            this.StartButton.Location = new System.Drawing.Point(150, 9);
+            this.StartButton.Location = new System.Drawing.Point(150, 8);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(48, 47);
             this.StartButton.TabIndex = 1;
@@ -96,11 +96,11 @@
             this.TopMostCheck.Checked = true;
             this.TopMostCheck.CheckState = System.Windows.Forms.CheckState.Checked;
             this.TopMostCheck.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.TopMostCheck.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.TopMostCheck.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.TopMostCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TopMostCheck.Font = new System.Drawing.Font("Webdings", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.TopMostCheck.ForeColor = System.Drawing.Color.White;
-            this.TopMostCheck.Location = new System.Drawing.Point(257, 9);
+            this.TopMostCheck.Location = new System.Drawing.Point(257, 10);
             this.TopMostCheck.Name = "TopMostCheck";
             this.TopMostCheck.Size = new System.Drawing.Size(47, 47);
             this.TopMostCheck.TabIndex = 5;
@@ -114,7 +114,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
-            this.ClientSize = new System.Drawing.Size(315, 68);
+            this.ClientSize = new System.Drawing.Size(321, 68);
             this.Controls.Add(this.TopMostCheck);
             this.Controls.Add(this.TimeLabel);
             this.Controls.Add(this.ResetButton);
@@ -128,6 +128,7 @@
             this.TopMost = true;
             this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.Deactivate += new System.EventHandler(this.MainForm_Deactivate);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 
         }
