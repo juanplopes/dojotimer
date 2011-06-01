@@ -24,9 +24,10 @@ namespace DojoTimer
                 using (var form = new ToastyForm())
                 {
                     PlayToasty();
-
                     form.Left = Screen.PrimaryScreen.WorkingArea.Right;
                     form.Top = Screen.PrimaryScreen.WorkingArea.Bottom - form.Height;
+                    form.Height = form.pictureBox1.Height;
+                    form.Width = 0;
                     form.Show();
 
                     for (int i = 0; i < 100; i++) PaintItWith(form, i);
@@ -49,9 +50,10 @@ namespace DojoTimer
 
         private static void PaintItWith(ToastyForm form, int i)
         {
-            form.Left = Screen.PrimaryScreen.WorkingArea.Right - (i * form.Width / 100);
+            form.Width = (i * form.pictureBox1.Width / 100);
+            form.Left = Screen.PrimaryScreen.WorkingArea.Right - form.Width;
             Application.DoEvents();
-            Thread.Sleep(3);
+            Thread.Sleep(2);
         }
     }
 }
