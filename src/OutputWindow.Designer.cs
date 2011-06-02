@@ -41,12 +41,12 @@
             this.textBox1.BackColor = System.Drawing.Color.Black;
             this.textBox1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(0, 65);
+            this.textBox1.Location = new System.Drawing.Point(0, 60);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(772, 359);
+            this.textBox1.Size = new System.Drawing.Size(772, 364);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Running...";
             // 
@@ -58,20 +58,20 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(772, 45);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Fechar";
+            this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // OutputTitleBar
             // 
+            this.OutputTitleBar.BackColor = System.Drawing.Color.White;
             this.OutputTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.OutputTitleBar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.OutputTitleBar.Location = new System.Drawing.Point(0, 0);
             this.OutputTitleBar.Name = "OutputTitleBar";
             this.OutputTitleBar.Size = new System.Drawing.Size(772, 60);
             this.OutputTitleBar.TabIndex = 10;
-            this.OutputTitleBar.BackColor = System.Drawing.Color.White;
             this.OutputTitleBar.TitleDescription = "The result of everything we did here. We want it GREEN!";
-            this.OutputTitleBar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.OutputTitleBar.TitleIcon = "~";
             this.OutputTitleBar.TitleText = "Was it ok?";
             // 

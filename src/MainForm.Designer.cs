@@ -138,7 +138,7 @@
             this.Controls.Add(this.TimeLabel);
             this.Controls.Add(this.ResetButton);
             this.Controls.Add(this.StartButton);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
