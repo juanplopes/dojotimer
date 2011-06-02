@@ -32,16 +32,18 @@
             this.IconLabel = new System.Windows.Forms.Label();
             this.DescriptionLabel = new System.Windows.Forms.Label();
             this.TitleLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.BackPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // BackPanel
             // 
             this.BackPanel.BackColor = System.Drawing.Color.White;
+            this.BackPanel.Controls.Add(this.label1);
             this.BackPanel.Controls.Add(this.IconLabel);
             this.BackPanel.Controls.Add(this.DescriptionLabel);
             this.BackPanel.Controls.Add(this.TitleLabel);
-            this.BackPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BackPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.BackPanel.Location = new System.Drawing.Point(0, 0);
             this.BackPanel.Name = "BackPanel";
             this.BackPanel.Size = new System.Drawing.Size(389, 60);
@@ -76,6 +78,15 @@
             this.TitleLabel.TabIndex = 3;
             this.TitleLabel.Text = "title";
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Black;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label1.Location = new System.Drawing.Point(0, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(389, 2);
+            this.label1.TabIndex = 6;
+            // 
             // FormTitleBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -84,7 +95,7 @@
             this.Controls.Add(this.BackPanel);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "FormTitleBar";
-            this.Size = new System.Drawing.Size(389, 60);
+            this.Size = new System.Drawing.Size(389, 62);
             this.BackPanel.ResumeLayout(false);
             this.BackPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -97,5 +108,6 @@
         private System.Windows.Forms.Label IconLabel;
         private System.Windows.Forms.Label DescriptionLabel;
         private System.Windows.Forms.Label TitleLabel;
+        private System.Windows.Forms.Label label1;
     }
 }
