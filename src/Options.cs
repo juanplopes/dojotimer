@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.IO.IsolatedStorage;
 
 namespace DojoTimer
 {
@@ -58,10 +59,9 @@ namespace DojoTimer
 
         public static Options Load()
         {
-            if (!File.Exists("dojotimer.options")) return new Options();
             try
             {
-                using (var stream = File.OpenRead("dojotimer.options"))
+                using (var stream = new IsolatedStorageFileStream("dojotimer.options", FileMode.Open))
                     return (Options)new BinaryFormatter().Deserialize(stream);
             }
             catch { return new Options(); }
@@ -69,7 +69,7 @@ namespace DojoTimer
 
         public void Save()
         {
-            using (var stream = File.OpenWrite("dojotimer.options"))
+            using (var stream = new IsolatedStorageFileStream("dojotimer.options", FileMode.Create))
                 new BinaryFormatter().Serialize(stream, this);
         }
 

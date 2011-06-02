@@ -31,7 +31,6 @@
             this.CloseButton = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.ScriptInput = new System.Windows.Forms.TextBox();
             this.ShortcutInput = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,10 +38,11 @@
             this.SecondsInput = new System.Windows.Forms.TextBox();
             this.MinutesInput = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.KeepTrackInput = new System.Windows.Forms.CheckBox();
-            this.ParticipantsInput = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.CommitScript = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.ParticipantsInput = new System.Windows.Forms.TextBox();
+            this.KeepTrackInput = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -62,9 +62,9 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -91,27 +91,13 @@
             this.tabPage1.Text = "Options";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.CommitScript);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.ParticipantsInput);
-            this.tabPage2.Controls.Add(this.KeepTrackInput);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(678, 435);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "People";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // ScriptInput
             // 
             this.ScriptInput.AcceptsReturn = true;
             this.ScriptInput.AcceptsTab = true;
-            this.ScriptInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.ScriptInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ScriptInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ScriptInput.Location = new System.Drawing.Point(6, 93);
             this.ScriptInput.Multiline = true;
@@ -122,8 +108,8 @@
             // 
             // ShortcutInput
             // 
-            this.ShortcutInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.ShortcutInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ShortcutInput.BackColor = System.Drawing.Color.White;
             this.ShortcutInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ShortcutInput.Location = new System.Drawing.Point(6, 398);
@@ -131,11 +117,13 @@
             this.ShortcutInput.ReadOnly = true;
             this.ShortcutInput.Size = new System.Drawing.Size(666, 31);
             this.ShortcutInput.TabIndex = 15;
+            this.ShortcutInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShortcutInput_KeyDown);
+            this.ShortcutInput.Leave += new System.EventHandler(this.ShortcutInput_Leave);
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(1, 370);
@@ -180,39 +168,27 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Time:";
             // 
-            // KeepTrackInput
+            // tabPage2
             // 
-            this.KeepTrackInput.AutoSize = true;
-            this.KeepTrackInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KeepTrackInput.Location = new System.Drawing.Point(6, 6);
-            this.KeepTrackInput.Name = "KeepTrackInput";
-            this.KeepTrackInput.Size = new System.Drawing.Size(321, 29);
-            this.KeepTrackInput.TabIndex = 0;
-            this.KeepTrackInput.Text = "Keep track of who participated";
-            this.KeepTrackInput.UseVisualStyleBackColor = true;
-            // 
-            // ParticipantsInput
-            // 
-            this.ParticipantsInput.AcceptsReturn = true;
-            this.ParticipantsInput.AcceptsTab = true;
-            this.ParticipantsInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.ParticipantsInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ParticipantsInput.Location = new System.Drawing.Point(6, 41);
-            this.ParticipantsInput.Multiline = true;
-            this.ParticipantsInput.Name = "ParticipantsInput";
-            this.ParticipantsInput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.ParticipantsInput.Size = new System.Drawing.Size(661, 274);
-            this.ParticipantsInput.TabIndex = 17;
+            this.tabPage2.Controls.Add(this.CommitScript);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.ParticipantsInput);
+            this.tabPage2.Controls.Add(this.KeepTrackInput);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(678, 435);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "People";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // CommitScript
             // 
             this.CommitScript.AcceptsReturn = true;
             this.CommitScript.AcceptsTab = true;
-            this.CommitScript.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.CommitScript.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.CommitScript.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CommitScript.Location = new System.Drawing.Point(8, 346);
             this.CommitScript.Multiline = true;
@@ -230,6 +206,32 @@
             this.label4.Size = new System.Drawing.Size(148, 25);
             this.label4.TabIndex = 18;
             this.label4.Text = "Commit script:";
+            // 
+            // ParticipantsInput
+            // 
+            this.ParticipantsInput.AcceptsReturn = true;
+            this.ParticipantsInput.AcceptsTab = true;
+            this.ParticipantsInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ParticipantsInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ParticipantsInput.Location = new System.Drawing.Point(6, 41);
+            this.ParticipantsInput.Multiline = true;
+            this.ParticipantsInput.Name = "ParticipantsInput";
+            this.ParticipantsInput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.ParticipantsInput.Size = new System.Drawing.Size(661, 274);
+            this.ParticipantsInput.TabIndex = 17;
+            // 
+            // KeepTrackInput
+            // 
+            this.KeepTrackInput.AutoSize = true;
+            this.KeepTrackInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KeepTrackInput.Location = new System.Drawing.Point(6, 6);
+            this.KeepTrackInput.Name = "KeepTrackInput";
+            this.KeepTrackInput.Size = new System.Drawing.Size(321, 29);
+            this.KeepTrackInput.TabIndex = 0;
+            this.KeepTrackInput.Text = "Keep track of who participated";
+            this.KeepTrackInput.UseVisualStyleBackColor = true;
             // 
             // OptionsForm
             // 
