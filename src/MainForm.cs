@@ -60,13 +60,13 @@ namespace DojoTimer
                 this.Activate();
                 using (var alarm = Sounds.alarm)
                     new SoundPlayer(alarm).Play();
-                HandleFinish();
+                HandleFinish(false);
             }
         }
 
-        private void HandleFinish()
+        private void HandleFinish(bool force)
         {
-            if (options.KeepTrack)
+            if (force || options.KeepTrack)
                 new WhoWasHereForm(options).ShowDialog(this);
         }
 
@@ -77,7 +77,7 @@ namespace DojoTimer
                 if (button is ButtonBase)
                 {
                     (button as ButtonBase).FlatAppearance.BorderColor = this.BackColor;
-                    (button as ButtonBase).FlatAppearance.CheckedBackColor = Color.FromArgb(150, Color.White);
+                    (button as ButtonBase).FlatAppearance.CheckedBackColor = Color.FromArgb(125, Color.White);
                     (button as ButtonBase).FlatAppearance.MouseOverBackColor = Color.FromArgb(150, Color.White);
                     (button as ButtonBase).FlatAppearance.MouseDownBackColor = Color.FromArgb(200, Color.White);
                 }
@@ -197,6 +197,11 @@ namespace DojoTimer
         private void MainForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void CommitButton_Click(object sender, EventArgs e)
+        {
+            HandleFinish(true);
         }
 
     }

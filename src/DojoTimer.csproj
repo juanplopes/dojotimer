@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormTitleBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormTitleBar.Designer.cs">
+      <DependentUpon>FormTitleBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Icons.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -87,6 +93,9 @@
     <Compile Include="WhoWasHereForm.Designer.cs">
       <DependentUpon>WhoWasHereForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormTitleBar.resx">
+      <DependentUpon>FormTitleBar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Icons.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Icons.Designer.cs</LastGenOutput>

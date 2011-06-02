@@ -30,7 +30,7 @@
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.OutputTitleBar = new DojoTimer.FormTitleBar();
             this.SuspendLayout();
             // 
             // textBox1
@@ -41,12 +41,12 @@
             this.textBox1.BackColor = System.Drawing.Color.Black;
             this.textBox1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(0, 45);
+            this.textBox1.Location = new System.Drawing.Point(0, 65);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(772, 379);
+            this.textBox1.Size = new System.Drawing.Size(772, 359);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Running...";
             // 
@@ -62,14 +62,18 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // panel1
+            // OutputTitleBar
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(772, 55);
-            this.panel1.TabIndex = 2;
+            this.OutputTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.OutputTitleBar.Location = new System.Drawing.Point(0, 0);
+            this.OutputTitleBar.Name = "OutputTitleBar";
+            this.OutputTitleBar.Size = new System.Drawing.Size(772, 60);
+            this.OutputTitleBar.TabIndex = 10;
+            this.OutputTitleBar.BackColor = System.Drawing.Color.White;
+            this.OutputTitleBar.TitleDescription = "The result of everything we did here. We want it GREEN!";
+            this.OutputTitleBar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.OutputTitleBar.TitleIcon = "~";
+            this.OutputTitleBar.TitleText = "Was it ok?";
             // 
             // OutputWindow
             // 
@@ -77,9 +81,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(772, 466);
+            this.Controls.Add(this.OutputTitleBar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.panel1);
             this.Name = "OutputWindow";
             this.ShowInTaskbar = false;
             this.Text = "OutputWindow";
@@ -93,6 +97,6 @@
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel1;
+        private FormTitleBar OutputTitleBar;
     }
 }

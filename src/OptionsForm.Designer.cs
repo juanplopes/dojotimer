@@ -43,6 +43,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.ParticipantsInput = new System.Windows.Forms.TextBox();
             this.KeepTrackInput = new System.Windows.Forms.CheckBox();
+            this.formTitleBar1 = new DojoTimer.FormTitleBar();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -52,7 +53,7 @@
             // 
             this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CloseButton.Location = new System.Drawing.Point(520, 486);
+            this.CloseButton.Location = new System.Drawing.Point(505, 482);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(178, 43);
             this.CloseButton.TabIndex = 2;
@@ -68,10 +69,10 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Location = new System.Drawing.Point(12, 66);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(686, 468);
+            this.tabControl1.Size = new System.Drawing.Size(671, 410);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPage1
@@ -86,7 +87,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(678, 435);
+            this.tabPage1.Size = new System.Drawing.Size(663, 377);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Options";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -103,7 +104,7 @@
             this.ScriptInput.Multiline = true;
             this.ScriptInput.Name = "ScriptInput";
             this.ScriptInput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.ScriptInput.Size = new System.Drawing.Size(666, 274);
+            this.ScriptInput.Size = new System.Drawing.Size(723, 174);
             this.ScriptInput.TabIndex = 16;
             // 
             // ShortcutInput
@@ -112,10 +113,10 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.ShortcutInput.BackColor = System.Drawing.Color.White;
             this.ShortcutInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShortcutInput.Location = new System.Drawing.Point(6, 398);
+            this.ShortcutInput.Location = new System.Drawing.Point(6, 298);
             this.ShortcutInput.Name = "ShortcutInput";
             this.ShortcutInput.ReadOnly = true;
-            this.ShortcutInput.Size = new System.Drawing.Size(666, 31);
+            this.ShortcutInput.Size = new System.Drawing.Size(723, 31);
             this.ShortcutInput.TabIndex = 15;
             this.ShortcutInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShortcutInput_KeyDown);
             this.ShortcutInput.Leave += new System.EventHandler(this.ShortcutInput_Leave);
@@ -126,7 +127,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1, 370);
+            this.label3.Location = new System.Drawing.Point(1, 270);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 25);
             this.label3.TabIndex = 14;
@@ -177,7 +178,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(678, 435);
+            this.tabPage2.Size = new System.Drawing.Size(663, 378);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "People";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -186,22 +187,22 @@
             // 
             this.CommitScript.AcceptsReturn = true;
             this.CommitScript.AcceptsTab = true;
-            this.CommitScript.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
+            this.CommitScript.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.CommitScript.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CommitScript.Location = new System.Drawing.Point(8, 346);
+            this.CommitScript.Location = new System.Drawing.Point(8, 286);
             this.CommitScript.Multiline = true;
             this.CommitScript.Name = "CommitScript";
             this.CommitScript.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.CommitScript.Size = new System.Drawing.Size(661, 83);
+            this.CommitScript.Size = new System.Drawing.Size(646, 86);
             this.CommitScript.TabIndex = 19;
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 318);
+            this.label4.Location = new System.Drawing.Point(3, 258);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(148, 25);
             this.label4.TabIndex = 18;
@@ -219,7 +220,7 @@
             this.ParticipantsInput.Multiline = true;
             this.ParticipantsInput.Name = "ParticipantsInput";
             this.ParticipantsInput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.ParticipantsInput.Size = new System.Drawing.Size(661, 274);
+            this.ParticipantsInput.Size = new System.Drawing.Size(646, 214);
             this.ParticipantsInput.TabIndex = 17;
             // 
             // KeepTrackInput
@@ -233,13 +234,27 @@
             this.KeepTrackInput.Text = "Keep track of who participated";
             this.KeepTrackInput.UseVisualStyleBackColor = true;
             // 
+            // formTitleBar1
+            // 
+            this.formTitleBar1.TitleDescription = "Change whatever you want. Then close me. That\'s it.";
+            this.formTitleBar1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.formTitleBar1.TitleIcon = "@";
+            this.formTitleBar1.Location = new System.Drawing.Point(0, 0);
+            this.formTitleBar1.Name = "formTitleBar1";
+            this.formTitleBar1.Size = new System.Drawing.Size(695, 60);
+            this.formTitleBar1.TabIndex = 9;
+            this.formTitleBar1.TitleText = "How should I behave?";
+            this.formTitleBar1.BackColor = System.Drawing.Color.White;
+            this.formTitleBar1.ForeColor = System.Drawing.SystemColors.ControlText;
+            // 
             // OptionsForm
             // 
             this.AcceptButton = this.CloseButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 538);
+            this.ClientSize = new System.Drawing.Size(695, 534);
             this.ControlBox = false;
+            this.Controls.Add(this.formTitleBar1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.CloseButton);
             this.MaximizeBox = false;
@@ -275,6 +290,7 @@
         private System.Windows.Forms.CheckBox KeepTrackInput;
         private System.Windows.Forms.TextBox CommitScript;
         private System.Windows.Forms.Label label4;
+        private FormTitleBar formTitleBar1;
 
     }
 }

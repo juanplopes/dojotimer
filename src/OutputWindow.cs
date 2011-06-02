@@ -33,7 +33,8 @@ namespace DojoTimer
             textBox1.Text = text;
             textBox1.SelectionStart = textBox1.TextLength;
             textBox1.ScrollToCaret();
-            panel1.BackColor = result ? Color.Green : Color.Red;
+            OutputTitleBar.BackColor = result ? Color.DarkGreen : Color.DarkRed;
+            OutputTitleBar.ForeColor = Color.White;
         }
 
         private void button1_Click(object sender, EventArgs e)
