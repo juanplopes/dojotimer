@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.BackPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.IconLabel = new System.Windows.Forms.Label();
             this.DescriptionLabel = new System.Windows.Forms.Label();
             this.TitleLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.BackPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,10 +44,20 @@
             this.BackPanel.Controls.Add(this.DescriptionLabel);
             this.BackPanel.Controls.Add(this.TitleLabel);
             this.BackPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BackPanel.ForeColor = System.Drawing.Color.Black;
             this.BackPanel.Location = new System.Drawing.Point(0, 0);
             this.BackPanel.Name = "BackPanel";
             this.BackPanel.Size = new System.Drawing.Size(389, 60);
             this.BackPanel.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Black;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label1.Location = new System.Drawing.Point(0, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(389, 2);
+            this.label1.TabIndex = 6;
             // 
             // IconLabel
             // 
@@ -77,15 +87,6 @@
             this.TitleLabel.Size = new System.Drawing.Size(46, 25);
             this.TitleLabel.TabIndex = 3;
             this.TitleLabel.Text = "title";
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Black;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label1.Location = new System.Drawing.Point(0, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(389, 2);
-            this.label1.TabIndex = 6;
             // 
             // FormTitleBar
             // 

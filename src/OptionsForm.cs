@@ -13,9 +13,15 @@ namespace DojoTimer
     public partial class OptionsForm : Form
     {
         Options options;
+        public Options Options { get { return options; } }
         public OptionsForm(Options options)
         {
             InitializeComponent();
+            SetOptions(options);
+        }
+
+        private void SetOptions(Options options)
+        {
             this.options = options;
             MinutesInput.Text = ((int)options.Period.TotalMinutes).ToString("00");
             SecondsInput.Text = options.Period.Seconds.ToString("00");
@@ -54,6 +60,11 @@ namespace DojoTimer
             options.Participants = ParticipantsInput.Lines;
             options.KeepTrack = KeepTrackInput.Checked;
             options.CommitScript = CommitScript.Text;
+        }
+
+        private void ResetButton_Click(object sender, EventArgs e)
+        {
+            SetOptions(new Options());
         }
     }
 }

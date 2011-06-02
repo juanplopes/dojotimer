@@ -43,6 +43,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.ParticipantsInput = new System.Windows.Forms.TextBox();
             this.KeepTrackInput = new System.Windows.Forms.CheckBox();
+            this.ResetButton = new System.Windows.Forms.Button();
             this.formTitleBar1 = new DojoTimer.FormTitleBar();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -178,7 +179,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(663, 378);
+            this.tabPage2.Size = new System.Drawing.Size(663, 377);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "People";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -234,18 +235,34 @@
             this.KeepTrackInput.Text = "Keep track of who participated";
             this.KeepTrackInput.UseVisualStyleBackColor = true;
             // 
+            // ResetButton
+            // 
+            this.ResetButton.BackColor = System.Drawing.Color.White;
+            this.ResetButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.ResetButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.ResetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ResetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResetButton.ForeColor = System.Drawing.Color.Black;
+            this.ResetButton.Location = new System.Drawing.Point(549, 12);
+            this.ResetButton.Name = "ResetButton";
+            this.ResetButton.Size = new System.Drawing.Size(134, 35);
+            this.ResetButton.TabIndex = 10;
+            this.ResetButton.Text = "Reset";
+            this.ResetButton.UseVisualStyleBackColor = false;
+            this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
+            // 
             // formTitleBar1
             // 
-            this.formTitleBar1.TitleDescription = "Change whatever you want. Then close me. That\'s it.";
+            this.formTitleBar1.BackColor = System.Drawing.Color.White;
             this.formTitleBar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.formTitleBar1.TitleIcon = "@";
+            this.formTitleBar1.ForeColor = System.Drawing.Color.Black;
             this.formTitleBar1.Location = new System.Drawing.Point(0, 0);
             this.formTitleBar1.Name = "formTitleBar1";
             this.formTitleBar1.Size = new System.Drawing.Size(695, 60);
             this.formTitleBar1.TabIndex = 9;
+            this.formTitleBar1.TitleDescription = "Change whatever you want. Then close me. That\'s it.";
+            this.formTitleBar1.TitleIcon = "@";
             this.formTitleBar1.TitleText = "How should I behave?";
-            this.formTitleBar1.BackColor = System.Drawing.Color.White;
-            this.formTitleBar1.ForeColor = System.Drawing.SystemColors.ControlText;
             // 
             // OptionsForm
             // 
@@ -254,6 +271,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(695, 534);
             this.ControlBox = false;
+            this.Controls.Add(this.ResetButton);
             this.Controls.Add(this.formTitleBar1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.CloseButton);
@@ -291,6 +309,7 @@
         private System.Windows.Forms.TextBox CommitScript;
         private System.Windows.Forms.Label label4;
         private FormTitleBar formTitleBar1;
+        private System.Windows.Forms.Button ResetButton;
 
     }
 }

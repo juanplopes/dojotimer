@@ -34,7 +34,8 @@ namespace DojoTimer
             {
                 IconLabel.ForeColor = value;
                 DescriptionLabel.ForeColor = value;
-                IconLabel.ForeColor = value;
+                TitleLabel.ForeColor = value;
+                label1.BackColor = value;
                 base.ForeColor = value;
             }
         }
@@ -48,6 +49,8 @@ namespace DojoTimer
         public FormTitleBar()
         {
             InitializeComponent();
+            this.ForeColor = Color.Navy;
+            this.BackColor = Color.White;
         }
     }
 }

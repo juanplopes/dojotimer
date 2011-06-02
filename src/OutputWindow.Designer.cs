@@ -66,7 +66,6 @@
             // 
             this.OutputTitleBar.BackColor = System.Drawing.Color.White;
             this.OutputTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.OutputTitleBar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.OutputTitleBar.Location = new System.Drawing.Point(0, 0);
             this.OutputTitleBar.Name = "OutputTitleBar";
             this.OutputTitleBar.Size = new System.Drawing.Size(772, 60);

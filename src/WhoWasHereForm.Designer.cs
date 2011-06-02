@@ -95,7 +95,9 @@
             // 
             // formTitleBar1
             // 
+            this.formTitleBar1.BackColor = System.Drawing.Color.White;
             this.formTitleBar1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.formTitleBar1.ForeColor = System.Drawing.Color.Black;
             this.formTitleBar1.Location = new System.Drawing.Point(0, 0);
             this.formTitleBar1.Name = "formTitleBar1";
             this.formTitleBar1.Size = new System.Drawing.Size(482, 60);

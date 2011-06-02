@@ -97,19 +97,20 @@ namespace DojoTimer
         private void TimeLabel_Click(object sender, EventArgs e)
         {
             hook.Dispose();
-            ShowOptionsForm();
+            options = ShowOptionsForm();
             options.Save();
             BindHotKey();
             SetTime();
         }
 
-        private void ShowOptionsForm()
+        private Options ShowOptionsForm()
         {
             var form = new OptionsForm(options);
             bool topmost = this.TopMost;
             this.TopMost = false;
             form.ShowDialog();
             this.TopMost = topmost;
+            return form.Options;
         }
 
         private void BindHotKey()
