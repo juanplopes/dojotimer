@@ -1,6 +1,6 @@
 $COMSPEC \/c build\ \"build\"
-cp build/dojotimer.exe ../juanplopes.github.com
-cd ..
-cd juanplopes.github.com
+cd ../juanplopes.github.com
+git pull
+cp ../dojotimer/build/dojotimer.exe .
 git commit -am "new dojotimer"
 git push
