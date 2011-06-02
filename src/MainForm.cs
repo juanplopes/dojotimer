@@ -25,7 +25,7 @@ namespace DojoTimer
             InitializeComponent();
             this.options = options;
             BindHotKey();
-         
+
             Stop();
             this.Left = Screen.PrimaryScreen.WorkingArea.Right - Width;
             this.Top = Screen.PrimaryScreen.WorkingArea.Top + 2 * SystemInformation.CaptionHeight;
@@ -33,7 +33,7 @@ namespace DojoTimer
 
         }
 
-        
+
         void hook_KeyPressed(object sender, KeyPressedEventArgs e)
         {
             RunButton_Click(this, e);
@@ -97,10 +97,19 @@ namespace DojoTimer
         private void TimeLabel_Click(object sender, EventArgs e)
         {
             hook.Dispose();
-            new OptionsForm(options).ShowDialog(this);
+            ShowOptionsForm();
             options.Save();
             BindHotKey();
             SetTime();
+        }
+
+        private void ShowOptionsForm()
+        {
+            var form = new OptionsForm(options);
+            bool topmost = this.TopMost;
+            this.TopMost = false;
+            form.ShowDialog();
+            this.TopMost = topmost;
         }
 
         private void BindHotKey()

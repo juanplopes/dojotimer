@@ -59,9 +59,10 @@ namespace DojoTimer
 
         public static Options Load()
         {
+            if (!File.Exists("dojotimer.options")) return new Options();
             try
             {
-                using (var stream = new IsolatedStorageFileStream("dojotimer.options", FileMode.Open))
+                using (var stream = File.OpenRead("dojotimer.options"))
                     return (Options)new BinaryFormatter().Deserialize(stream);
             }
             catch { return new Options(); }
@@ -69,7 +70,7 @@ namespace DojoTimer
 
         public void Save()
         {
-            using (var stream = new IsolatedStorageFileStream("dojotimer.options", FileMode.Create))
+            using (var stream = File.Create("dojotimer.options"))
                 new BinaryFormatter().Serialize(stream, this);
         }
 

@@ -21,13 +21,15 @@ namespace DojoTimer
             SetLastParticipant(options);
             var autocomplete = GetAutoCompleteSource(options);
 
-            Person1Input.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            Person1Input.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            Person1Input.AutoCompleteCustomSource = autocomplete;
+            SetupAutoComplete(Person1Input, autocomplete);
+            SetupAutoComplete(Person2Input, autocomplete);
+        }
 
-            Person2Input.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            Person2Input.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            Person2Input.AutoCompleteCustomSource = autocomplete;
+        public static void SetupAutoComplete(TextBox textbox, AutoCompleteStringCollection autocomplete)
+        {
+            textbox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            textbox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            textbox.AutoCompleteCustomSource = autocomplete;
         }
 
         private static AutoCompleteStringCollection GetAutoCompleteSource(Options options)
@@ -48,18 +50,33 @@ namespace DojoTimer
             this.Close();
         }
 
+        private bool ValidatePerson()
+        {
+            bool result = !string.IsNullOrEmpty(Person1) && !string.IsNullOrEmpty(Person2);
+            if (!result)
+                MessageBox.Show(this, "Please, if you want to save, make sure you fill both boxes.", "Validation",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return result;
+        }
+
         private void OnlySaveButton_Click(object sender, EventArgs e)
         {
-            options.MarkFinish(false, Person1, Person2);
-            options.Save();
-            this.Close();
+            if (ValidatePerson())
+            {
+                options.MarkFinish(false, Person1, Person2);
+                options.Save();
+                this.Close();
+            }
         }
 
         private void SaveCommitButton_Click(object sender, EventArgs e)
         {
-            options.MarkFinish(true, Person1, Person2);
-            options.Save();
-            this.Close();
+            if (ValidatePerson())
+            {
+                options.MarkFinish(true, Person1, Person2);
+                options.Save();
+                this.Close();
+            }
         }
     }
 }
