@@ -46,6 +46,7 @@ namespace DojoTimer
             Participants = new string[0];
         }
 
+        [field:NonSerialized]
         public event Action<string> Write;
 
         public bool Run()
