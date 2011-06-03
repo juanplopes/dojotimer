@@ -10,7 +10,7 @@ namespace DojoTimer.Helpers
     public class ColorScheme
     {
         public static ColorScheme Green = new ColorScheme(Color.Green, Color.White, Color.DarkGreen, Icons.Green);
-        public static ColorScheme Red = new ColorScheme(Color.Red, Color.White, Color.DarkRed, Icons.Green);
+        public static ColorScheme Red = new ColorScheme(Color.Red, Color.White, Color.DarkRed, Icons.Red);
 
         Color color;
         Color darkColor;

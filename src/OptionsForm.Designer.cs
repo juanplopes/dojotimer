@@ -108,7 +108,7 @@
             this.ScriptInput.Multiline = true;
             this.ScriptInput.Name = "ScriptInput";
             this.ScriptInput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.ScriptInput.Size = new System.Drawing.Size(651, 174);
+            this.ScriptInput.Size = new System.Drawing.Size(651, 216);
             this.ScriptInput.TabIndex = 16;
             // 
             // ShortcutInput
@@ -118,7 +118,7 @@
             this.ShortcutInput.BackColor = System.Drawing.Color.White;
             this.ShortcutInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ShortcutInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShortcutInput.Location = new System.Drawing.Point(6, 298);
+            this.ShortcutInput.Location = new System.Drawing.Point(6, 340);
             this.ShortcutInput.Name = "ShortcutInput";
             this.ShortcutInput.ReadOnly = true;
             this.ShortcutInput.Size = new System.Drawing.Size(651, 31);
@@ -132,7 +132,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1, 270);
+            this.label3.Location = new System.Drawing.Point(1, 312);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 25);
             this.label3.TabIndex = 14;
