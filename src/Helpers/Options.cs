@@ -23,6 +23,8 @@ namespace DojoTimer.Helpers
         public string[] Participants { get; set; }
         public string CommitScript { get; set; }
 
+        public string WorkingDirectory { get; set; }
+
         public Keys ShortcutKey { get { return Shortcut & Keys.KeyCode; } }
 
         public ModifierKeys ShortcutModifiers
@@ -42,9 +44,10 @@ namespace DojoTimer.Helpers
             Period = TimeSpan.FromMinutes(5);
             Shortcut = Keys.Control | Keys.Space;
             var myDir = Environment.CurrentDirectory;
-            Script = string.Format("@cd /D \"{0}\"\r\necho There is no script.", myDir);
-            CommitScript = string.Format("@cd /D \"{0}\"\r\necho Dojo today with %1 and %2.", myDir);
+            Script = string.Format("echo There is no script.", myDir);
+            CommitScript = string.Format("echo Dojo today with %1 and %2.", myDir);
             Participants = new string[0];
+            WorkingDirectory = Environment.CurrentDirectory;
         }
 
         [field:NonSerialized]
@@ -52,7 +55,7 @@ namespace DojoTimer.Helpers
 
         public bool Run()
         {
-            var runner = new ProcessRunner(Script);
+            var runner = new ProcessRunner(Script, WorkingDirectory);
             runner.Write += s => { if (Write != null) Write(s); };
             return runner.Run();
         }
@@ -76,7 +79,7 @@ namespace DojoTimer.Helpers
         public void MarkFinish(bool commit, string person1, string person2)
         {
             if (commit)
-                new ProcessRunner(CommitScript).Run(person1, person2);
+                new ProcessRunner(CommitScript, WorkingDirectory).Run(person1, person2);
 
             var list = new List<string>(Participants);
             list.RemoveAll(x => StringComparer.InvariantCultureIgnoreCase.Equals(x, person2));

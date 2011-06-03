@@ -29,6 +29,7 @@ namespace DojoTimer
             SecondsInput.Text = options.Period.Seconds.ToString("00");
             ShortcutInput.Text = (ShortcutInput.Tag = options.Shortcut).ToString();
             ScriptInput.Text = options.Script;
+            WorkingDirectoryInput.Text = options.WorkingDirectory;
 
             ParticipantsInput.Lines = options.Participants;
             KeepTrackInput.Checked = options.KeepTrack;
@@ -62,6 +63,7 @@ namespace DojoTimer
             options.Participants = ParticipantsInput.Lines;
             options.KeepTrack = KeepTrackInput.Checked;
             options.CommitScript = CommitScript.Text;
+            options.WorkingDirectory = WorkingDirectoryInput.Text;
         }
 
         private void ResetButton_Click(object sender, EventArgs e)
@@ -69,5 +71,14 @@ namespace DojoTimer
             if (MessageBox.Show(this, "Are you sure?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                 SetOptions(new Options());
         }
+
+        private void BrowseButton_Click(object sender, EventArgs e)
+        {
+            if (BrowseFolder.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                WorkingDirectoryInput.Text = BrowseFolder.SelectedPath;
+            }
+        }
+
     }
 }

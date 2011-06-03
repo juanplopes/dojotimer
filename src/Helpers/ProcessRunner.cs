@@ -9,7 +9,12 @@ namespace DojoTimer.Helpers
     public class ProcessRunner
     {
         string scriptText;
-        public ProcessRunner(string scriptText) { this.scriptText = scriptText; }
+        string workingDir;
+        public ProcessRunner(string scriptText, string workingDir)
+        {
+            this.scriptText = scriptText;
+            this.workingDir = workingDir;
+        }
         public event Action<string> Write;
         public void InvokeWrite(string arg)
         {
@@ -23,7 +28,6 @@ namespace DojoTimer.Helpers
             var file = temp + ".cmd";
             try
             {
-
                 var script = scriptText.Replace("\r\n", "\r\n@if errorlevel 1 exit /b %errorlevel%\r\n");
                 script = "@chcp 28591>NUL\r\n" + script;
                 File.WriteAllText(file, script, Encoding.GetEncoding(28591));
@@ -74,6 +78,7 @@ namespace DojoTimer.Helpers
             var psi = new ProcessStartInfo();
             psi.UseShellExecute = false;
             psi.Arguments = argStr;
+            psi.WorkingDirectory = workingDir;
             psi.FileName = file;
             psi.RedirectStandardError = Write != null;
             psi.RedirectStandardOutput = Write != null;
