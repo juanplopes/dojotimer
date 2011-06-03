@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DojoTimer {
+namespace DojoTimer.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace DojoTimer {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DojoTimer.Sounds", typeof(Sounds).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DojoTimer.Resources.Sounds", typeof(Sounds).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

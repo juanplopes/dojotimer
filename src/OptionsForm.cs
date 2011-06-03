@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using DojoTimer.Helpers;
 
 namespace DojoTimer
 {
@@ -18,6 +19,7 @@ namespace DojoTimer
         {
             InitializeComponent();
             SetOptions(options);
+            formTitleBar1.BindHandleTo(this);
         }
 
         private void SetOptions(Options options)
@@ -48,7 +50,7 @@ namespace DojoTimer
         private void ShortcutInput_Leave(object sender, EventArgs e)
         {
             if ((((Keys)ShortcutInput.Tag) & Keys.Modifiers) == 0)
-                 ShortcutInput.Text = (ShortcutInput.Tag = options.Shortcut).ToString();
+                ShortcutInput.Text = (ShortcutInput.Tag = options.Shortcut).ToString();
         }
 
         private void OptionsForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -64,7 +66,8 @@ namespace DojoTimer
 
         private void ResetButton_Click(object sender, EventArgs e)
         {
-            SetOptions(new Options());
+            if (MessageBox.Show(this, "Are you sure?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                SetOptions(new Options());
         }
     }
 }

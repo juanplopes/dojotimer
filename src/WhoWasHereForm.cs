@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using DojoTimer.Helpers;
 
 namespace DojoTimer
 {
@@ -23,6 +24,7 @@ namespace DojoTimer
 
             SetupAutoComplete(Person1Input, autocomplete);
             SetupAutoComplete(Person2Input, autocomplete);
+            formTitleBar1.BindHandleTo(this);
         }
 
         public static void SetupAutoComplete(TextBox textbox, AutoCompleteStringCollection autocomplete)

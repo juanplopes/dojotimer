@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
+using DojoTimer.Helpers;
 
 namespace DojoTimer
 {
@@ -36,6 +37,7 @@ namespace DojoTimer
                 DescriptionLabel.ForeColor = value;
                 TitleLabel.ForeColor = value;
                 label1.BackColor = value;
+                CloseButton.ForeColor = value;
                 base.ForeColor = value;
             }
         }
@@ -43,7 +45,20 @@ namespace DojoTimer
         public override Color BackColor
         {
             get { return base.BackColor; }
-            set { BackPanel.BackColor = value; base.BackColor = value; }
+            set
+            {
+                BackPanel.BackColor = value; 
+                base.BackColor = value; 
+                CloseButton.BackColor = value;
+                CloseButton.FlatAppearance.BorderColor = value;
+            }
+        }
+
+        public DraggingHandle BindHandleTo(Form form)
+        {
+            var handle = new DraggingHandle(form);
+            handle.Bind(IconLabel, DescriptionLabel, TitleLabel, label1, this, BackPanel);
+            return handle;
         }
 
         public FormTitleBar()
@@ -51,6 +66,11 @@ namespace DojoTimer
             InitializeComponent();
             this.ForeColor = Color.Navy;
             this.BackColor = Color.White;
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            ParentForm.Close();
         }
     }
 }

@@ -48,13 +48,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainTitleBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainTitleBar.Designer.cs">
+      <DependentUpon>MainTitleBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTitleBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="FormTitleBar.Designer.cs">
       <DependentUpon>FormTitleBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Icons.Designer.cs">
+    <Compile Include="Helpers\ColorScheme.cs" />
+    <Compile Include="Helpers\DraggingHandle.cs" />
+    <Compile Include="Resources\Icons.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Icons.resx</DependentUpon>
@@ -65,24 +73,24 @@
     <Compile Include="OptionsForm.Designer.cs">
       <DependentUpon>OptionsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="KeyboardHook.cs" />
+    <Compile Include="Helpers\KeyboardHook.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Options.cs" />
+    <Compile Include="Helpers\Options.cs" />
     <Compile Include="OutputWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OutputWindow.Designer.cs">
       <DependentUpon>OutputWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProcessRunner.cs" />
+    <Compile Include="Helpers\ProcessRunner.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sounds.Designer.cs">
+    <Compile Include="Resources\Sounds.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Sounds.resx</DependentUpon>
@@ -93,10 +101,13 @@
     <Compile Include="WhoWasHereForm.Designer.cs">
       <DependentUpon>WhoWasHereForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="MainTitleBar.resx">
+      <DependentUpon>MainTitleBar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTitleBar.resx">
       <DependentUpon>FormTitleBar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Icons.resx">
+    <EmbeddedResource Include="Resources\Icons.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Icons.Designer.cs</LastGenOutput>
     </EmbeddedResource>
@@ -119,7 +130,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Sounds.resx">
+    <EmbeddedResource Include="Resources\Sounds.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Sounds.Designer.cs</LastGenOutput>
     </EmbeddedResource>
@@ -146,6 +157,7 @@
     <Content Include="Resources\toasty.png" />
     <Content Include="Resources\toasty.wav" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

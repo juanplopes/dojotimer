@@ -10,7 +10,7 @@ using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO.IsolatedStorage;
 
-namespace DojoTimer
+namespace DojoTimer.Helpers
 {
     [Serializable]
     public class Options

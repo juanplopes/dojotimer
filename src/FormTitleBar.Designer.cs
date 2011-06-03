@@ -33,12 +33,14 @@
             this.IconLabel = new System.Windows.Forms.Label();
             this.DescriptionLabel = new System.Windows.Forms.Label();
             this.TitleLabel = new System.Windows.Forms.Label();
+            this.CloseButton = new System.Windows.Forms.Button();
             this.BackPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // BackPanel
             // 
             this.BackPanel.BackColor = System.Drawing.Color.White;
+            this.BackPanel.Controls.Add(this.CloseButton);
             this.BackPanel.Controls.Add(this.label1);
             this.BackPanel.Controls.Add(this.IconLabel);
             this.BackPanel.Controls.Add(this.DescriptionLabel);
@@ -72,21 +74,35 @@
             // DescriptionLabel
             // 
             this.DescriptionLabel.AutoSize = true;
-            this.DescriptionLabel.Location = new System.Drawing.Point(58, 34);
+            this.DescriptionLabel.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DescriptionLabel.Location = new System.Drawing.Point(58, 32);
             this.DescriptionLabel.Name = "DescriptionLabel";
-            this.DescriptionLabel.Size = new System.Drawing.Size(58, 13);
+            this.DescriptionLabel.Size = new System.Drawing.Size(65, 16);
             this.DescriptionLabel.TabIndex = 4;
             this.DescriptionLabel.Text = "description";
             // 
             // TitleLabel
             // 
             this.TitleLabel.AutoSize = true;
-            this.TitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TitleLabel.Location = new System.Drawing.Point(56, 9);
+            this.TitleLabel.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TitleLabel.Location = new System.Drawing.Point(56, 8);
             this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(46, 25);
+            this.TitleLabel.Size = new System.Drawing.Size(61, 29);
             this.TitleLabel.TabIndex = 3;
             this.TitleLabel.Text = "title";
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseButton.Font = new System.Drawing.Font("Webdings", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.CloseButton.Location = new System.Drawing.Point(337, 12);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(38, 35);
+            this.CloseButton.TabIndex = 7;
+            this.CloseButton.Text = "r";
+            this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // FormTitleBar
             // 
@@ -110,5 +126,6 @@
         private System.Windows.Forms.Label DescriptionLabel;
         private System.Windows.Forms.Label TitleLabel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button CloseButton;
     }
 }

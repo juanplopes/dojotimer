@@ -10,6 +10,8 @@ using System.Diagnostics;
 using System.Media;
 using System.IO;
 using System.Collections;
+using DojoTimer.Resources;
+using DojoTimer.Helpers;
 
 namespace DojoTimer
 {
@@ -18,6 +20,7 @@ namespace DojoTimer
         Options options;
         Stopwatch stopwatch = new Stopwatch();
         KeyboardHook hook = new KeyboardHook();
+        ColorScheme scheme = ColorScheme.Green;
 
         public MainForm() : this(Options.Load()) { }
         public MainForm(Options options)
@@ -29,8 +32,8 @@ namespace DojoTimer
             Stop();
             this.Left = Screen.PrimaryScreen.WorkingArea.Right - Width;
             this.Top = Screen.PrimaryScreen.WorkingArea.Top + 2 * SystemInformation.CaptionHeight;
-            this.Icon = Icons.Green;
-
+            scheme.ApplyToMain(this);
+            TitleBar.BindHandleTo(this);
         }
 
 
@@ -67,22 +70,11 @@ namespace DojoTimer
         private void HandleFinish(bool force)
         {
             if (force || options.KeepTrack)
-                new WhoWasHereForm(options).ShowDialog(this);
+                scheme.ApplyTo(new WhoWasHereForm(options)).ShowDialog(this);
         }
 
         private void SetTransparency()
         {
-            foreach (var button in this.Controls)
-            {
-                if (button is ButtonBase)
-                {
-                    (button as ButtonBase).FlatAppearance.BorderColor = this.BackColor;
-                    (button as ButtonBase).FlatAppearance.CheckedBackColor = Color.FromArgb(125, Color.White);
-                    (button as ButtonBase).FlatAppearance.MouseOverBackColor = Color.FromArgb(150, Color.White);
-                    (button as ButtonBase).FlatAppearance.MouseDownBackColor = Color.FromArgb(200, Color.White);
-                }
-            }
-
             var control = TimeLabel;
             control.FlatAppearance.MouseOverBackColor = Color.FromArgb(inside ? 150 : 225, Color.White);
             control.ForeColor = inside || !MainTimer.Enabled ? Color.White : this.BackColor;
@@ -96,6 +88,11 @@ namespace DojoTimer
 
         private void TimeLabel_Click(object sender, EventArgs e)
         {
+            ShowOptions();
+        }
+
+        private void ShowOptions()
+        {
             hook.Dispose();
             options = ShowOptionsForm();
             options.Save();
@@ -106,6 +103,7 @@ namespace DojoTimer
         private Options ShowOptionsForm()
         {
             var form = new OptionsForm(options);
+            scheme.ApplyTo(form);
             bool topmost = this.TopMost;
             this.TopMost = false;
             form.ShowDialog();
@@ -163,6 +161,7 @@ namespace DojoTimer
                     form.Close();
 
             var output = new OutputWindow();
+            scheme.ApplyTo(output);
             options.Write += s => output.Write(s);
             RunAndShow(output);
         }
@@ -173,9 +172,8 @@ namespace DojoTimer
 
             output.Show();
             output.Activate();
-            this.BackColor = run ? Color.Green : Color.Red;
-            this.Icon = run ? Icons.Green : Icons.Red;
-            this.SetTransparency();
+            scheme = run ? ColorScheme.Green : ColorScheme.Red;
+            scheme.ApplyToMain(this);
             output.ShowText(run);
         }
 
@@ -195,14 +193,24 @@ namespace DojoTimer
             this.TopMost = TopMostCheck.Checked;
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void CommitButton_Click(object sender, EventArgs e)
         {
             HandleFinish(true);
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void CommitButton_Click_1(object sender, EventArgs e)
+        {
+            HandleFinish(true);
+        }
+
+        private void SettingsButton_Click(object sender, EventArgs e)
+        {
+            ShowOptions();
         }
 
     }

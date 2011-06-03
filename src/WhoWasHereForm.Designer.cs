@@ -38,8 +38,9 @@
             // 
             // Person1Input
             // 
-            this.Person1Input.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.Person1Input.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Person1Input.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Person1Input.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Person1Input.Location = new System.Drawing.Point(17, 75);
             this.Person1Input.Name = "Person1Input";
@@ -48,8 +49,9 @@
             // 
             // Person2Input
             // 
-            this.Person2Input.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.Person2Input.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Person2Input.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Person2Input.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Person2Input.Location = new System.Drawing.Point(17, 112);
             this.Person2Input.Name = "Person2Input";
@@ -59,8 +61,11 @@
             // SaveCommitButton
             // 
             this.SaveCommitButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.SaveCommitButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.SaveCommitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.SaveCommitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveCommitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveCommitButton.Location = new System.Drawing.Point(17, 154);
+            this.SaveCommitButton.Location = new System.Drawing.Point(17, 159);
             this.SaveCommitButton.Name = "SaveCommitButton";
             this.SaveCommitButton.Size = new System.Drawing.Size(113, 51);
             this.SaveCommitButton.TabIndex = 4;
@@ -71,8 +76,11 @@
             // OnlySaveButton
             // 
             this.OnlySaveButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.OnlySaveButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.OnlySaveButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.OnlySaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OnlySaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OnlySaveButton.Location = new System.Drawing.Point(136, 154);
+            this.OnlySaveButton.Location = new System.Drawing.Point(136, 159);
             this.OnlySaveButton.Name = "OnlySaveButton";
             this.OnlySaveButton.Size = new System.Drawing.Size(113, 51);
             this.OnlySaveButton.TabIndex = 5;
@@ -84,8 +92,11 @@
             // 
             this.CloseButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.CloseButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.CloseButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.CloseButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CloseButton.Location = new System.Drawing.Point(352, 154);
+            this.CloseButton.Location = new System.Drawing.Point(352, 159);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(113, 51);
             this.CloseButton.TabIndex = 6;
@@ -95,9 +106,10 @@
             // 
             // formTitleBar1
             // 
-            this.formTitleBar1.BackColor = System.Drawing.Color.White;
+            this.formTitleBar1.BackColor = System.Drawing.Color.Green;
+            this.formTitleBar1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.formTitleBar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.formTitleBar1.ForeColor = System.Drawing.Color.Black;
+            this.formTitleBar1.ForeColor = System.Drawing.Color.White;
             this.formTitleBar1.Location = new System.Drawing.Point(0, 0);
             this.formTitleBar1.Name = "formTitleBar1";
             this.formTitleBar1.Size = new System.Drawing.Size(482, 60);
@@ -111,7 +123,8 @@
             this.AcceptButton = this.SaveCommitButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 211);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(482, 222);
             this.ControlBox = false;
             this.Controls.Add(this.formTitleBar1);
             this.Controls.Add(this.CloseButton);
@@ -119,10 +132,9 @@
             this.Controls.Add(this.SaveCommitButton);
             this.Controls.Add(this.Person2Input);
             this.Controls.Add(this.Person1Input);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "WhoWasHereForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Commit";
             this.ResumeLayout(false);
             this.PerformLayout();
 

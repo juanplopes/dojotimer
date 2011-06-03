@@ -4,7 +4,7 @@ using System.Text;
 using System.IO;
 using System.Diagnostics;
 
-namespace DojoTimer
+namespace DojoTimer.Helpers
 {
     public class ProcessRunner
     {

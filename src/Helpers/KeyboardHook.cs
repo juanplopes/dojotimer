@@ -5,7 +5,7 @@ using System.Text;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace DojoTimer
+namespace DojoTimer.Helpers
 {
     public sealed class KeyboardHook : IDisposable
     {

@@ -16,6 +16,7 @@ namespace DojoTimer
         public OutputWindow()
         {
             InitializeComponent();
+            OutputTitleBar.BindHandleTo(this);
         }
 
         public void Clear()
