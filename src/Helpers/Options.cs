@@ -45,7 +45,7 @@ namespace DojoTimer.Helpers
             Shortcut = Keys.Control | Keys.Space;
             var myDir = Environment.CurrentDirectory;
             Script = string.Format("echo There is no script.", myDir);
-            CommitScript = string.Format("echo Dojo today with %1 and %2.", myDir);
+            CommitScript = string.Format("echo Dojo today with %~1 and %~2.", myDir);
             Participants = new string[0];
             WorkingDirectory = Environment.CurrentDirectory;
         }
