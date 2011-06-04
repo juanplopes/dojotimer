@@ -31,10 +31,18 @@ namespace DojoTimer
 
         public void ShowText(bool result)
         {
-            textBox1.Text = text;
-            textBox1.SelectionStart = textBox1.TextLength;
-            textBox1.ScrollToCaret();
+            OutputText.Text = text;
+            OutputText.SelectionStart = OutputText.TextLength;
+            OutputText.ScrollToCaret();
+            SetTitleMessages(result);
+        }
+
+        private void SetTitleMessages(bool result)
+        {
             OutputTitleBar.BackColor = result ? Color.Green : Color.Red;
+            OutputTitleBar.TitleText = result ? "SUCCEEDED" : "FAILED";
+            OutputTitleBar.TitleDescription = result ?
+                "Yay, it works!" : "Gotta fix it. Bad, bad programmer.";
             OutputTitleBar.ForeColor = Color.White;
         }
 

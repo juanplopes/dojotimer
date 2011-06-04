@@ -28,41 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.OutputText = new System.Windows.Forms.TextBox();
+            this.CloseButton = new System.Windows.Forms.Button();
             this.OutputTitleBar = new DojoTimer.FormTitleBar();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.OutputText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.Color.Black;
-            this.textBox1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(0, 60);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(772, 364);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Running...";
+            this.OutputText.BackColor = System.Drawing.Color.Black;
+            this.OutputText.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OutputText.ForeColor = System.Drawing.Color.White;
+            this.OutputText.Location = new System.Drawing.Point(0, 60);
+            this.OutputText.Multiline = true;
+            this.OutputText.Name = "textBox1";
+            this.OutputText.ReadOnly = true;
+            this.OutputText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.OutputText.Size = new System.Drawing.Size(772, 364);
+            this.OutputText.TabIndex = 0;
+            this.OutputText.Text = "Running...";
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 421);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(772, 45);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.CloseButton.BackColor = System.Drawing.Color.White;
+            this.CloseButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CloseButton.Location = new System.Drawing.Point(0, 421);
+            this.CloseButton.Name = "button1";
+            this.CloseButton.Size = new System.Drawing.Size(772, 45);
+            this.CloseButton.TabIndex = 1;
+            this.CloseButton.Text = "Close";
+            this.CloseButton.UseVisualStyleBackColor = false;
+            this.CloseButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // OutputTitleBar
             // 
@@ -75,18 +75,18 @@
             this.OutputTitleBar.TabIndex = 10;
             this.OutputTitleBar.TitleDescription = "The result of everything we did here. We want it GREEN!";
             this.OutputTitleBar.TitleIcon = "~";
-            this.OutputTitleBar.TitleText = "Was it ok?";
+            this.OutputTitleBar.TitleText = "Running tests...";
             // 
             // OutputWindow
             // 
-            this.AcceptButton = this.button1;
+            this.AcceptButton = this.CloseButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(772, 466);
             this.ControlBox = false;
             this.Controls.Add(this.OutputTitleBar);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.CloseButton);
+            this.Controls.Add(this.OutputText);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "OutputWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
@@ -98,8 +98,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox OutputText;
+        private System.Windows.Forms.Button CloseButton;
         private FormTitleBar OutputTitleBar;
     }
 }

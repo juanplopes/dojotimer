@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.BackPanel = new System.Windows.Forms.Panel();
+            this.CloseButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.IconLabel = new System.Windows.Forms.Label();
             this.DescriptionLabel = new System.Windows.Forms.Label();
             this.TitleLabel = new System.Windows.Forms.Label();
-            this.CloseButton = new System.Windows.Forms.Button();
             this.BackPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +51,19 @@
             this.BackPanel.Name = "BackPanel";
             this.BackPanel.Size = new System.Drawing.Size(389, 60);
             this.BackPanel.TabIndex = 8;
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseButton.Font = new System.Drawing.Font("Webdings", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.CloseButton.Location = new System.Drawing.Point(337, 12);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(38, 35);
+            this.CloseButton.TabIndex = 7;
+            this.CloseButton.Text = "r";
+            this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // label1
             // 
@@ -75,11 +88,11 @@
             // 
             this.DescriptionLabel.AutoSize = true;
             this.DescriptionLabel.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DescriptionLabel.Location = new System.Drawing.Point(58, 32);
+            this.DescriptionLabel.Location = new System.Drawing.Point(58, 37);
             this.DescriptionLabel.Name = "DescriptionLabel";
-            this.DescriptionLabel.Size = new System.Drawing.Size(65, 16);
+            this.DescriptionLabel.Size = new System.Drawing.Size(227, 16);
             this.DescriptionLabel.TabIndex = 4;
-            this.DescriptionLabel.Text = "description";
+            this.DescriptionLabel.Text = "description long enough to cover something";
             // 
             // TitleLabel
             // 
@@ -87,22 +100,9 @@
             this.TitleLabel.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TitleLabel.Location = new System.Drawing.Point(56, 8);
             this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(61, 29);
+            this.TitleLabel.Size = new System.Drawing.Size(98, 29);
             this.TitleLabel.TabIndex = 3;
-            this.TitleLabel.Text = "title";
-            // 
-            // CloseButton
-            // 
-            this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CloseButton.Font = new System.Drawing.Font("Webdings", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.CloseButton.Location = new System.Drawing.Point(337, 12);
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(38, 35);
-            this.CloseButton.TabIndex = 7;
-            this.CloseButton.Text = "r";
-            this.CloseButton.UseVisualStyleBackColor = true;
-            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            this.TitleLabel.Text = "title (g)";
             // 
             // FormTitleBar
             // 

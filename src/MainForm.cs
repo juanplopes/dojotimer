@@ -168,10 +168,10 @@ namespace DojoTimer
 
         private void RunAndShow(OutputWindow output)
         {
-            var run = options.Run();
-
             output.Show();
             output.Activate();
+            var run = options.Run();
+
             scheme = run ? ColorScheme.Green : ColorScheme.Red;
             scheme.ApplyToMain(this);
             output.ShowText(run);
