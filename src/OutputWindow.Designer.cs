@@ -33,7 +33,7 @@
             this.OutputTitleBar = new DojoTimer.FormTitleBar();
             this.SuspendLayout();
             // 
-            // textBox1
+            // OutputText
             // 
             this.OutputText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -43,21 +43,21 @@
             this.OutputText.ForeColor = System.Drawing.Color.White;
             this.OutputText.Location = new System.Drawing.Point(0, 60);
             this.OutputText.Multiline = true;
-            this.OutputText.Name = "textBox1";
+            this.OutputText.Name = "OutputText";
             this.OutputText.ReadOnly = true;
             this.OutputText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.OutputText.Size = new System.Drawing.Size(772, 364);
             this.OutputText.TabIndex = 0;
             this.OutputText.Text = "Running...";
             // 
-            // button1
+            // CloseButton
             // 
             this.CloseButton.BackColor = System.Drawing.Color.White;
             this.CloseButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CloseButton.Location = new System.Drawing.Point(0, 421);
-            this.CloseButton.Name = "button1";
+            this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(772, 45);
             this.CloseButton.TabIndex = 1;
             this.CloseButton.Text = "Close";
@@ -90,6 +90,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "OutputWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Text = "Output";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();

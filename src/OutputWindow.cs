@@ -6,6 +6,7 @@ using System.Drawing;
 
 using System.Text;
 using System.Windows.Forms;
+using DojoTimer.Helpers;
 
 namespace DojoTimer
 {
@@ -39,11 +40,11 @@ namespace DojoTimer
 
         private void SetTitleMessages(bool result)
         {
-            OutputTitleBar.BackColor = result ? Color.Green : Color.Red;
+            var scheme = result ? ColorScheme.Green : ColorScheme.Red;
+            scheme.ApplyTo(this);
             OutputTitleBar.TitleText = result ? "SUCCEEDED" : "FAILED";
             OutputTitleBar.TitleDescription = result ?
                 "Yay, it works!" : "Gotta fix it. Bad, bad programmer.";
-            OutputTitleBar.ForeColor = Color.White;
         }
 
         private void button1_Click(object sender, EventArgs e)

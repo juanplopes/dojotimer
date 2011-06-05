@@ -161,7 +161,6 @@ namespace DojoTimer
                     form.Close();
 
             var output = new OutputWindow();
-            scheme.ApplyTo(output);
             options.Write += s => output.Write(s);
             RunAndShow(output);
         }
@@ -170,6 +169,7 @@ namespace DojoTimer
         {
             output.Show();
             output.Activate();
+            Application.DoEvents(); //huh?
             var run = options.Run();
 
             scheme = run ? ColorScheme.Green : ColorScheme.Red;
