@@ -60,7 +60,7 @@
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(772, 45);
             this.CloseButton.TabIndex = 1;
-            this.CloseButton.Text = "Close";
+            this.CloseButton.Text = "Close (press ENTER)";
             this.CloseButton.UseVisualStyleBackColor = false;
             this.CloseButton.Click += new System.EventHandler(this.button1_Click);
             // 
