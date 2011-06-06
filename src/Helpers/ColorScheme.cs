@@ -41,6 +41,7 @@ namespace DojoTimer.Helpers
             {
                 ApplyTo<ButtonBase>(control, ApplyToMain);
                 ApplyTo<MainTitleBar>(control, ApplyToMain);
+                ApplyTo<LinkLabel>(control, ApplyToMain);
             }
             return form;
         }
@@ -51,6 +52,11 @@ namespace DojoTimer.Helpers
             button.FlatAppearance.CheckedBackColor = Color.FromArgb(125, Color.White);
             button.FlatAppearance.MouseOverBackColor = Color.FromArgb(150, Color.White);
             button.FlatAppearance.MouseDownBackColor = Color.FromArgb(200, Color.White);
+        }
+
+        public void ApplyToMain(LinkLabel label)
+        {
+            label.BackColor = darkColor;
         }
 
         public void ApplyToMain(MainTitleBar control)

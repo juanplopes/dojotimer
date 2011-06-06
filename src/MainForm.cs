@@ -213,5 +213,10 @@ namespace DojoTimer
             ShowOptions();
         }
 
+        private void GotoLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(GotoLink.Text);
+        }
+
     }
 }
