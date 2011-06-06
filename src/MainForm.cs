@@ -76,8 +76,9 @@ namespace DojoTimer
         private void SetTransparency()
         {
             var control = TimeLabel;
-            control.FlatAppearance.MouseOverBackColor = Color.FromArgb(inside ? 150 : 225, Color.White);
-            control.ForeColor = inside || !MainTimer.Enabled ? Color.White : this.BackColor;
+            var show = inside || !MainTimer.Enabled;
+            control.FlatAppearance.MouseOverBackColor = Color.FromArgb(show ? 150 : 225, Color.White);
+            control.ForeColor = show ? Color.White : this.BackColor;
         }
 
         private void ResetButton_Click(object sender, EventArgs e)
