@@ -60,11 +60,18 @@ namespace DojoTimer
             else
             {
                 Stop();
-                this.Activate();
+                ReallyActivate();
                 using (var alarm = Sounds.alarm)
                     new SoundPlayer(alarm).Play();
                 HandleFinish(false);
             }
+        }
+
+        private void ReallyActivate()
+        {
+            this.TopMost = true;
+            this.Activate();
+            this.TopMost = TopMostCheck.Checked;
         }
 
         private void HandleFinish(bool force)
