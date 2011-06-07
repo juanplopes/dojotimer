@@ -62,8 +62,7 @@ namespace DojoTimer.Helpers
 
         public static string ReferenceFile()
         {
-            var path = Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DojoTimer");
+            var path = Application.LocalUserAppDataPath;
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
             return Path.Combine(path, ".options");
