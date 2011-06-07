@@ -60,11 +60,20 @@ namespace DojoTimer.Helpers
             return runner.Run();
         }
 
+        public static string ReferenceFile()
+        {
+            var path = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DojoTimer");
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
+            return Path.Combine(path, ".options");
+        }
+
         public static Options Load()
         {
             try
             {
-                using (var stream = new IsolatedStorageFileStream(".options", FileMode.Open))
+                using (var stream = File.OpenRead(ReferenceFile()))
                     return (Options)new BinaryFormatter().Deserialize(stream);
             }
             catch { return new Options(); }
@@ -72,8 +81,12 @@ namespace DojoTimer.Helpers
 
         public void Save()
         {
-            using (var stream = new IsolatedStorageFileStream(".options", FileMode.Create))
-                new BinaryFormatter().Serialize(stream, this);
+            try
+            {
+                using (var stream = File.Create(ReferenceFile()))
+                    new BinaryFormatter().Serialize(stream, this);
+            }
+            catch { }
         }
 
         public void MarkFinish(bool commit, string person1, string person2)
