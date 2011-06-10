@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using DojoTimer.Helpers;
+using System.Threading;
 
 namespace DojoTimer
 {
@@ -63,22 +64,27 @@ namespace DojoTimer
 
         private void OnlySaveButton_Click(object sender, EventArgs e)
         {
+            MarkFinish(false);
+        }
+
+        private void MarkFinish(bool commit)
+        {
             if (ValidatePerson())
             {
-                options.MarkFinish(false, Person1, Person2);
-                options.Save();
+                var person1 = Person1;
+                var person2 = Person2;
+                new Thread(() =>
+                {
+                    options.MarkFinish(commit, person1, person2);
+                    options.Save();
+                }).Start();
                 this.Close();
             }
         }
 
         private void SaveCommitButton_Click(object sender, EventArgs e)
         {
-            if (ValidatePerson())
-            {
-                options.MarkFinish(true, Person1, Person2);
-                options.Save();
-                this.Close();
-            }
+            MarkFinish(true);
         }
     }
 }
