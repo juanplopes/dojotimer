@@ -1,18 +1,24 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build"> 
   <PropertyGroup> 
     <BuildDir>$(MSBuildProjectDirectory)\build\</BuildDir>
-
-    <SourceDir>src\</SourceDir>
+	<PackageDir>$(MSBuildProjectDirectory)\pkg\</PackageDir>
+	
+    <SourceDir>$(MSBuildProjectDirectory)\src\</SourceDir>
     <Configuration>Release</Configuration>
     <Platform>x86</Platform>
   </PropertyGroup>
 
+  <Import Project="util\msbuild\MSBuild.Community.Tasks.Targets"/>
+
+  
   <ItemGroup>
     <SolutionFile Include="$(SourceDir)\DojoTimer.sln" />
   </ItemGroup>
+  
   <Target Name="Clean">
     <MSBuild Projects="@(SolutionFile)" Targets="Clean" Properties="Configuration=$(Configuration);Platform=$(Platform);OutputPath=$(BuildDir)"/>
     <DeleteTree Directories="$(BuildDir)" ContinueOnError="true"/>
+	<DeleteTree Directories="$(PackageDir)" ContinueOnError="true"/>
   </Target>
  
   <Target Name="Build">
@@ -21,5 +27,14 @@
 
   <Target Name="Rebuild">
     <CallTarget Targets="Clean; Build"></CallTarget>
+  </Target>
+  
+  <Target Name="Package" DependsOnTargets="Rebuild">
+	<ItemGroup>
+      <ZipFiles Include="$(BuildDir)dojotimer.exe"/>
+    </ItemGroup>
+
+	<Copy SourceFiles ="@(ZipFiles)" DestinationFolder="$(PackageDir)" />
+    <Zip Files="@(ZipFiles)" ZipFileName="$(PackageDir)\dojotimer.zip" WorkingDirectory="$(BuildDir)" />
   </Target>
 </Project>
