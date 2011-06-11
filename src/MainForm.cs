@@ -19,7 +19,7 @@ namespace DojoTimer
     {
         Options options;
         Stopwatch stopwatch = new Stopwatch();
-        //KeyboardHook hook = new KeyboardHook();
+        KeyboardHook hook = new KeyboardHook();
         ColorScheme scheme = ColorScheme.Green;
 
         public MainForm() : this(Options.Load()) { }
