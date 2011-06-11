@@ -19,7 +19,7 @@ namespace DojoTimer
     {
         Options options;
         Stopwatch stopwatch = new Stopwatch();
-        KeyboardHook hook = new KeyboardHook();
+        //KeyboardHook hook = new KeyboardHook();
         ColorScheme scheme = ColorScheme.Green;
 
         public MainForm() : this(Options.Load()) { }
@@ -101,7 +101,7 @@ namespace DojoTimer
 
         private void ShowOptions()
         {
-            hook.Dispose();
+          //  hook.Dispose();
             options = ShowOptionsForm();
             options.Save();
             BindHotKey();
@@ -121,9 +121,9 @@ namespace DojoTimer
 
         private void BindHotKey()
         {
-            hook = new KeyboardHook();
-            hook.KeyPressed += hook_KeyPressed;
-            hook.RegisterHotKey(options.ShortcutModifiers, options.ShortcutKey);
+          //  hook = new KeyboardHook();
+         //   hook.KeyPressed += hook_KeyPressed;
+         //   hook.RegisterHotKey(options.ShortcutModifiers, options.ShortcutKey);
         }
         private void RunButton_Click(object sender, EventArgs e)
         {
