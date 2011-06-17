@@ -145,7 +145,7 @@ namespace DojoTimer
                 stopwatch.Reset();
             stopwatch.Start();
             MainTimer.Enabled = true;
-            StartButton.Text = "<";
+            StartButton.Text = ";";
         }
 
         private void Stop()

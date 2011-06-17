@@ -47,11 +47,11 @@
             this.StartButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.StartButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StartButton.Font = new System.Drawing.Font("Webdings", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.StartButton.Font = new System.Drawing.Font("Webdings", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.StartButton.ForeColor = System.Drawing.Color.White;
             this.StartButton.Location = new System.Drawing.Point(152, 34);
             this.StartButton.Name = "StartButton";
-            this.StartButton.Size = new System.Drawing.Size(48, 47);
+            this.StartButton.Size = new System.Drawing.Size(47, 47);
             this.StartButton.TabIndex = 1;
             this.StartButton.Text = "4";
             this.StartButton.UseVisualStyleBackColor = false;
@@ -63,7 +63,7 @@
             this.ResetButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.ResetButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ResetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ResetButton.Font = new System.Drawing.Font("Webdings", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.ResetButton.Font = new System.Drawing.Font("Webdings", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.ResetButton.ForeColor = System.Drawing.Color.White;
             this.ResetButton.Location = new System.Drawing.Point(206, 34);
             this.ResetButton.Name = "ResetButton";
@@ -86,7 +86,7 @@
             this.TimeLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TimeLabel.ForeColor = System.Drawing.Color.Transparent;
-            this.TimeLabel.Location = new System.Drawing.Point(12, 33);
+            this.TimeLabel.Location = new System.Drawing.Point(12, 34);
             this.TimeLabel.Name = "TimeLabel";
             this.TimeLabel.Size = new System.Drawing.Size(132, 47);
             this.TimeLabel.TabIndex = 3;
