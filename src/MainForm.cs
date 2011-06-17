@@ -77,7 +77,9 @@ namespace DojoTimer
         private void HandleFinish(bool force)
         {
             if (force || options.KeepTrack)
+            {
                 scheme.ApplyTo(new WhoWasHereForm(options)).ShowDialog();
+            }
         }
 
         private void SetTransparency()

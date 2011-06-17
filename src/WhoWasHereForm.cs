@@ -86,5 +86,23 @@ namespace DojoTimer
         {
             MarkFinish(true);
         }
+
+        private void WhoWasHereForm_Activated(object sender, EventArgs e)
+        {
+            HandleActivate(true);
+        }
+
+        private void HandleActivate(bool value)
+        {
+            Person1Input.Visible = Person2Input.Visible = value;
+            ClickHereLabel.Visible = !value;
+            if (value) Person1Input.Focus();
+        }
+
+        private void WhoWasHereForm_Deactivate(object sender, EventArgs e)
+        {
+            HandleActivate(false);
+        }
+       
     }
 }

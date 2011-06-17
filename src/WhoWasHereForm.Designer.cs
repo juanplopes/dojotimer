@@ -33,6 +33,7 @@
             this.SaveCommitButton = new System.Windows.Forms.Button();
             this.OnlySaveButton = new System.Windows.Forms.Button();
             this.CloseButton = new System.Windows.Forms.Button();
+            this.ClickHereLabel = new System.Windows.Forms.Label();
             this.formTitleBar1 = new DojoTimer.FormTitleBar();
             this.SuspendLayout();
             // 
@@ -104,6 +105,16 @@
             this.CloseButton.UseVisualStyleBackColor = true;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
+            // ClickHereLabel
+            // 
+            this.ClickHereLabel.AutoSize = true;
+            this.ClickHereLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClickHereLabel.Location = new System.Drawing.Point(102, 95);
+            this.ClickHereLabel.Name = "ClickHereLabel";
+            this.ClickHereLabel.Size = new System.Drawing.Size(279, 33);
+            this.ClickHereLabel.TabIndex = 8;
+            this.ClickHereLabel.Text = "Hey, you, click here!";
+            // 
             // formTitleBar1
             // 
             this.formTitleBar1.BackColor = System.Drawing.Color.Green;
@@ -126,6 +137,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(482, 222);
             this.ControlBox = false;
+            this.Controls.Add(this.ClickHereLabel);
             this.Controls.Add(this.formTitleBar1);
             this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.OnlySaveButton);
@@ -134,8 +146,11 @@
             this.Controls.Add(this.Person1Input);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "WhoWasHereForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TopMost = true;
+            this.Activated += new System.EventHandler(this.WhoWasHereForm_Activated);
+            this.Deactivate += new System.EventHandler(this.WhoWasHereForm_Deactivate);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,5 +164,6 @@
         private System.Windows.Forms.Button OnlySaveButton;
         private System.Windows.Forms.Button CloseButton;
         private FormTitleBar formTitleBar1;
+        private System.Windows.Forms.Label ClickHereLabel;
     }
 }
