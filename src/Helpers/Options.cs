@@ -46,7 +46,7 @@ namespace DojoTimer.Helpers
             var myDir = Environment.CurrentDirectory;
             Script = string.Format("echo There is no script.", myDir);
             KeepTrack = true;
-            CommitScript = string.Format("echo %date% %time% *** %~1 and %~2 > dojo.log", myDir);
+            CommitScript = string.Format("echo %date% %time% *** %~1 and %~2 >> dojo.log", myDir);
             Participants = new string[0];
             WorkingDirectory = Environment.CurrentDirectory;
         }
