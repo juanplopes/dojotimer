@@ -92,7 +92,14 @@ namespace DojoTimer.Helpers
         public void MarkFinish(bool commit, string person1, string person2)
         {
             if (commit)
-                new ProcessRunner(CommitScript, WorkingDirectory).Run(person1, person2);
+            {
+                var runner = new ProcessRunner(CommitScript, WorkingDirectory);
+                var sb = new StringBuilder();
+                runner.Write += x=>sb.AppendLine(x);
+
+                if (!runner.Run(person1, person2))
+                    MessageBox.Show("Commit failed.\n" + sb.ToString());
+            }
 
             var list = new List<string>(Participants);
             list.RemoveAll(x => StringComparer.InvariantCultureIgnoreCase.Equals(x, person2));
