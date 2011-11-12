@@ -56,6 +56,9 @@ namespace DojoTimer
 
         private void OptionsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            CheckDirectory(e);
+            if (e.Cancel) return;
+
             options.Period = TimeSpan.FromSeconds(int.Parse(MinutesInput.Text) * 60 + int.Parse(SecondsInput.Text));
             options.Shortcut = (Keys)ShortcutInput.Tag;
             options.Script = ScriptInput.Text;
@@ -66,6 +69,16 @@ namespace DojoTimer
             options.WorkingDirectory = WorkingDirectoryInput.Text;
         }
 
+        private void CheckDirectory(FormClosingEventArgs e)
+        {
+            if (!Directory.Exists(WorkingDirectoryInput.Text) &&
+                MessageBox.Show("The directory you selected doesn't seem to exist. Are you sure you want to close?", "Warning",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.Yes)
+            {
+                e.Cancel = true;
+            }
+        }
+
         private void ResetButton_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show(this, "Are you sure?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
@@ -74,6 +87,7 @@ namespace DojoTimer
 
         private void BrowseButton_Click(object sender, EventArgs e)
         {
+            BrowseFolder.SelectedPath = WorkingDirectoryInput.Text;
             if (BrowseFolder.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 WorkingDirectoryInput.Text = BrowseFolder.SelectedPath;
