@@ -62,7 +62,7 @@ namespace DojoTimer
                 Stop();
                 ReallyActivate();
                 using (var alarm = Sounds.alarm)
-                    new SoundPlayer(alarm).Play();
+                    new SoundPlayer(alarm).PlaySync();
                 HandleFinish(false);
             }
         }
