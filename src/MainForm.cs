@@ -11,6 +11,7 @@ using System.Media;
 using System.IO;
 using System.Collections;
 using DojoTimer.Resources;
+using DojoTimer.Keyboard;
 using DojoTimer.Helpers;
 
 namespace DojoTimer
@@ -19,7 +20,7 @@ namespace DojoTimer
     {
         Options options;
         Stopwatch stopwatch = new Stopwatch();
-        KeyboardHook hook = new KeyboardHook();
+        IKeyboardHook hook;
         ColorScheme scheme = ColorScheme.Green;
 
         public MainForm() : this(Options.Load()) { }
@@ -123,7 +124,7 @@ namespace DojoTimer
 
         private void BindHotKey()
         {
-            hook = new KeyboardHook();
+            hook = KeyboardHooks.Create();
             hook.KeyPressed += hook_KeyPressed;
             hook.RegisterHotKey(options.ShortcutModifiers, options.ShortcutKey);
         }

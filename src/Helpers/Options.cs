@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO.IsolatedStorage;
+using DojoTimer.Keyboard;
 
 namespace DojoTimer.Helpers
 {

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,7 +12,6 @@
     <AssemblyName>dojotimer</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -73,7 +72,6 @@
     <Compile Include="OptionsForm.Designer.cs">
       <DependentUpon>OptionsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\KeyboardHook.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,13 +147,20 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Keyboard\ModifierKeys.cs" />
+    <Compile Include="Keyboard\KeyPressedEventArgs.cs" />
+    <Compile Include="Keyboard\DummyWindow.cs" />
+    <Compile Include="Keyboard\Win32KeyboardHook.cs" />
+    <Compile Include="Keyboard\KeyboardHooks.cs" />
+    <Compile Include="Keyboard\IKeyboardHook.cs" />
+    <Compile Include="Keyboard\X11KeyboardHook.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\alarm.wav" />
-    <Content Include="Resources\Green.ico" />
-    <Content Include="Resources\Red.ico" />
     <Content Include="Resources\toasty.png" />
     <Content Include="Resources\toasty.wav" />
+    <Content Include="Resources\green.ico" />
+    <Content Include="Resources\red.ico" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -166,4 +171,8 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <Folder Include="Keyboard\" />
+    <Folder Include="Helpers\" />
+  </ItemGroup>
 </Project>

@@ -32,8 +32,6 @@ namespace DojoTimer.Helpers
                 script = "@chcp 28591>NUL\r\n" + script;
                 File.WriteAllText(file, script, Encoding.GetEncoding(28591));
 
-                var processes = Process.GetProcesses();
-
                 var psi = MakeParams(file, args);
                 var process = MakeProcess(psi);
                 process.Start();
