@@ -37,7 +37,8 @@
             this.TopMostCheck = new System.Windows.Forms.CheckBox();
             this.CloseButton = new System.Windows.Forms.Button();
             this.SettingsButton = new System.Windows.Forms.Button();
-            this.GotoLink = new System.Windows.Forms.LinkLabel();
+            this.RunButton = new System.Windows.Forms.Button();
+            this.LinkButton = new System.Windows.Forms.Button();
             this.TitleBar = new DojoTimer.MainTitleBar();
             this.SuspendLayout();
             // 
@@ -103,7 +104,7 @@
             this.CommitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CommitButton.Font = new System.Drawing.Font("Webdings", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.CommitButton.ForeColor = System.Drawing.Color.White;
-            this.CommitButton.Location = new System.Drawing.Point(179, -2);
+            this.CommitButton.Location = new System.Drawing.Point(231, -2);
             this.CommitButton.Name = "CommitButton";
             this.CommitButton.Size = new System.Drawing.Size(30, 30);
             this.CommitButton.TabIndex = 14;
@@ -124,7 +125,7 @@
             this.TopMostCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TopMostCheck.Font = new System.Drawing.Font("Webdings", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.TopMostCheck.ForeColor = System.Drawing.Color.White;
-            this.TopMostCheck.Location = new System.Drawing.Point(209, -2);
+            this.TopMostCheck.Location = new System.Drawing.Point(261, -2);
             this.TopMostCheck.Name = "TopMostCheck";
             this.TopMostCheck.Size = new System.Drawing.Size(30, 30);
             this.TopMostCheck.TabIndex = 13;
@@ -142,7 +143,7 @@
             this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CloseButton.Font = new System.Drawing.Font("Webdings", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.CloseButton.ForeColor = System.Drawing.Color.White;
-            this.CloseButton.Location = new System.Drawing.Point(239, -2);
+            this.CloseButton.Location = new System.Drawing.Point(291, -2);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(30, 30);
             this.CloseButton.TabIndex = 12;
@@ -159,7 +160,7 @@
             this.SettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SettingsButton.Font = new System.Drawing.Font("Webdings", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.SettingsButton.ForeColor = System.Drawing.Color.White;
-            this.SettingsButton.Location = new System.Drawing.Point(152, -2);
+            this.SettingsButton.Location = new System.Drawing.Point(204, -2);
             this.SettingsButton.Name = "SettingsButton";
             this.SettingsButton.Size = new System.Drawing.Size(30, 30);
             this.SettingsButton.TabIndex = 15;
@@ -167,24 +168,40 @@
             this.SettingsButton.UseVisualStyleBackColor = false;
             this.SettingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
             // 
-            // GotoLink
+            // RunButton
             // 
-            this.GotoLink.ActiveLinkColor = System.Drawing.Color.White;
-            this.GotoLink.BackColor = System.Drawing.Color.DarkGreen;
-            this.GotoLink.DisabledLinkColor = System.Drawing.Color.White;
-            this.GotoLink.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.GotoLink.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GotoLink.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.GotoLink.LinkColor = System.Drawing.Color.White;
-            this.GotoLink.Location = new System.Drawing.Point(0, 88);
-            this.GotoLink.Name = "GotoLink";
-            this.GotoLink.Size = new System.Drawing.Size(269, 23);
-            this.GotoLink.TabIndex = 17;
-            this.GotoLink.TabStop = true;
-            this.GotoLink.Text = "http://github.com/juanplopes/dojotimer";
-            this.GotoLink.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.GotoLink.VisitedLinkColor = System.Drawing.Color.White;
-            this.GotoLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.GotoLink_LinkClicked);
+            this.RunButton.BackColor = System.Drawing.Color.Transparent;
+            this.RunButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.RunButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.RunButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RunButton.Font = new System.Drawing.Font("Webdings", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.RunButton.ForeColor = System.Drawing.Color.White;
+            this.RunButton.Location = new System.Drawing.Point(259, 34);
+            this.RunButton.Name = "RunButton";
+            this.RunButton.Size = new System.Drawing.Size(47, 47);
+            this.RunButton.TabIndex = 18;
+            this.RunButton.Text = "~";
+            this.RunButton.UseVisualStyleBackColor = false;
+            this.RunButton.Click += new System.EventHandler(this.RunButton_Click_1);
+            // 
+            // LinkButton
+            // 
+            this.LinkButton.BackColor = System.Drawing.Color.DarkGreen;
+            this.LinkButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.LinkButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.LinkButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.LinkButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LinkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LinkButton.ForeColor = System.Drawing.Color.Transparent;
+            this.LinkButton.Location = new System.Drawing.Point(0, 87);
+            this.LinkButton.Margin = new System.Windows.Forms.Padding(0);
+            this.LinkButton.Name = "LinkButton";
+            this.LinkButton.Size = new System.Drawing.Size(321, 24);
+            this.LinkButton.TabIndex = 19;
+            this.LinkButton.Tag = "dark";
+            this.LinkButton.Text = "http://github.com/juanplopes/dojotimer";
+            this.LinkButton.UseVisualStyleBackColor = false;
+            this.LinkButton.Click += new System.EventHandler(this.LinkButton_Click);
             // 
             // TitleBar
             // 
@@ -193,7 +210,7 @@
             this.TitleBar.ForeColor = System.Drawing.Color.White;
             this.TitleBar.Location = new System.Drawing.Point(0, 0);
             this.TitleBar.Name = "TitleBar";
-            this.TitleBar.Size = new System.Drawing.Size(269, 28);
+            this.TitleBar.Size = new System.Drawing.Size(321, 28);
             this.TitleBar.TabIndex = 4;
             // 
             // MainForm
@@ -201,9 +218,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
-            this.ClientSize = new System.Drawing.Size(269, 111);
+            this.ClientSize = new System.Drawing.Size(321, 111);
             this.ControlBox = false;
-            this.Controls.Add(this.GotoLink);
+            this.Controls.Add(this.LinkButton);
+            this.Controls.Add(this.RunButton);
             this.Controls.Add(this.SettingsButton);
             this.Controls.Add(this.CommitButton);
             this.Controls.Add(this.TopMostCheck);
@@ -236,7 +254,8 @@
         private System.Windows.Forms.CheckBox TopMostCheck;
         private System.Windows.Forms.Button CloseButton;
         private System.Windows.Forms.Button SettingsButton;
-        private System.Windows.Forms.LinkLabel GotoLink;
+        private System.Windows.Forms.Button RunButton;
+        private System.Windows.Forms.Button LinkButton;
     }
 }
 

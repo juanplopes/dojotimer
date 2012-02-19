@@ -28,9 +28,10 @@ namespace DojoTimer.Helpers
             var file = temp + ".cmd";
             try
             {
-                var script = scriptText.Replace("\r\n", "\r\n@if errorlevel 1 exit /b %errorlevel%\r\n");
-                script = "@chcp 28591>NUL\r\n" + script;
-                File.WriteAllText(file, script, Encoding.GetEncoding(28591));
+                var lines = scriptText.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                for (int i = 0; i < lines.Length; i++)lines[i] = "(" + lines[i] + ")";
+                    
+                File.WriteAllText(file, String.Join(" && ", lines));
 
                 var psi = MakeParams(file, args);
                 var process = MakeProcess(psi);
