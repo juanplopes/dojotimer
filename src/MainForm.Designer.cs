@@ -129,7 +129,7 @@
             this.TopMostCheck.Name = "TopMostCheck";
             this.TopMostCheck.Size = new System.Drawing.Size(30, 30);
             this.TopMostCheck.TabIndex = 13;
-            this.TopMostCheck.Text = "Î";
+            this.TopMostCheck.Text = "a";
             this.TopMostCheck.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.TopMostCheck.UseVisualStyleBackColor = false;
             this.TopMostCheck.CheckedChanged += new System.EventHandler(this.TopMostCheck_CheckedChanged);

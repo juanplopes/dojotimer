@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.Diagnostics;
+using DojoTimer.Keyboard;
 
 namespace DojoTimer.Helpers
 {
@@ -75,10 +76,21 @@ namespace DojoTimer.Helpers
                 argStr += string.Format("\"{0}\" ", arg);
 
             var psi = new ProcessStartInfo();
+            if (KeyboardHooks.IsLinux)
+            {
+                psi.FileName = "/bin/sh";
+            }
+            else
+            {
+                psi.FileName = "cmd";
+                argStr = "/C " + argStr;
+            }
+
+
             psi.UseShellExecute = false;
             psi.Arguments = argStr;
             psi.WorkingDirectory = workingDir;
-            psi.FileName = "/bin/sh";
+
             psi.RedirectStandardError = Write != null;
             psi.RedirectStandardOutput = Write != null;
             psi.WindowStyle = ProcessWindowStyle.Hidden;
