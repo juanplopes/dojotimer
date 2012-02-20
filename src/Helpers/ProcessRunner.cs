@@ -32,7 +32,7 @@ namespace DojoTimer.Helpers
                 for (int i = 0; i < lines.Length; i++)lines[i] = "(" + lines[i] + ")";
                     
                 File.WriteAllText(file, String.Join(" && ", lines));
-
+				
                 var psi = MakeParams(file, args);
                 var process = MakeProcess(psi);
                 process.Start();
@@ -70,7 +70,7 @@ namespace DojoTimer.Helpers
 
         private ProcessStartInfo MakeParams(string file, params string[] args)
         {
-            string argStr = "";
+            string argStr = file + " ";
             foreach (var arg in args)
                 argStr += string.Format("\"{0}\" ", arg);
 
@@ -78,7 +78,7 @@ namespace DojoTimer.Helpers
             psi.UseShellExecute = false;
             psi.Arguments = argStr;
             psi.WorkingDirectory = workingDir;
-            psi.FileName = file;
+            psi.FileName = "/bin/sh";
             psi.RedirectStandardError = Write != null;
             psi.RedirectStandardOutput = Write != null;
             psi.WindowStyle = ProcessWindowStyle.Hidden;

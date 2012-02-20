@@ -109,6 +109,7 @@ namespace DojoTimer
             options.Save();
             BindHotKey();
             SetTime();
+			ResetButton.Focus();
         }
 
         private Options ShowOptionsForm()
@@ -117,7 +118,7 @@ namespace DojoTimer
             scheme.ApplyTo(form);
             bool topmost = this.TopMost;
             this.TopMost = false;
-            form.ShowDialog();
+			form.ShowDialog();
             this.TopMost = topmost;
             return form.Options;
         }
