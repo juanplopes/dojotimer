@@ -129,7 +129,7 @@
             this.TopMostCheck.Name = "TopMostCheck";
             this.TopMostCheck.Size = new System.Drawing.Size(30, 30);
             this.TopMostCheck.TabIndex = 13;
-            this.TopMostCheck.Text = "ë";
+            this.TopMostCheck.Text = "Î";
             this.TopMostCheck.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.TopMostCheck.UseVisualStyleBackColor = false;
             this.TopMostCheck.CheckedChanged += new System.EventHandler(this.TopMostCheck_CheckedChanged);
@@ -191,8 +191,7 @@
             this.LinkButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.LinkButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.LinkButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LinkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LinkButton.ForeColor = System.Drawing.Color.Transparent;
+            this.LinkButton.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LinkButton.Location = new System.Drawing.Point(0, 87);
             this.LinkButton.Margin = new System.Windows.Forms.Padding(0);
             this.LinkButton.Name = "LinkButton";

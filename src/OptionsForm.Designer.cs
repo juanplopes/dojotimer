@@ -112,7 +112,7 @@
             this.BrowseButton.Name = "BrowseButton";
             this.BrowseButton.Size = new System.Drawing.Size(42, 31);
             this.BrowseButton.TabIndex = 11;
-            this.BrowseButton.Text = "Ì";
+            this.BrowseButton.Text = "Ã";
             this.BrowseButton.UseVisualStyleBackColor = false;
             this.BrowseButton.Click += new System.EventHandler(this.BrowseButton_Click);
             // 

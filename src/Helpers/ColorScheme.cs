@@ -48,9 +48,10 @@ namespace DojoTimer.Helpers
 
         public void ApplyToMain(ButtonBase button)
         {
-            var selected = button.Tag != "dark" ? color : darkColor;
+            var selected = "dark".Equals(button.Tag) ? darkColor : color;
 
             button.FlatAppearance.BorderColor = selected;
+			button.ForeColor = Color.White;
             button.BackColor = selected;
             button.FlatAppearance.CheckedBackColor = Color.FromArgb(125, Color.White);
             button.FlatAppearance.MouseOverBackColor = Color.FromArgb(150, Color.White);
