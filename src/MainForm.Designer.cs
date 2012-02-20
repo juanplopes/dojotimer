@@ -191,7 +191,7 @@
             this.LinkButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.LinkButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.LinkButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LinkButton.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LinkButton.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LinkButton.Location = new System.Drawing.Point(0, 87);
             this.LinkButton.Margin = new System.Windows.Forms.Padding(0);
             this.LinkButton.Name = "LinkButton";
