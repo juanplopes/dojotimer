@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 
 using System.Text;
+using System.Media;
+using System.IO.Ports;
 using System.Windows.Forms;
 using DojoTimer.Helpers;
 
