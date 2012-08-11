@@ -21,6 +21,11 @@ namespace DojoTimer.Helpers
         public Keys Shortcut { get; set; }
 
         public bool KeepTrack { get; set; }
+        public bool UseSemaphore { get; set; }
+        public string SemaphorePort { get; set; }
+        public int SemaphoreBaudRate { get; set; }
+        public char GreenSignalChar { get; set; }
+        public char RedSignalChar { get; set; }
         public string[] Participants { get; set; }
         public string CommitScript { get; set; }
 
@@ -47,6 +52,11 @@ namespace DojoTimer.Helpers
             var myDir = Environment.CurrentDirectory;
             Script = string.Format("echo There is no script.", myDir);
             KeepTrack = true;
+            UseSemaphore = false;
+            SemaphorePort = "COM12";
+            GreenSignalChar = '2';
+            RedSignalChar = '1';
+            SemaphoreBaudRate = 9600;
             CommitScript = string.Format("echo %date% %time% *** %~1 and %~2 >> dojo.log", myDir);
             Participants = new string[0];
             WorkingDirectory = Environment.CurrentDirectory;

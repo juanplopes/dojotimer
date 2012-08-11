@@ -9,7 +9,6 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Media;
 using System.IO;
-using System.IO.Ports;
 using System.Collections;
 using DojoTimer.Resources;
 using DojoTimer.Keyboard;
@@ -23,22 +22,14 @@ namespace DojoTimer
         Stopwatch stopwatch = new Stopwatch();
         IKeyboardHook hook;
         ColorScheme scheme = ColorScheme.Green;
-        SerialPort sp;
+        Semaphore semaphore;
         
         public MainForm() : this(Options.Load()) { }
         public MainForm(Options options)
         {
             InitializeComponent();
             this.options = options;
-            sp = new SerialPort("COM12", 9600);
-            try
-            {
-                sp.Open();
-            }
-            catch (SystemException ex)
-            {
-                System.Console.WriteLine(ex);
-            }
+            this.semaphore = new Semaphore(options);
             BindHotKey();
 
             Stop();
@@ -198,18 +189,7 @@ namespace DojoTimer
             scheme = run ? ColorScheme.Green : ColorScheme.Red;
             scheme.ApplyToMain(this);
             output.ShowText(run);
-            this.ShowArduinoResult(run);
-        }
-        
-        private void ShowArduinoResult(bool result)
-        {
-            if (sp.IsOpen)
-            {
-                char[] spSend = {(result ? '2' : '1')};
-                sp.Write(spSend, 0, spSend.Length);
-                sp.DiscardInBuffer();
-                sp.DiscardOutBuffer();
-            }
+            semaphore.ShowResult(run);
         }
 
         bool inside = true;

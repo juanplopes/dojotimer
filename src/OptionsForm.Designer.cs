@@ -46,12 +46,23 @@
             this.label4 = new System.Windows.Forms.Label();
             this.ParticipantsInput = new System.Windows.Forms.TextBox();
             this.KeepTrackInput = new System.Windows.Forms.CheckBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.SemaphoreRedSignalInput = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.SemaphoreGreenSignalInput = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.SemaphorePortInput = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.UseSemaphoreInput = new System.Windows.Forms.CheckBox();
             this.ResetButton = new System.Windows.Forms.Button();
             this.BrowseFolder = new System.Windows.Forms.FolderBrowserDialog();
             this.formTitleBar1 = new DojoTimer.FormTitleBar();
+            this.SemaphoreBaudRateInput = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // CloseButton
@@ -70,11 +81,12 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(12, 66);
             this.tabControl1.Name = "tabControl1";
@@ -117,8 +129,8 @@
             // 
             // WorkingDirectoryInput
             // 
-            this.WorkingDirectoryInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.WorkingDirectoryInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.WorkingDirectoryInput.BackColor = System.Drawing.Color.White;
             this.WorkingDirectoryInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.WorkingDirectoryInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -141,9 +153,9 @@
             // 
             this.ScriptInput.AcceptsReturn = true;
             this.ScriptInput.AcceptsTab = true;
-            this.ScriptInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ScriptInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.ScriptInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ScriptInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ScriptInput.Location = new System.Drawing.Point(6, 217);
@@ -155,8 +167,8 @@
             // 
             // ShortcutInput
             // 
-            this.ShortcutInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ShortcutInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.ShortcutInput.BackColor = System.Drawing.Color.White;
             this.ShortcutInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ShortcutInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -170,8 +182,8 @@
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(1, 127);
@@ -236,8 +248,8 @@
             // 
             this.CommitScript.AcceptsReturn = true;
             this.CommitScript.AcceptsTab = true;
-            this.CommitScript.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CommitScript.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.CommitScript.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CommitScript.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CommitScript.Location = new System.Drawing.Point(8, 215);
@@ -262,9 +274,9 @@
             // 
             this.ParticipantsInput.AcceptsReturn = true;
             this.ParticipantsInput.AcceptsTab = true;
-            this.ParticipantsInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ParticipantsInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.ParticipantsInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ParticipantsInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ParticipantsInput.Location = new System.Drawing.Point(6, 41);
@@ -285,6 +297,98 @@
             this.KeepTrackInput.TabIndex = 0;
             this.KeepTrackInput.Text = "Keep track of who participated";
             this.KeepTrackInput.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.SemaphoreBaudRateInput);
+            this.tabPage3.Controls.Add(this.label9);
+            this.tabPage3.Controls.Add(this.SemaphoreRedSignalInput);
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.SemaphoreGreenSignalInput);
+            this.tabPage3.Controls.Add(this.label7);
+            this.tabPage3.Controls.Add(this.SemaphorePortInput);
+            this.tabPage3.Controls.Add(this.label6);
+            this.tabPage3.Controls.Add(this.UseSemaphoreInput);
+            this.tabPage3.Location = new System.Drawing.Point(4, 31);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(663, 375);
+            this.tabPage3.TabIndex = 1;
+            this.tabPage3.Text = "Semaphore";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // SemaphoreRedSignalInput
+            // 
+            this.SemaphoreRedSignalInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SemaphoreRedSignalInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SemaphoreRedSignalInput.Location = new System.Drawing.Point(156, 210);
+            this.SemaphoreRedSignalInput.MaxLength = 1;
+            this.SemaphoreRedSignalInput.Name = "SemaphoreRedSignalInput";
+            this.SemaphoreRedSignalInput.Size = new System.Drawing.Size(84, 31);
+            this.SemaphoreRedSignalInput.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(151, 182);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(123, 25);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Red Signal:";
+            // 
+            // SemaphoreGreenSignalInput
+            // 
+            this.SemaphoreGreenSignalInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SemaphoreGreenSignalInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SemaphoreGreenSignalInput.Location = new System.Drawing.Point(6, 210);
+            this.SemaphoreGreenSignalInput.MaxLength = 1;
+            this.SemaphoreGreenSignalInput.Name = "SemaphoreGreenSignalInput";
+            this.SemaphoreGreenSignalInput.Size = new System.Drawing.Size(84, 31);
+            this.SemaphoreGreenSignalInput.TabIndex = 15;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(1, 182);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(143, 25);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Green Signal:";
+            // 
+            // SemaphorePortInput
+            // 
+            this.SemaphorePortInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SemaphorePortInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SemaphorePortInput.Location = new System.Drawing.Point(6, 66);
+            this.SemaphorePortInput.Name = "SemaphorePortInput";
+            this.SemaphorePortInput.Size = new System.Drawing.Size(651, 31);
+            this.SemaphorePortInput.TabIndex = 13;
+            this.SemaphorePortInput.Text = "COM12";
+            this.SemaphorePortInput.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(1, 38);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 25);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Port:";
+            // 
+            // UseSemaphoreInput
+            // 
+            this.UseSemaphoreInput.AutoSize = true;
+            this.UseSemaphoreInput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UseSemaphoreInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UseSemaphoreInput.Location = new System.Drawing.Point(6, 6);
+            this.UseSemaphoreInput.Name = "UseSemaphoreInput";
+            this.UseSemaphoreInput.Size = new System.Drawing.Size(179, 29);
+            this.UseSemaphoreInput.TabIndex = 0;
+            this.UseSemaphoreInput.Text = "Use semaphore";
+            this.UseSemaphoreInput.UseVisualStyleBackColor = true;
             // 
             // ResetButton
             // 
@@ -315,6 +419,26 @@
             this.formTitleBar1.TitleIcon = "@";
             this.formTitleBar1.TitleText = "How should I behave?";
             // 
+            // textBox1
+            // 
+            this.SemaphoreBaudRateInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SemaphoreBaudRateInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SemaphoreBaudRateInput.Location = new System.Drawing.Point(6, 140);
+            this.SemaphoreBaudRateInput.Name = "textBox1";
+            this.SemaphoreBaudRateInput.Size = new System.Drawing.Size(651, 31);
+            this.SemaphoreBaudRateInput.TabIndex = 19;
+            this.SemaphoreBaudRateInput.Text = "9600";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(1, 112);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(119, 25);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Baud Rate:";
+            // 
             // OptionsForm
             // 
             this.AcceptButton = this.CloseButton;
@@ -339,6 +463,8 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -356,8 +482,10 @@
         private System.Windows.Forms.TextBox MinutesInput;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TextBox ParticipantsInput;
         private System.Windows.Forms.CheckBox KeepTrackInput;
+        private System.Windows.Forms.CheckBox UseSemaphoreInput;
         private System.Windows.Forms.TextBox CommitScript;
         private System.Windows.Forms.Label label4;
         private FormTitleBar formTitleBar1;
@@ -366,6 +494,14 @@
         private System.Windows.Forms.TextBox WorkingDirectoryInput;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.FolderBrowserDialog BrowseFolder;
+        private System.Windows.Forms.TextBox SemaphoreRedSignalInput;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox SemaphoreGreenSignalInput;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox SemaphorePortInput;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox SemaphoreBaudRateInput;
+        private System.Windows.Forms.Label label9;
 
     }
 }

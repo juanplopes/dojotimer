@@ -33,6 +33,11 @@ namespace DojoTimer
 
             ParticipantsInput.Lines = options.Participants;
             KeepTrackInput.Checked = options.KeepTrack;
+            UseSemaphoreInput.Checked = options.UseSemaphore;
+            SemaphorePortInput.Text = options.SemaphorePort;
+            SemaphoreGreenSignalInput.Text = options.GreenSignalChar.ToString();
+            SemaphoreRedSignalInput.Text = options.RedSignalChar.ToString();
+            SemaphoreBaudRateInput.Text = options.SemaphoreBaudRate.ToString();
             CommitScript.Text = options.CommitScript;
         }
 
@@ -65,6 +70,13 @@ namespace DojoTimer
 
             options.Participants = ParticipantsInput.Lines;
             options.KeepTrack = KeepTrackInput.Checked;
+            options.UseSemaphore = UseSemaphoreInput.Checked;
+            options.SemaphorePort = SemaphorePortInput.Text;
+            if (SemaphoreGreenSignalInput.Text.Length == 1)
+                options.GreenSignalChar = SemaphoreGreenSignalInput.Text[0];
+            if (SemaphoreRedSignalInput.Text.Length == 1)
+                options.RedSignalChar = SemaphoreRedSignalInput.Text[0];
+            options.SemaphoreBaudRate = Int32.Parse(SemaphoreBaudRateInput.Text);
             options.CommitScript = CommitScript.Text;
             options.WorkingDirectory = WorkingDirectoryInput.Text;
         }
@@ -92,6 +104,11 @@ namespace DojoTimer
             {
                 WorkingDirectoryInput.Text = BrowseFolder.SelectedPath;
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
     }
