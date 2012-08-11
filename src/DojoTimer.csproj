@@ -158,6 +158,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\alarm.wav" />
+    <None Include="Resources\pass.wav" />
+    <None Include="Resources\fail.wav" />
     <Content Include="Resources\toasty.png" />
     <Content Include="Resources\toasty.wav" />
     <Content Include="Resources\green.ico" />

@@ -26,6 +26,8 @@ namespace DojoTimer.Helpers
         public int SemaphoreBaudRate { get; set; }
         public char GreenSignalChar { get; set; }
         public char RedSignalChar { get; set; }
+        public bool PlayAlarmSound { get; set; }
+        public bool PlayTestResultSound { get; set; }
         public string[] Participants { get; set; }
         public string CommitScript { get; set; }
 
@@ -57,6 +59,8 @@ namespace DojoTimer.Helpers
             GreenSignalChar = '2';
             RedSignalChar = '1';
             SemaphoreBaudRate = 9600;
+            PlayAlarmSound = true;
+            PlayTestResultSound = false;
             CommitScript = string.Format("echo %date% %time% *** %~1 and %~2 >> dojo.log", myDir);
             Participants = new string[0];
             WorkingDirectory = Environment.CurrentDirectory;

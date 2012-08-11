@@ -64,8 +64,9 @@ namespace DojoTimer
             {
                 Stop();
                 ReallyActivate();
-                using (var alarm = Sounds.alarm)
-                    new SoundPlayer(alarm).PlaySync();
+                if (options.PlayAlarmSound) 
+                    using (var alarm = Sounds.alarm)
+                        new SoundPlayer(alarm).PlaySync();
                 HandleFinish(false);
             }
         }
@@ -190,6 +191,14 @@ namespace DojoTimer
             scheme.ApplyToMain(this);
             output.ShowText(run);
             semaphore.ShowResult(run);
+            this.RunSound(run);
+        }
+
+        private void RunSound(bool result)
+        {
+            if (options.PlayTestResultSound) 
+                using (var sound = result ? Sounds.pass : Sounds.fail)
+                    new SoundPlayer(sound).PlaySync();
         }
 
         bool inside = true;

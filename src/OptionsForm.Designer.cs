@@ -47,6 +47,8 @@
             this.ParticipantsInput = new System.Windows.Forms.TextBox();
             this.KeepTrackInput = new System.Windows.Forms.CheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.SemaphoreBaudRateInput = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.SemaphoreRedSignalInput = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.SemaphoreGreenSignalInput = new System.Windows.Forms.TextBox();
@@ -57,8 +59,8 @@
             this.ResetButton = new System.Windows.Forms.Button();
             this.BrowseFolder = new System.Windows.Forms.FolderBrowserDialog();
             this.formTitleBar1 = new DojoTimer.FormTitleBar();
-            this.SemaphoreBaudRateInput = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.AlarmSoundInput = new System.Windows.Forms.CheckBox();
+            this.TestResultSound = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -96,6 +98,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.TestResultSound);
+            this.tabPage1.Controls.Add(this.AlarmSoundInput);
             this.tabPage1.Controls.Add(this.BrowseButton);
             this.tabPage1.Controls.Add(this.WorkingDirectoryInput);
             this.tabPage1.Controls.Add(this.label5);
@@ -317,6 +321,26 @@
             this.tabPage3.Text = "Semaphore";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // SemaphoreBaudRateInput
+            // 
+            this.SemaphoreBaudRateInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SemaphoreBaudRateInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SemaphoreBaudRateInput.Location = new System.Drawing.Point(6, 140);
+            this.SemaphoreBaudRateInput.Name = "SemaphoreBaudRateInput";
+            this.SemaphoreBaudRateInput.Size = new System.Drawing.Size(651, 31);
+            this.SemaphoreBaudRateInput.TabIndex = 19;
+            this.SemaphoreBaudRateInput.Text = "9600";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(1, 112);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(119, 25);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Baud Rate:";
+            // 
             // SemaphoreRedSignalInput
             // 
             this.SemaphoreRedSignalInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -419,25 +443,29 @@
             this.formTitleBar1.TitleIcon = "@";
             this.formTitleBar1.TitleText = "How should I behave?";
             // 
-            // textBox1
+            // checkBox1
             // 
-            this.SemaphoreBaudRateInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SemaphoreBaudRateInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SemaphoreBaudRateInput.Location = new System.Drawing.Point(6, 140);
-            this.SemaphoreBaudRateInput.Name = "textBox1";
-            this.SemaphoreBaudRateInput.Size = new System.Drawing.Size(651, 31);
-            this.SemaphoreBaudRateInput.TabIndex = 19;
-            this.SemaphoreBaudRateInput.Text = "9600";
+            this.AlarmSoundInput.AutoSize = true;
+            this.AlarmSoundInput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AlarmSoundInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AlarmSoundInput.Location = new System.Drawing.Point(264, 31);
+            this.AlarmSoundInput.Name = "checkBox1";
+            this.AlarmSoundInput.Size = new System.Drawing.Size(151, 29);
+            this.AlarmSoundInput.TabIndex = 19;
+            this.AlarmSoundInput.Text = "Alarm Sound";
+            this.AlarmSoundInput.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // checkBox2
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(1, 112);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(119, 25);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Baud Rate:";
+            this.TestResultSound.AutoSize = true;
+            this.TestResultSound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TestResultSound.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TestResultSound.Location = new System.Drawing.Point(452, 33);
+            this.TestResultSound.Name = "checkBox2";
+            this.TestResultSound.Size = new System.Drawing.Size(205, 29);
+            this.TestResultSound.TabIndex = 20;
+            this.TestResultSound.Text = "Test Result Sound";
+            this.TestResultSound.UseVisualStyleBackColor = true;
             // 
             // OptionsForm
             // 
@@ -502,6 +530,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox SemaphoreBaudRateInput;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.CheckBox TestResultSound;
+        private System.Windows.Forms.CheckBox AlarmSoundInput;
 
     }
 }

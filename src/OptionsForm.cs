@@ -39,6 +39,8 @@ namespace DojoTimer
             SemaphoreRedSignalInput.Text = options.RedSignalChar.ToString();
             SemaphoreBaudRateInput.Text = options.SemaphoreBaudRate.ToString();
             CommitScript.Text = options.CommitScript;
+            AlarmSoundInput.Checked = options.PlayAlarmSound;
+            TestResultSound.Checked = options.PlayTestResultSound;
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -79,6 +81,8 @@ namespace DojoTimer
             options.SemaphoreBaudRate = Int32.Parse(SemaphoreBaudRateInput.Text);
             options.CommitScript = CommitScript.Text;
             options.WorkingDirectory = WorkingDirectoryInput.Text;
+            options.PlayAlarmSound = AlarmSoundInput.Checked;
+            options.PlayTestResultSound = TestResultSound.Checked;
         }
 
         private void CheckDirectory(FormClosingEventArgs e)
