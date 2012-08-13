@@ -4,6 +4,9 @@ obj/
 *.user
 *.log
 *.resources
+[Tt]humbs.db
+*.pidb
+*.userprefs
 
 *.cache 
 *.sln.cache
