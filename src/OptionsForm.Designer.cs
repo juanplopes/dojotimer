@@ -31,6 +31,8 @@
             this.CloseButton = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.TestResultSound = new System.Windows.Forms.CheckBox();
+            this.AlarmSoundInput = new System.Windows.Forms.CheckBox();
             this.BrowseButton = new System.Windows.Forms.Button();
             this.WorkingDirectoryInput = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -59,8 +61,6 @@
             this.ResetButton = new System.Windows.Forms.Button();
             this.BrowseFolder = new System.Windows.Forms.FolderBrowserDialog();
             this.formTitleBar1 = new DojoTimer.FormTitleBar();
-            this.AlarmSoundInput = new System.Windows.Forms.CheckBox();
-            this.TestResultSound = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -83,9 +83,9 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -118,6 +118,30 @@
             this.tabPage1.Text = "Options";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // TestResultSound
+            // 
+            this.TestResultSound.AutoSize = true;
+            this.TestResultSound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TestResultSound.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TestResultSound.Location = new System.Drawing.Point(452, 31);
+            this.TestResultSound.Name = "TestResultSound";
+            this.TestResultSound.Size = new System.Drawing.Size(205, 29);
+            this.TestResultSound.TabIndex = 20;
+            this.TestResultSound.Text = "Test Result Sound";
+            this.TestResultSound.UseVisualStyleBackColor = true;
+            // 
+            // AlarmSoundInput
+            // 
+            this.AlarmSoundInput.AutoSize = true;
+            this.AlarmSoundInput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AlarmSoundInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AlarmSoundInput.Location = new System.Drawing.Point(255, 31);
+            this.AlarmSoundInput.Name = "AlarmSoundInput";
+            this.AlarmSoundInput.Size = new System.Drawing.Size(176, 29);
+            this.AlarmSoundInput.TabIndex = 19;
+            this.AlarmSoundInput.Text = "Time Up Sound";
+            this.AlarmSoundInput.UseVisualStyleBackColor = true;
+            // 
             // BrowseButton
             // 
             this.BrowseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -133,8 +157,8 @@
             // 
             // WorkingDirectoryInput
             // 
-            this.WorkingDirectoryInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.WorkingDirectoryInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.WorkingDirectoryInput.BackColor = System.Drawing.Color.White;
             this.WorkingDirectoryInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.WorkingDirectoryInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -157,9 +181,9 @@
             // 
             this.ScriptInput.AcceptsReturn = true;
             this.ScriptInput.AcceptsTab = true;
-            this.ScriptInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.ScriptInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ScriptInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ScriptInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ScriptInput.Location = new System.Drawing.Point(6, 217);
@@ -171,8 +195,8 @@
             // 
             // ShortcutInput
             // 
-            this.ShortcutInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.ShortcutInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ShortcutInput.BackColor = System.Drawing.Color.White;
             this.ShortcutInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ShortcutInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -186,8 +210,8 @@
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(1, 127);
@@ -252,8 +276,8 @@
             // 
             this.CommitScript.AcceptsReturn = true;
             this.CommitScript.AcceptsTab = true;
-            this.CommitScript.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.CommitScript.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.CommitScript.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CommitScript.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CommitScript.Location = new System.Drawing.Point(8, 215);
@@ -278,9 +302,9 @@
             // 
             this.ParticipantsInput.AcceptsReturn = true;
             this.ParticipantsInput.AcceptsTab = true;
-            this.ParticipantsInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.ParticipantsInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ParticipantsInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ParticipantsInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ParticipantsInput.Location = new System.Drawing.Point(6, 41);
@@ -443,35 +467,10 @@
             this.formTitleBar1.TitleIcon = "@";
             this.formTitleBar1.TitleText = "How should I behave?";
             // 
-            // checkBox1
-            // 
-            this.AlarmSoundInput.AutoSize = true;
-            this.AlarmSoundInput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AlarmSoundInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AlarmSoundInput.Location = new System.Drawing.Point(264, 31);
-            this.AlarmSoundInput.Name = "checkBox1";
-            this.AlarmSoundInput.Size = new System.Drawing.Size(151, 29);
-            this.AlarmSoundInput.TabIndex = 19;
-            this.AlarmSoundInput.Text = "Alarm Sound";
-            this.AlarmSoundInput.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.TestResultSound.AutoSize = true;
-            this.TestResultSound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TestResultSound.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TestResultSound.Location = new System.Drawing.Point(452, 33);
-            this.TestResultSound.Name = "checkBox2";
-            this.TestResultSound.Size = new System.Drawing.Size(205, 29);
-            this.TestResultSound.TabIndex = 20;
-            this.TestResultSound.Text = "Test Result Sound";
-            this.TestResultSound.UseVisualStyleBackColor = true;
-            // 
             // OptionsForm
             // 
             this.AcceptButton = this.CloseButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(695, 534);
             this.ControlBox = false;

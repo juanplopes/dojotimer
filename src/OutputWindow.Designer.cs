@@ -80,14 +80,11 @@
             // OutputWindow
             // 
             this.AcceptButton = this.CloseButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(772, 466);
-            this.ControlBox = false;
             this.Controls.Add(this.OutputTitleBar);
             this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.OutputText);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "OutputWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Output";
