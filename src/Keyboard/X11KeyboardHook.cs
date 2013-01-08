@@ -16,10 +16,12 @@ namespace DojoTimer.Keyboard
         private IList<Keys> originalKey = new List<Keys>();
         private IList<ModifierKeys> originalModifier = new List<ModifierKeys>();
 
+        private Gdk.Window window;
 
         public X11KeyboardHook()
         {
-            Gdk.Global.DefaultRootWindow.AddFilter(FilterFunction);
+            window = new Gdk.Window(gdk_get_default_root_window());
+            window.AddFilter(FilterFunction);
         }
 
         public event EventHandler<KeyPressedEventArgs> KeyPressed;
@@ -74,7 +76,7 @@ namespace DojoTimer.Keyboard
 
         public void Dispose()
         {
-            Gdk.Global.DefaultRootWindow.RemoveFilter(FilterFunction);
+            window.RemoveFilter(FilterFunction);
 
             IntPtr xid = gdk_x11_drawable_get_xid(gdk_get_default_root_window());
             IntPtr xdisplay = gdk_x11_get_default_xdisplay();
