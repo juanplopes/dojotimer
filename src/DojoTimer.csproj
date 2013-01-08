@@ -39,6 +39,14 @@
     <ApplicationIcon>Resources\Green.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="gdk-sharp">
+      <HintPath>..\lib\gdk-sharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="glib-sharp">
+      <HintPath>..\lib\glib-sharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
