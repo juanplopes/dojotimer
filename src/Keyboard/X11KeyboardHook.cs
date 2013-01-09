@@ -34,7 +34,7 @@ namespace DojoTimer.Keyboard
                 Gtk.Application.Init();
                 Application.AddMessageFilter(new Filter());
             }
-            
+			Console.WriteLine (Marshal.SizeOf(typeof(IntPtr)));
             window = new Gdk.Window(gdk_get_default_root_window());
             window.AddFilter(FilterFunction);
         }
@@ -140,20 +140,20 @@ namespace DojoTimer.Keyboard
             return gdk_x11_get_default_xdisplay();
         }
 
-        [DllImport("libgtk-x11-2.0")]
+        [DllImport("libgtk-x11-2.0.so.0")]
         private static extern IntPtr gdk_x11_drawable_get_xid(IntPtr gdkWindow);
 
-        [DllImport("libgdk-x11-2.0")]
+        [DllImport("libgdk-x11-2.0.so.0")]
         extern static IntPtr gdk_x11_get_default_xdisplay();
 
-        [DllImport("libgtk-x11-2.0")]
+        [DllImport("libgtk-x11-2.0.so.0")]
         private static extern IntPtr gdk_x11_drawable_get_xdisplay(IntPtr gdkDrawable);
 
 
-        [DllImport("libgtk-x11-2.0")]
+        [DllImport("libgtk-x11-2.0.so.0")]
         private static extern IntPtr gdk_x11_window_get_drawable_impl(IntPtr gdkWindow);
 
-        [DllImport("libgtk-x11-2.0")]
+        [DllImport("libgtk-x11-2.0.so.0")]
         extern static IntPtr gdk_get_default_root_window();
 
 
@@ -186,13 +186,13 @@ namespace DojoTimer.Keyboard
             public uint keycode;
             public int same_screen;
         }
-        [DllImport("libgdk-x11-2.0")]
+        [DllImport("libgdk-x11-2.0.so.0")]
         extern static void gdk_error_trap_push();
 
-        [DllImport("libgdk-x11-2.0")]
+        [DllImport("libgdk-x11-2.0.so.0")]
         extern static int gdk_error_trap_pop();
 
-        [DllImport("libgdk-x11-2.0")]
+        [DllImport("libgdk-x11-2.0.so.0")]
         extern static void gdk_flush();
 
         [Flags]
