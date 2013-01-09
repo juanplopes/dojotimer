@@ -8,7 +8,7 @@ namespace DojoTimer.Keyboard
 {
     public class X11KeyboardHook : IKeyboardHook
     {
-		private static volatile int count = 0;
+		private static int count = 0;
 		
         private const int KeyPress = 2;
         private const int GrabModeAsync = 1;

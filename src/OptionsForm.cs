@@ -47,12 +47,11 @@ namespace DojoTimer
         {
             this.Close();
         }
-
+		
         private void ShortcutInput_KeyDown(object sender, KeyEventArgs e)
         {
             ShortcutInput.Text = (ShortcutInput.Tag = e.KeyData).ToString();
-
-            e.SuppressKeyPress = true;
+			e.SuppressKeyPress = true;
         }
 
         private void ShortcutInput_Leave(object sender, EventArgs e)
