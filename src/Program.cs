@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using System.Windows.Forms;
+using System.Threading;
 
 namespace DojoTimer
 {
@@ -11,11 +12,12 @@ namespace DojoTimer
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+			Application.Run(new MainForm());
+			
         }
     }
 }

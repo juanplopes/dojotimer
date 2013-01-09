@@ -2,11 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace DojoTimer.Keyboard
 {
     public class X11KeyboardHook : IKeyboardHook
     {
+		private static volatile int count = 0;
+		
         private const int KeyPress = 2;
         private const int GrabModeAsync = 1;
         
@@ -17,9 +20,21 @@ namespace DojoTimer.Keyboard
         private IList<ModifierKeys> originalModifier = new List<ModifierKeys>();
 
         private Gdk.Window window;
-
+		
+		class Filter : IMessageFilter {
+			public bool PreFilterMessage(ref Message m) {
+				Gtk.Application.RunIteration(false);
+				return false;	
+			}
+		}
+		
         public X11KeyboardHook()
         {
+			if (Interlocked.Increment(ref count) == 1) {
+				Gtk.Application.Init();
+				Application.AddMessageFilter(new Filter());
+			}
+			
             window = new Gdk.Window(gdk_get_default_root_window());
             window.AddFilter(FilterFunction);
         }
