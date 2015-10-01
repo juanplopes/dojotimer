@@ -39,7 +39,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.OutputText.BackColor = System.Drawing.Color.Black;
-            this.OutputText.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OutputText.Font = new System.Drawing.Font("Courier", 14.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OutputText.ForeColor = System.Drawing.Color.White;
             this.OutputText.Location = new System.Drawing.Point(0, 60);
             this.OutputText.Multiline = true;
