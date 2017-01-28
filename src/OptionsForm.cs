@@ -41,6 +41,7 @@ namespace DojoTimer
             CommitScript.Text = options.CommitScript;
             AlarmSoundInput.Checked = options.PlayAlarmSound;
             TestResultSound.Checked = options.PlayTestResultSound;
+            TimeoutInput.Text = options.TestTimeout.ToString();
             SetFontButton(options.Font);
         }
 
@@ -84,6 +85,7 @@ namespace DojoTimer
             options.PlayAlarmSound = AlarmSoundInput.Checked;
             options.PlayTestResultSound = TestResultSound.Checked;
             options.Font = FontButton.Font;
+            options.TestTimeout = Int32.Parse(TimeoutInput.Text);
         }
 
         private void CheckDirectory(FormClosingEventArgs e)

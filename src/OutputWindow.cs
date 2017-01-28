@@ -47,7 +47,7 @@ namespace DojoTimer
             scheme.ApplyTo(this);
             OutputTitleBar.TitleText = result ? "SUCCEEDED" : "FAILED";
             OutputTitleBar.TitleDescription = result ?
-                "Yay, it works!" : "Gotta fix it. Bad, bad programmer.";
+                "Yay, it works!" : "Gotta fix it. That's the game.";
         }
 
         private void button1_Click(object sender, EventArgs e)

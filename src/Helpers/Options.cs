@@ -34,8 +34,7 @@ namespace DojoTimer.Helpers
         public string[] Participants { get; set; }
         public string CommitScript { get; set; }
         public System.Drawing.Font Font { get; set; }
-
-
+        public int TestTimeout { get; set; }
         public string WorkingDirectory { get; set; }
 
         public Keys ShortcutKey { get { return Shortcut & Keys.KeyCode; } }
@@ -72,6 +71,7 @@ namespace DojoTimer.Helpers
             Participants = new string[0];
             WorkingDirectory = Environment.CurrentDirectory;
             Font = DEFAULT_OUTPUT_FONT;
+            TestTimeout = 2000;
         }
 
         [field:NonSerialized]
@@ -79,7 +79,7 @@ namespace DojoTimer.Helpers
 
         public bool Run()
         {
-            var runner = new ProcessRunner(Script, WorkingDirectory);
+            var runner = new ProcessRunner(Script, WorkingDirectory, TestTimeout);
             runner.Write += s => { if (Write != null) Write(s); };
             return runner.Run();
         }
@@ -116,7 +116,7 @@ namespace DojoTimer.Helpers
         {
             if (commit)
             {
-                var runner = new ProcessRunner(CommitScript, WorkingDirectory);
+                var runner = new ProcessRunner(CommitScript, WorkingDirectory, TestTimeout);
                 var sb = new StringBuilder();
                 runner.Write += x=>sb.AppendLine(x);
 

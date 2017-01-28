@@ -62,8 +62,11 @@
             this.UseSemaphoreInput = new System.Windows.Forms.CheckBox();
             this.ResetButton = new System.Windows.Forms.Button();
             this.BrowseFolder = new System.Windows.Forms.FolderBrowserDialog();
-            this.formTitleBar1 = new DojoTimer.FormTitleBar();
             this.BrowseFont = new System.Windows.Forms.FontDialog();
+            this.label11 = new System.Windows.Forms.Label();
+            this.TimeoutInput = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.formTitleBar1 = new DojoTimer.FormTitleBar();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -101,6 +104,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.TimeoutInput);
+            this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.FontButton);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.TestResultSound);
@@ -115,6 +120,7 @@
             this.tabPage1.Controls.Add(this.SecondsInput);
             this.tabPage1.Controls.Add(this.MinutesInput);
             this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -131,7 +137,7 @@
             this.FontButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FontButton.Location = new System.Drawing.Point(6, 93);
             this.FontButton.Name = "FontButton";
-            this.FontButton.Size = new System.Drawing.Size(648, 43);
+            this.FontButton.Size = new System.Drawing.Size(451, 39);
             this.FontButton.TabIndex = 22;
             this.FontButton.Text = "...";
             this.FontButton.UseVisualStyleBackColor = false;
@@ -154,7 +160,7 @@
             this.TestResultSound.AutoSize = true;
             this.TestResultSound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TestResultSound.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TestResultSound.Location = new System.Drawing.Point(234, 33);
+            this.TestResultSound.Location = new System.Drawing.Point(447, 31);
             this.TestResultSound.Name = "TestResultSound";
             this.TestResultSound.Size = new System.Drawing.Size(205, 29);
             this.TestResultSound.TabIndex = 20;
@@ -166,7 +172,7 @@
             this.AlarmSoundInput.AutoSize = true;
             this.AlarmSoundInput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AlarmSoundInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AlarmSoundInput.Location = new System.Drawing.Point(481, 31);
+            this.AlarmSoundInput.Location = new System.Drawing.Point(251, 31);
             this.AlarmSoundInput.Name = "AlarmSoundInput";
             this.AlarmSoundInput.Size = new System.Drawing.Size(176, 29);
             this.AlarmSoundInput.TabIndex = 19;
@@ -236,7 +242,7 @@
             this.ShortcutInput.Location = new System.Drawing.Point(6, 229);
             this.ShortcutInput.Name = "ShortcutInput";
             this.ShortcutInput.ReadOnly = true;
-            this.ShortcutInput.Size = new System.Drawing.Size(648, 31);
+            this.ShortcutInput.Size = new System.Drawing.Size(391, 31);
             this.ShortcutInput.TabIndex = 15;
             this.ShortcutInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShortcutInput_KeyDown);
             this.ShortcutInput.Leave += new System.EventHandler(this.ShortcutInput_Leave);
@@ -249,9 +255,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(1, 201);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 25);
+            this.label3.Size = new System.Drawing.Size(146, 25);
             this.label3.TabIndex = 14;
-            this.label3.Text = "Shortcut:";
+            this.label3.Text = "Test Shortcut:";
             // 
             // label2
             // 
@@ -487,6 +493,35 @@
             this.ResetButton.UseVisualStyleBackColor = false;
             this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(412, 201);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(143, 25);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "Test Timeout:";
+            // 
+            // TimeoutInput
+            // 
+            this.TimeoutInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TimeoutInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeoutInput.Location = new System.Drawing.Point(417, 229);
+            this.TimeoutInput.Name = "TimeoutInput";
+            this.TimeoutInput.Size = new System.Drawing.Size(189, 31);
+            this.TimeoutInput.TabIndex = 24;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(612, 231);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(40, 25);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "ms";
+            // 
             // formTitleBar1
             // 
             this.formTitleBar1.BackColor = System.Drawing.Color.White;
@@ -567,5 +602,8 @@
         private System.Windows.Forms.Button FontButton;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.FontDialog BrowseFont;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox TimeoutInput;
+        private System.Windows.Forms.Label label11;
     }
 }

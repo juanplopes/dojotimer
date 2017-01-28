@@ -11,10 +11,13 @@ namespace DojoTimer.Helpers
     {
         string scriptText;
         string workingDir;
-        public ProcessRunner(string scriptText, string workingDir)
+        int timeout;
+
+        public ProcessRunner(string scriptText, string workingDir, int timeout)
         {
             this.scriptText = scriptText;
             this.workingDir = workingDir;
+            this.timeout = timeout;
         }
         public event Action<string> Write;
         public void InvokeWrite(string arg)
@@ -30,10 +33,10 @@ namespace DojoTimer.Helpers
             try
             {
                 var lines = scriptText.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-                for (int i = 0; i < lines.Length; i++)lines[i] = "(" + lines[i] + ")";
-                    
+                for (int i = 0; i < lines.Length; i++) lines[i] = "(" + lines[i] + ")";
+
                 File.WriteAllText(file, String.Join(" && ", lines));
-				
+
                 var psi = MakeParams(file, args);
                 var process = MakeProcess(psi);
                 process.Start();
@@ -43,7 +46,18 @@ namespace DojoTimer.Helpers
                     process.BeginOutputReadLine();
                 }
 
-                process.WaitForExit();
+                if (timeout > 0)
+                {
+                    if (!process.WaitForExit(timeout))
+                    {
+                        InvokeWrite(string.Format("Error: process timeout ({0}ms)", timeout));
+                        process.Kill();
+                    }
+                }
+                else
+                {
+                    process.WaitForExit();
+                }
 
                 return process.ExitCode == 0;
             }
@@ -85,7 +99,6 @@ namespace DojoTimer.Helpers
                 psi.FileName = "cmd";
                 argStr = "/C " + argStr;
             }
-
 
             psi.UseShellExecute = false;
             psi.Arguments = argStr;
