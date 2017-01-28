@@ -65,7 +65,9 @@ namespace DojoTimer.Helpers
             SemaphoreBaudRate = 9600;
             PlayAlarmSound = true;
             PlayTestResultSound = false;
-            CommitScript = string.Format("echo %date% %time% *** %~1 and %~2 >> dojo.log", myDir);
+            CommitScript = KeyboardHooks.IsLinux ?
+                "echo $(date) - $1 e $2 >> dojo.log" :
+                "echo %date% %time% *** %~1 and %~2 >> dojo.log";
             Participants = new string[0];
             WorkingDirectory = Environment.CurrentDirectory;
             Font = DEFAULT_OUTPUT_FONT;
