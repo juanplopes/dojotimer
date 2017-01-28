@@ -16,7 +16,8 @@ namespace DojoTimer.Helpers
     [Serializable]
     public class Options
     {
-        public static readonly System.Drawing.Font DEFAULT_OUTPUT_FONT = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        public static readonly System.Drawing.Font DEFAULT_OUTPUT_FONT = 
+            new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
         public TimeSpan Period { get; set; }
         public string Script { get; set; }

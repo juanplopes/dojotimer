@@ -154,7 +154,7 @@
             this.TestResultSound.AutoSize = true;
             this.TestResultSound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TestResultSound.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TestResultSound.Location = new System.Drawing.Point(270, 31);
+            this.TestResultSound.Location = new System.Drawing.Point(234, 33);
             this.TestResultSound.Name = "TestResultSound";
             this.TestResultSound.Size = new System.Drawing.Size(205, 29);
             this.TestResultSound.TabIndex = 20;
