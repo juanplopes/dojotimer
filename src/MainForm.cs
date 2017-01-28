@@ -23,6 +23,7 @@ namespace DojoTimer
         IKeyboardHook hook;
         ColorScheme scheme = ColorScheme.Green;
         Semaphore semaphore;
+        bool simplified = false;
         
         public MainForm(string path) : this(Options.Load(), path) { }
         public MainForm(Options options, string path)
@@ -104,7 +105,10 @@ namespace DojoTimer
 
         private void TimeLabel_Click(object sender, EventArgs e)
         {
-            ShowOptions();
+            if (simplified)
+                StartButton_Click(sender, e);
+            else
+                ShowOptions();
         }
 
         private void ShowOptions()
@@ -249,5 +253,26 @@ namespace DojoTimer
             Process.Start(LinkButton.Text);
         }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SimplifyButton_Click(object sender, EventArgs e)
+        {
+            simplified = !simplified;
+            RunButton.Visible = !simplified;
+            StartButton.Visible = !simplified;
+            CommitButton.Visible = !simplified;
+            TopMostCheck.Visible = !simplified;
+            SettingsButton.Visible = !simplified;
+            LinkButton.Visible = !simplified;
+
+            var lastSize = this.Size;
+            var newSize = this.Size = new Size(!simplified ? 314 : 205, !simplified ? 113 : 91);
+            var diff = new Point(lastSize - newSize);
+
+            this.Location = new Point(this.Location.X + diff.X, this.Location.Y);
+        }
     }
 }

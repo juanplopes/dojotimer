@@ -29,6 +29,8 @@ namespace DojoTimer.Helpers
         {
             if (control is T)
                 action((T)control);
+            if (control is FlowLayoutPanel)
+                ApplyToChildren(control);
         }
 
 
@@ -36,14 +38,18 @@ namespace DojoTimer.Helpers
         {
             form.BackColor = color;
             form.Icon = icon;
+            ApplyToChildren(form);
+            return form;
+        }
 
+        private void ApplyToChildren(Control form)
+        {
             foreach (Control control in form.Controls)
             {
                 ApplyTo<ButtonBase>(control, ApplyToMain);
                 ApplyTo<MainTitleBar>(control, ApplyToMain);
                 ApplyTo<LinkLabel>(control, ApplyToMain);
             }
-            return form;
         }
 
         public void ApplyToMain(ButtonBase button)
