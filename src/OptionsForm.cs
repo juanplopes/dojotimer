@@ -41,6 +41,7 @@ namespace DojoTimer
             CommitScript.Text = options.CommitScript;
             AlarmSoundInput.Checked = options.PlayAlarmSound;
             TestResultSound.Checked = options.PlayTestResultSound;
+            SetFontButton(options.Font);
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -82,6 +83,7 @@ namespace DojoTimer
             options.WorkingDirectory = WorkingDirectoryInput.Text;
             options.PlayAlarmSound = AlarmSoundInput.Checked;
             options.PlayTestResultSound = TestResultSound.Checked;
+            options.Font = FontButton.Font;
         }
 
         private void CheckDirectory(FormClosingEventArgs e)
@@ -109,10 +111,29 @@ namespace DojoTimer
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
+        
 
+        private void FontButton_Click(object sender, EventArgs e)
+        {
+            if (BrowseFont.ShowDialog() == DialogResult.OK)
+            {
+                var font = BrowseFont.Font;
+                SetFontButton(font);
+            }
         }
 
+        private void SetFontButton(Font font)
+        {
+            if (font == null)
+                font = Options.DEFAULT_OUTPUT_FONT;
+            BrowseFont.Font = font;
+            FontButton.Text = MakeFontName(font);
+            FontButton.Font = font;
+        }
+
+        private static string MakeFontName(Font font)
+        {
+            return font.Name + ", " + font.Style + ", " + font.SizeInPoints + "pt";
+        }
     }
 }

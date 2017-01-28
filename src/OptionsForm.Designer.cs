@@ -31,6 +31,8 @@
             this.CloseButton = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.FontButton = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             this.TestResultSound = new System.Windows.Forms.CheckBox();
             this.AlarmSoundInput = new System.Windows.Forms.CheckBox();
             this.BrowseButton = new System.Windows.Forms.Button();
@@ -61,6 +63,7 @@
             this.ResetButton = new System.Windows.Forms.Button();
             this.BrowseFolder = new System.Windows.Forms.FolderBrowserDialog();
             this.formTitleBar1 = new DojoTimer.FormTitleBar();
+            this.BrowseFont = new System.Windows.Forms.FontDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -73,7 +76,7 @@
             this.CloseButton.BackColor = System.Drawing.Color.White;
             this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CloseButton.Location = new System.Drawing.Point(505, 482);
+            this.CloseButton.Location = new System.Drawing.Point(502, 548);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(178, 43);
             this.CloseButton.TabIndex = 2;
@@ -93,11 +96,13 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 66);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(671, 410);
+            this.tabControl1.Size = new System.Drawing.Size(668, 476);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.FontButton);
+            this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.TestResultSound);
             this.tabPage1.Controls.Add(this.AlarmSoundInput);
             this.tabPage1.Controls.Add(this.BrowseButton);
@@ -113,17 +118,43 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(663, 375);
+            this.tabPage1.Size = new System.Drawing.Size(660, 441);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Options";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // FontButton
+            // 
+            this.FontButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FontButton.BackColor = System.Drawing.Color.White;
+            this.FontButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FontButton.Location = new System.Drawing.Point(6, 93);
+            this.FontButton.Name = "FontButton";
+            this.FontButton.Size = new System.Drawing.Size(648, 43);
+            this.FontButton.TabIndex = 22;
+            this.FontButton.Text = "...";
+            this.FontButton.UseVisualStyleBackColor = false;
+            this.FontButton.Click += new System.EventHandler(this.FontButton_Click);
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(1, 65);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(131, 25);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Output Font:";
             // 
             // TestResultSound
             // 
             this.TestResultSound.AutoSize = true;
             this.TestResultSound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TestResultSound.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TestResultSound.Location = new System.Drawing.Point(452, 31);
+            this.TestResultSound.Location = new System.Drawing.Point(270, 31);
             this.TestResultSound.Name = "TestResultSound";
             this.TestResultSound.Size = new System.Drawing.Size(205, 29);
             this.TestResultSound.TabIndex = 20;
@@ -135,7 +166,7 @@
             this.AlarmSoundInput.AutoSize = true;
             this.AlarmSoundInput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AlarmSoundInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AlarmSoundInput.Location = new System.Drawing.Point(255, 31);
+            this.AlarmSoundInput.Location = new System.Drawing.Point(481, 31);
             this.AlarmSoundInput.Name = "AlarmSoundInput";
             this.AlarmSoundInput.Size = new System.Drawing.Size(176, 29);
             this.AlarmSoundInput.TabIndex = 19;
@@ -144,10 +175,10 @@
             // 
             // BrowseButton
             // 
-            this.BrowseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BrowseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BrowseButton.BackColor = System.Drawing.Color.White;
             this.BrowseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BrowseButton.Location = new System.Drawing.Point(615, 93);
+            this.BrowseButton.Location = new System.Drawing.Point(612, 167);
             this.BrowseButton.Name = "BrowseButton";
             this.BrowseButton.Size = new System.Drawing.Size(42, 31);
             this.BrowseButton.TabIndex = 11;
@@ -157,21 +188,23 @@
             // 
             // WorkingDirectoryInput
             // 
-            this.WorkingDirectoryInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.WorkingDirectoryInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.WorkingDirectoryInput.BackColor = System.Drawing.Color.White;
             this.WorkingDirectoryInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.WorkingDirectoryInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WorkingDirectoryInput.Location = new System.Drawing.Point(6, 93);
+            this.WorkingDirectoryInput.Location = new System.Drawing.Point(6, 167);
             this.WorkingDirectoryInput.Name = "WorkingDirectoryInput";
-            this.WorkingDirectoryInput.Size = new System.Drawing.Size(603, 31);
+            this.WorkingDirectoryInput.Size = new System.Drawing.Size(600, 31);
             this.WorkingDirectoryInput.TabIndex = 18;
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1, 65);
+            this.label5.Location = new System.Drawing.Point(1, 139);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(189, 25);
             this.label5.TabIndex = 17;
@@ -186,35 +219,35 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ScriptInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ScriptInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScriptInput.Location = new System.Drawing.Point(6, 217);
+            this.ScriptInput.Location = new System.Drawing.Point(6, 291);
             this.ScriptInput.Multiline = true;
             this.ScriptInput.Name = "ScriptInput";
             this.ScriptInput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.ScriptInput.Size = new System.Drawing.Size(651, 152);
+            this.ScriptInput.Size = new System.Drawing.Size(648, 144);
             this.ScriptInput.TabIndex = 16;
             // 
             // ShortcutInput
             // 
-            this.ShortcutInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.ShortcutInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ShortcutInput.BackColor = System.Drawing.Color.White;
             this.ShortcutInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ShortcutInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShortcutInput.Location = new System.Drawing.Point(6, 155);
+            this.ShortcutInput.Location = new System.Drawing.Point(6, 229);
             this.ShortcutInput.Name = "ShortcutInput";
             this.ShortcutInput.ReadOnly = true;
-            this.ShortcutInput.Size = new System.Drawing.Size(651, 31);
+            this.ShortcutInput.Size = new System.Drawing.Size(648, 31);
             this.ShortcutInput.TabIndex = 15;
             this.ShortcutInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShortcutInput_KeyDown);
             this.ShortcutInput.Leave += new System.EventHandler(this.ShortcutInput_Leave);
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1, 127);
+            this.label3.Location = new System.Drawing.Point(1, 201);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 25);
             this.label3.TabIndex = 14;
@@ -224,7 +257,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1, 189);
+            this.label2.Location = new System.Drawing.Point(1, 263);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 25);
             this.label2.TabIndex = 13;
@@ -267,7 +300,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 31);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(663, 375);
+            this.tabPage2.Size = new System.Drawing.Size(660, 441);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "People";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -280,11 +313,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CommitScript.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CommitScript.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CommitScript.Location = new System.Drawing.Point(8, 215);
+            this.CommitScript.Location = new System.Drawing.Point(8, 281);
             this.CommitScript.Multiline = true;
             this.CommitScript.Name = "CommitScript";
             this.CommitScript.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.CommitScript.Size = new System.Drawing.Size(646, 157);
+            this.CommitScript.Size = new System.Drawing.Size(643, 157);
             this.CommitScript.TabIndex = 19;
             // 
             // label4
@@ -292,7 +325,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1, 187);
+            this.label4.Location = new System.Drawing.Point(1, 253);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(148, 25);
             this.label4.TabIndex = 18;
@@ -311,7 +344,7 @@
             this.ParticipantsInput.Multiline = true;
             this.ParticipantsInput.Name = "ParticipantsInput";
             this.ParticipantsInput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.ParticipantsInput.Size = new System.Drawing.Size(646, 143);
+            this.ParticipantsInput.Size = new System.Drawing.Size(643, 209);
             this.ParticipantsInput.TabIndex = 17;
             // 
             // KeepTrackInput
@@ -340,7 +373,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 31);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(663, 375);
+            this.tabPage3.Size = new System.Drawing.Size(660, 441);
             this.tabPage3.TabIndex = 1;
             this.tabPage3.Text = "Semaphore";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -414,7 +447,6 @@
             this.SemaphorePortInput.Size = new System.Drawing.Size(651, 31);
             this.SemaphorePortInput.TabIndex = 13;
             this.SemaphorePortInput.Text = "COM12";
-            this.SemaphorePortInput.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label6
             // 
@@ -440,13 +472,14 @@
             // 
             // ResetButton
             // 
+            this.ResetButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ResetButton.BackColor = System.Drawing.Color.White;
             this.ResetButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.ResetButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.ResetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ResetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ResetButton.ForeColor = System.Drawing.Color.Black;
-            this.ResetButton.Location = new System.Drawing.Point(321, 482);
+            this.ResetButton.Location = new System.Drawing.Point(318, 548);
             this.ResetButton.Name = "ResetButton";
             this.ResetButton.Size = new System.Drawing.Size(178, 43);
             this.ResetButton.TabIndex = 10;
@@ -461,7 +494,7 @@
             this.formTitleBar1.ForeColor = System.Drawing.Color.Black;
             this.formTitleBar1.Location = new System.Drawing.Point(0, 0);
             this.formTitleBar1.Name = "formTitleBar1";
-            this.formTitleBar1.Size = new System.Drawing.Size(695, 60);
+            this.formTitleBar1.Size = new System.Drawing.Size(692, 60);
             this.formTitleBar1.TabIndex = 9;
             this.formTitleBar1.TitleDescription = "Change whatever you want. Then close me. That\'s it.";
             this.formTitleBar1.TitleIcon = "@";
@@ -472,7 +505,7 @@
             this.AcceptButton = this.CloseButton;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(695, 534);
+            this.ClientSize = new System.Drawing.Size(692, 600);
             this.ControlBox = false;
             this.Controls.Add(this.ResetButton);
             this.Controls.Add(this.formTitleBar1);
@@ -531,6 +564,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckBox TestResultSound;
         private System.Windows.Forms.CheckBox AlarmSoundInput;
-
+        private System.Windows.Forms.Button FontButton;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.FontDialog BrowseFont;
     }
 }

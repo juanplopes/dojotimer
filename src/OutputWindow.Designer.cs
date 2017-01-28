@@ -31,6 +31,7 @@
             this.OutputText = new System.Windows.Forms.TextBox();
             this.CloseButton = new System.Windows.Forms.Button();
             this.OutputTitleBar = new DojoTimer.FormTitleBar();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // OutputText
@@ -39,7 +40,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.OutputText.BackColor = System.Drawing.Color.Black;
-            this.OutputText.Font = new System.Drawing.Font("Courier", 14.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OutputText.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OutputText.ForeColor = System.Drawing.Color.White;
             this.OutputText.Location = new System.Drawing.Point(0, 60);
             this.OutputText.Multiline = true;
@@ -77,11 +78,25 @@
             this.OutputTitleBar.TitleIcon = "~";
             this.OutputTitleBar.TitleText = "Running tests...";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DimGray;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(705, 66);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(44, 38);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "+";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // OutputWindow
             // 
             this.AcceptButton = this.CloseButton;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(772, 466);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.OutputTitleBar);
             this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.OutputText);
@@ -99,5 +114,6 @@
         private System.Windows.Forms.TextBox OutputText;
         private System.Windows.Forms.Button CloseButton;
         private FormTitleBar OutputTitleBar;
+        private System.Windows.Forms.Button button1;
     }
 }

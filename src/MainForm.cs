@@ -175,7 +175,7 @@ namespace DojoTimer
                 if (form is OutputWindow && !form.IsDisposed)
                     form.Close();
 
-            var output = new OutputWindow();
+            var output = new OutputWindow(options.Font);
             options.Write += s => output.Write(s);
             RunAndShow(output);
         }

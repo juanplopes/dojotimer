@@ -127,7 +127,7 @@
             this.formTitleBar1.TabIndex = 7;
             this.formTitleBar1.TitleDescription = "The one will stay should come first.";
             this.formTitleBar1.TitleIcon = "^";
-            this.formTitleBar1.TitleText = "Who was here?";
+            this.formTitleBar1.TitleText = "Who were here?";
             // 
             // WhoWasHereForm
             // 

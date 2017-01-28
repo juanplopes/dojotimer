@@ -16,10 +16,11 @@ namespace DojoTimer
     {
         string text = "";
 
-        public OutputWindow()
+        public OutputWindow(Font font)
         {
             InitializeComponent();
             OutputTitleBar.BindHandleTo(this);
+            OutputText.Font = font;
         }
 
         public void Clear()

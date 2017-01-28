@@ -16,6 +16,8 @@ namespace DojoTimer.Helpers
     [Serializable]
     public class Options
     {
+        public static readonly System.Drawing.Font DEFAULT_OUTPUT_FONT = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
         public TimeSpan Period { get; set; }
         public string Script { get; set; }
         public Keys Shortcut { get; set; }
@@ -30,6 +32,8 @@ namespace DojoTimer.Helpers
         public bool PlayTestResultSound { get; set; }
         public string[] Participants { get; set; }
         public string CommitScript { get; set; }
+        public System.Drawing.Font Font { get; set; }
+
 
         public string WorkingDirectory { get; set; }
 
@@ -64,6 +68,7 @@ namespace DojoTimer.Helpers
             CommitScript = string.Format("echo %date% %time% *** %~1 and %~2 >> dojo.log", myDir);
             Participants = new string[0];
             WorkingDirectory = Environment.CurrentDirectory;
+            Font = DEFAULT_OUTPUT_FONT;
         }
 
         [field:NonSerialized]
