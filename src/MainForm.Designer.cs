@@ -233,12 +233,12 @@
             this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel2.AutoSize = true;
             this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel2.Controls.Add(this.CloseButton);
-            this.flowLayoutPanel2.Controls.Add(this.SimplifyButton);
-            this.flowLayoutPanel2.Controls.Add(this.TopMostCheck);
-            this.flowLayoutPanel2.Controls.Add(this.CommitButton);
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel2.Controls.Add(this.SettingsButton);
-            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel2.Controls.Add(this.CommitButton);
+            this.flowLayoutPanel2.Controls.Add(this.TopMostCheck);
+            this.flowLayoutPanel2.Controls.Add(this.SimplifyButton);
+            this.flowLayoutPanel2.Controls.Add(this.CloseButton);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(162, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(150, 30);
