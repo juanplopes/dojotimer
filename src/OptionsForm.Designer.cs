@@ -137,7 +137,7 @@
             this.FontButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FontButton.Location = new System.Drawing.Point(6, 93);
             this.FontButton.Name = "FontButton";
-            this.FontButton.Size = new System.Drawing.Size(451, 39);
+            this.FontButton.Size = new System.Drawing.Size(648, 39);
             this.FontButton.TabIndex = 22;
             this.FontButton.Text = "...";
             this.FontButton.UseVisualStyleBackColor = false;
