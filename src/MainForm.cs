@@ -24,11 +24,13 @@ namespace DojoTimer
         ColorScheme scheme = ColorScheme.Green;
         Semaphore semaphore;
         
-        public MainForm() : this(Options.Load()) { }
-        public MainForm(Options options)
+        public MainForm(string path) : this(Options.Load(), path) { }
+        public MainForm(Options options, string path)
         {
             InitializeComponent();
             this.options = options;
+            if (path != null) options.WorkingDirectory = path;
+
             this.semaphore = new Semaphore(options);
             BindHotKey();
 
