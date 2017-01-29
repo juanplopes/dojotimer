@@ -34,7 +34,7 @@
     <StartupObject>DojoTimer.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\Green.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\green.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
