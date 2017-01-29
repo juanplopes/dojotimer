@@ -50,8 +50,8 @@ namespace DojoTimer.Helpers
                 {
                     if (!process.WaitForExit(timeout))
                     {
-                        InvokeWrite(string.Format("Error: process timeout ({0}ms)", timeout));
                         process.Kill();
+                        InvokeWrite(string.Format("Error: process timeout ({0}ms)", timeout));
                     }
                 }
                 else
@@ -107,6 +107,7 @@ namespace DojoTimer.Helpers
             psi.RedirectStandardError = Write != null;
             psi.RedirectStandardOutput = Write != null;
             psi.WindowStyle = ProcessWindowStyle.Hidden;
+            psi.CreateNoWindow = true;
             return psi;
         }
 

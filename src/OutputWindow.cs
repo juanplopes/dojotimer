@@ -31,6 +31,7 @@ namespace DojoTimer
         public void Write(string data)
         {
             text += data + "\r\n";
+            Console.WriteLine(data);
         }
 
         public void ShowText(bool result)
