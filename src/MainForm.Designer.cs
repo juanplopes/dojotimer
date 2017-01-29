@@ -96,10 +96,10 @@
             this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CloseButton.Font = new System.Drawing.Font("Webdings", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.CloseButton.ForeColor = System.Drawing.Color.White;
-            this.CloseButton.Location = new System.Drawing.Point(120, 0);
+            this.CloseButton.Location = new System.Drawing.Point(140, 0);
             this.CloseButton.Margin = new System.Windows.Forms.Padding(0);
             this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(30, 30);
+            this.CloseButton.Size = new System.Drawing.Size(35, 30);
             this.CloseButton.TabIndex = 12;
             this.CloseButton.Text = "r";
             this.CloseButton.UseVisualStyleBackColor = false;
@@ -119,10 +119,10 @@
             this.TopMostCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TopMostCheck.Font = new System.Drawing.Font("Webdings", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.TopMostCheck.ForeColor = System.Drawing.Color.White;
-            this.TopMostCheck.Location = new System.Drawing.Point(60, 0);
+            this.TopMostCheck.Location = new System.Drawing.Point(70, 0);
             this.TopMostCheck.Margin = new System.Windows.Forms.Padding(0);
             this.TopMostCheck.Name = "TopMostCheck";
-            this.TopMostCheck.Size = new System.Drawing.Size(30, 30);
+            this.TopMostCheck.Size = new System.Drawing.Size(35, 30);
             this.TopMostCheck.TabIndex = 13;
             this.TopMostCheck.Text = "a";
             this.TopMostCheck.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -139,10 +139,10 @@
             this.CommitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CommitButton.Font = new System.Drawing.Font("Webdings", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.CommitButton.ForeColor = System.Drawing.Color.White;
-            this.CommitButton.Location = new System.Drawing.Point(30, 0);
+            this.CommitButton.Location = new System.Drawing.Point(35, 0);
             this.CommitButton.Margin = new System.Windows.Forms.Padding(0);
             this.CommitButton.Name = "CommitButton";
-            this.CommitButton.Size = new System.Drawing.Size(30, 30);
+            this.CommitButton.Size = new System.Drawing.Size(35, 30);
             this.CommitButton.TabIndex = 14;
             this.CommitButton.Text = "^";
             this.CommitButton.UseVisualStyleBackColor = false;
@@ -161,7 +161,7 @@
             this.SettingsButton.Location = new System.Drawing.Point(0, 0);
             this.SettingsButton.Margin = new System.Windows.Forms.Padding(0);
             this.SettingsButton.Name = "SettingsButton";
-            this.SettingsButton.Size = new System.Drawing.Size(30, 30);
+            this.SettingsButton.Size = new System.Drawing.Size(35, 30);
             this.SettingsButton.TabIndex = 15;
             this.SettingsButton.Text = "@";
             this.SettingsButton.UseVisualStyleBackColor = false;
@@ -230,7 +230,6 @@
             // 
             // flowLayoutPanel2
             // 
-            //this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel2.AutoSize = true;
             this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
@@ -239,9 +238,9 @@
             this.flowLayoutPanel2.Controls.Add(this.TopMostCheck);
             this.flowLayoutPanel2.Controls.Add(this.SimplifyButton);
             this.flowLayoutPanel2.Controls.Add(this.CloseButton);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(162, 0);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(137, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(150, 30);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(175, 30);
             this.flowLayoutPanel2.TabIndex = 21;
             // 
             // SimplifyButton
@@ -254,10 +253,10 @@
             this.SimplifyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SimplifyButton.Font = new System.Drawing.Font("Webdings", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.SimplifyButton.ForeColor = System.Drawing.Color.White;
-            this.SimplifyButton.Location = new System.Drawing.Point(90, 0);
+            this.SimplifyButton.Location = new System.Drawing.Point(105, 0);
             this.SimplifyButton.Margin = new System.Windows.Forms.Padding(0);
             this.SimplifyButton.Name = "SimplifyButton";
-            this.SimplifyButton.Size = new System.Drawing.Size(30, 30);
+            this.SimplifyButton.Size = new System.Drawing.Size(35, 30);
             this.SimplifyButton.TabIndex = 16;
             this.SimplifyButton.Text = "q";
             this.SimplifyButton.UseVisualStyleBackColor = false;
