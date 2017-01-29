@@ -101,7 +101,7 @@
             this.CloseButton.Location = new System.Drawing.Point(144, 0);
             this.CloseButton.Margin = new System.Windows.Forms.Padding(0);
             this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(36, 30);
+            this.CloseButton.Size = new System.Drawing.Size(36, 28);
             this.CloseButton.TabIndex = 12;
             this.CloseButton.UseVisualStyleBackColor = false;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
@@ -123,7 +123,7 @@
             this.TopMostCheck.Location = new System.Drawing.Point(72, 0);
             this.TopMostCheck.Margin = new System.Windows.Forms.Padding(0);
             this.TopMostCheck.Name = "TopMostCheck";
-            this.TopMostCheck.Size = new System.Drawing.Size(36, 30);
+            this.TopMostCheck.Size = new System.Drawing.Size(36, 28);
             this.TopMostCheck.TabIndex = 13;
             this.TopMostCheck.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.TopMostCheck.UseVisualStyleBackColor = false;
@@ -142,7 +142,7 @@
             this.CommitButton.Location = new System.Drawing.Point(36, 0);
             this.CommitButton.Margin = new System.Windows.Forms.Padding(0);
             this.CommitButton.Name = "CommitButton";
-            this.CommitButton.Size = new System.Drawing.Size(36, 30);
+            this.CommitButton.Size = new System.Drawing.Size(36, 28);
             this.CommitButton.TabIndex = 14;
             this.CommitButton.UseVisualStyleBackColor = false;
             this.CommitButton.Click += new System.EventHandler(this.CommitButton_Click_1);
@@ -160,7 +160,7 @@
             this.SettingsButton.Location = new System.Drawing.Point(0, 0);
             this.SettingsButton.Margin = new System.Windows.Forms.Padding(0);
             this.SettingsButton.Name = "SettingsButton";
-            this.SettingsButton.Size = new System.Drawing.Size(36, 30);
+            this.SettingsButton.Size = new System.Drawing.Size(36, 28);
             this.SettingsButton.TabIndex = 15;
             this.SettingsButton.UseVisualStyleBackColor = false;
             this.SettingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
@@ -238,7 +238,7 @@
             this.flowLayoutPanel2.Controls.Add(this.CloseButton);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(132, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(180, 30);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(180, 28);
             this.flowLayoutPanel2.TabIndex = 21;
             // 
             // SimplifyButton
@@ -254,7 +254,7 @@
             this.SimplifyButton.Location = new System.Drawing.Point(108, 0);
             this.SimplifyButton.Margin = new System.Windows.Forms.Padding(0);
             this.SimplifyButton.Name = "SimplifyButton";
-            this.SimplifyButton.Size = new System.Drawing.Size(36, 30);
+            this.SimplifyButton.Size = new System.Drawing.Size(36, 28);
             this.SimplifyButton.TabIndex = 16;
             this.SimplifyButton.UseVisualStyleBackColor = false;
             this.SimplifyButton.Click += new System.EventHandler(this.SimplifyButton_Click);
