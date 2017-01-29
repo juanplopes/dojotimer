@@ -107,7 +107,6 @@ namespace DojoTimer.Helpers
             psi.RedirectStandardError = Write != null;
             psi.RedirectStandardOutput = Write != null;
             psi.WindowStyle = ProcessWindowStyle.Hidden;
-            psi.CreateNoWindow = true;
             return psi;
         }
 

@@ -94,9 +94,6 @@ namespace DojoTimer
             var show = inside || !MainTimer.Enabled;
             TimeLabel.FlatAppearance.MouseOverBackColor = Color.FromArgb(show ? 150 : 225, Color.White);
             TimeLabel.ForeColor = show ? Color.White : this.BackColor;
-
-            var showExc = !inside && !MainTimer.Enabled;
-            ExcLabel1.Visible = showExc;
         }
 
         private void ResetButton_Click(object sender, EventArgs e)
