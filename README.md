@@ -6,7 +6,9 @@ Download latest version at:
 
 This DojoTimer is as simple as it gets. It becomes red when tests aren't passing.
 
-![Green DojoTimer](https://github.com/juanplopes/dojotimer/raw/master/doc/green.png) ![Red DojoTimer](https://github.com/juanplopes/dojotimer/raw/master/doc/red.png)
+![Green DojoTimer](https://github.com/juanplopes/dojotimer/raw/master/doc/green.png) 
+![Red DojoTimer](https://github.com/juanplopes/dojotimer/raw/master/doc/red.png) 
+![Red DojoTimer Small](https://github.com/juanplopes/dojotimer/raw/master/doc/redsmall.png)
 
 ##Developing
 
