@@ -109,6 +109,7 @@ namespace DojoTimer
                 StartButton_Click(sender, e);
             else
                 ShowOptions();
+            ResetButton.Focus();
         }
 
         private void ShowOptions()
