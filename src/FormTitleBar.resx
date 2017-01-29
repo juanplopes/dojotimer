@@ -117,4 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="CloseButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAADwSURBVDhPjZK9DgFBFIXX39IqSOjEo3gqUfMwao1ERCM6D6DUKkREoVrfnb13mdkd2S852bn3
+        zD0jMxIjy7IRuqKFtkrgtdEG7VCqbWeM0QsZK7UK6Mnw0bk5Z5Sa8ZROQBHCOhw2tmK20M2VZZYoRVXD
+        wtpO6KNYyFu/IXIPLRcgUPwLCfGHDZp1QqqHDcyp21aNvFRHt5bBjN32L0vd7oNRZ9jwQ2jI8MlZ9cn/
+        JywaKDYsFzZBsYudS0AvX5fYI3fbfGOvc7FfMcvrggPynoo6DHmggdpeSHFyCH0LuaOhtr/Q7KKGlpXg
+        N5EekCQf7Ru7g1vUL9wAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="IconLabel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAEGSURBVEhL5ZU9isJAGIaj4k8hCy7YeQU70W22cxHPoRewsPIUFpZW3sPawgt4DKsttojPhG/i
+        5/JFMgkI6gMPgcw78zIkmUQPJY7jCh5Q84s9iYTD5KqyiRZT1Llc+gLNWK7/cQXB+IK9coQWrkDncpkU
+        aLhZR4uJRMrDYgvcKjfYluEXgR11ZXc75VKGy8NiM7RoSOQKN8034I7umczR4gvTrC8I5YhZBTffkS9w
+        x0OoWQUtTHNJQRGY3Mc/1LgzrPiiz4XbKq5Qf9FrbEqkHCz0gRYDieSHSfod936jxQ9aeVNfYJF1/gf9
+        F3yB9TfqoMUQrbxpUmDBYA1PqDnjp0Tehii6ABh9zRif8yL7AAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OutputWindow));
             this.OutputText = new System.Windows.Forms.TextBox();
             this.CloseButton = new System.Windows.Forms.Button();
             this.OutputTitleBar = new DojoTimer.FormTitleBar();
@@ -66,15 +67,15 @@
             // 
             // OutputTitleBar
             // 
-            this.OutputTitleBar.BackColor = System.Drawing.Color.White;
+            this.OutputTitleBar.BackColor = System.Drawing.Color.DimGray;
             this.OutputTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.OutputTitleBar.ForeColor = System.Drawing.Color.Black;
+            this.OutputTitleBar.ForeColor = System.Drawing.Color.White;
             this.OutputTitleBar.Location = new System.Drawing.Point(0, 0);
             this.OutputTitleBar.Name = "OutputTitleBar";
             this.OutputTitleBar.Size = new System.Drawing.Size(772, 60);
             this.OutputTitleBar.TabIndex = 10;
             this.OutputTitleBar.TitleDescription = "The result of everything we did here. We want it GREEN!";
-            this.OutputTitleBar.TitleIcon = "~";
+            this.OutputTitleBar.TitleIcon = ((System.Drawing.Image)(resources.GetObject("OutputTitleBar.TitleIcon")));
             this.OutputTitleBar.TitleText = "Running tests...";
             // 
             // OutputWindow

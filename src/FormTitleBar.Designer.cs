@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTitleBar));
             this.BackPanel = new System.Windows.Forms.Panel();
             this.CloseButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,14 +40,14 @@
             // 
             // BackPanel
             // 
-            this.BackPanel.BackColor = System.Drawing.Color.White;
+            this.BackPanel.BackColor = System.Drawing.Color.DimGray;
             this.BackPanel.Controls.Add(this.CloseButton);
             this.BackPanel.Controls.Add(this.label1);
             this.BackPanel.Controls.Add(this.IconLabel);
             this.BackPanel.Controls.Add(this.DescriptionLabel);
             this.BackPanel.Controls.Add(this.TitleLabel);
             this.BackPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BackPanel.ForeColor = System.Drawing.Color.Black;
+            this.BackPanel.ForeColor = System.Drawing.Color.White;
             this.BackPanel.Location = new System.Drawing.Point(0, 0);
             this.BackPanel.Name = "BackPanel";
             this.BackPanel.Size = new System.Drawing.Size(389, 60);
@@ -55,13 +56,13 @@
             // CloseButton
             // 
             this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CloseButton.Font = new System.Drawing.Font("Webdings", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.CloseButton.Image = ((System.Drawing.Image)(resources.GetObject("CloseButton.Image")));
             this.CloseButton.Location = new System.Drawing.Point(337, 12);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(38, 35);
             this.CloseButton.TabIndex = 7;
-            this.CloseButton.Text = "r";
             this.CloseButton.UseVisualStyleBackColor = true;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
@@ -76,13 +77,11 @@
             // 
             // IconLabel
             // 
-            this.IconLabel.AutoSize = true;
-            this.IconLabel.Font = new System.Drawing.Font("Webdings", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.IconLabel.Location = new System.Drawing.Point(5, 8);
+            this.IconLabel.Image = ((System.Drawing.Image)(resources.GetObject("IconLabel.Image")));
+            this.IconLabel.Location = new System.Drawing.Point(13, 12);
             this.IconLabel.Name = "IconLabel";
-            this.IconLabel.Size = new System.Drawing.Size(54, 39);
+            this.IconLabel.Size = new System.Drawing.Size(43, 39);
             this.IconLabel.TabIndex = 5;
-            this.IconLabel.Text = "A";
             // 
             // DescriptionLabel
             // 

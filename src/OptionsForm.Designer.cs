@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptionsForm));
             this.CloseButton = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.TimeoutInput = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.FontButton = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.TestResultSound = new System.Windows.Forms.CheckBox();
@@ -45,6 +48,7 @@
             this.SecondsInput = new System.Windows.Forms.TextBox();
             this.MinutesInput = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.CommitScript = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -63,9 +67,6 @@
             this.ResetButton = new System.Windows.Forms.Button();
             this.BrowseFolder = new System.Windows.Forms.FolderBrowserDialog();
             this.BrowseFont = new System.Windows.Forms.FontDialog();
-            this.label11 = new System.Windows.Forms.Label();
-            this.TimeoutInput = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.formTitleBar1 = new DojoTimer.FormTitleBar();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -83,7 +84,7 @@
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(178, 43);
             this.CloseButton.TabIndex = 2;
-            this.CloseButton.Text = "Close";
+            this.CloseButton.Text = "Save and close";
             this.CloseButton.UseVisualStyleBackColor = false;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
@@ -128,6 +129,25 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Options";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // TimeoutInput
+            // 
+            this.TimeoutInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TimeoutInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeoutInput.Location = new System.Drawing.Point(417, 229);
+            this.TimeoutInput.Name = "TimeoutInput";
+            this.TimeoutInput.Size = new System.Drawing.Size(189, 31);
+            this.TimeoutInput.TabIndex = 24;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(412, 201);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(143, 25);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "Test Timeout:";
             // 
             // FontButton
             // 
@@ -296,6 +316,16 @@
             this.label1.Size = new System.Drawing.Size(65, 25);
             this.label1.TabIndex = 10;
             this.label1.Text = "Time:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(612, 231);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(40, 25);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "ms";
             // 
             // tabPage2
             // 
@@ -483,56 +513,27 @@
             this.ResetButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.ResetButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.ResetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ResetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ResetButton.ForeColor = System.Drawing.Color.Black;
-            this.ResetButton.Location = new System.Drawing.Point(318, 548);
+            this.ResetButton.Location = new System.Drawing.Point(12, 548);
             this.ResetButton.Name = "ResetButton";
             this.ResetButton.Size = new System.Drawing.Size(178, 43);
             this.ResetButton.TabIndex = 10;
-            this.ResetButton.Text = "Reset";
+            this.ResetButton.Text = "Reset to default";
             this.ResetButton.UseVisualStyleBackColor = false;
             this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(412, 201);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(143, 25);
-            this.label11.TabIndex = 23;
-            this.label11.Text = "Test Timeout:";
-            // 
-            // TimeoutInput
-            // 
-            this.TimeoutInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TimeoutInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimeoutInput.Location = new System.Drawing.Point(417, 229);
-            this.TimeoutInput.Name = "TimeoutInput";
-            this.TimeoutInput.Size = new System.Drawing.Size(189, 31);
-            this.TimeoutInput.TabIndex = 24;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(612, 231);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(40, 25);
-            this.label12.TabIndex = 25;
-            this.label12.Text = "ms";
-            // 
             // formTitleBar1
             // 
-            this.formTitleBar1.BackColor = System.Drawing.Color.White;
+            this.formTitleBar1.BackColor = System.Drawing.Color.DimGray;
             this.formTitleBar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.formTitleBar1.ForeColor = System.Drawing.Color.Black;
+            this.formTitleBar1.ForeColor = System.Drawing.Color.White;
             this.formTitleBar1.Location = new System.Drawing.Point(0, 0);
             this.formTitleBar1.Name = "formTitleBar1";
             this.formTitleBar1.Size = new System.Drawing.Size(692, 60);
             this.formTitleBar1.TabIndex = 9;
             this.formTitleBar1.TitleDescription = "Change whatever you want. Then close me. That\'s it.";
-            this.formTitleBar1.TitleIcon = "@";
+            this.formTitleBar1.TitleIcon = ((System.Drawing.Image)(resources.GetObject("formTitleBar1.TitleIcon")));
             this.formTitleBar1.TitleText = "How should I behave?";
             // 
             // OptionsForm

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WhoWasHereForm));
             this.Person1Input = new System.Windows.Forms.TextBox();
             this.Person2Input = new System.Windows.Forms.TextBox();
             this.SaveCommitButton = new System.Windows.Forms.Button();
@@ -117,7 +118,7 @@
             // 
             // formTitleBar1
             // 
-            this.formTitleBar1.BackColor = System.Drawing.Color.Green;
+            this.formTitleBar1.BackColor = System.Drawing.Color.DimGray;
             this.formTitleBar1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.formTitleBar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.formTitleBar1.ForeColor = System.Drawing.Color.White;
@@ -126,7 +127,7 @@
             this.formTitleBar1.Size = new System.Drawing.Size(482, 60);
             this.formTitleBar1.TabIndex = 7;
             this.formTitleBar1.TitleDescription = "The one will stay should come first.";
-            this.formTitleBar1.TitleIcon = "^";
+            this.formTitleBar1.TitleIcon = ((System.Drawing.Image)(resources.GetObject("formTitleBar1.TitleIcon")));
             this.formTitleBar1.TitleText = "Who were here?";
             // 
             // WhoWasHereForm

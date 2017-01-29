@@ -22,10 +22,12 @@ namespace DojoTimer
             get { return DescriptionLabel.Text; }
             set { DescriptionLabel.Text = value; }
         }
-        public string TitleIcon
+
+        [Editor(typeof(System.Drawing.Design.ImageEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        public Image TitleIcon
         {
-            get { return IconLabel.Text; }
-            set { IconLabel.Text = value; }
+            get { return IconLabel.Image; }
+            set { IconLabel.Image = value; }
         }
 
         public override Color ForeColor

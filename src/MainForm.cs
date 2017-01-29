@@ -156,14 +156,14 @@ namespace DojoTimer
                 stopwatch.Reset();
             stopwatch.Start();
             MainTimer.Enabled = true;
-            StartButton.Text = ";";
+            StartButton.Image = Icons.pause;
         }
 
         private void Stop()
         {
             stopwatch.Stop();
             MainTimer.Enabled = false;
-            StartButton.Text = "4";
+            StartButton.Image = Icons.play;
             SetTransparency();
             SetTime();
         }
@@ -221,6 +221,7 @@ namespace DojoTimer
         private void TopMostCheck_CheckedChanged(object sender, EventArgs e)
         {
             this.TopMost = TopMostCheck.Checked;
+            TopMostCheck.Image = TopMostCheck.Checked ? Icons.locked : Icons.unlocked;
         }
 
         private void CommitButton_Click(object sender, EventArgs e)
@@ -272,6 +273,7 @@ namespace DojoTimer
             var newSize = this.Size = new Size(!simplified ? 314 : 205, !simplified ? 113 : 91);
             var diff = new Point(lastSize - newSize);
 
+            SimplifyButton.Image = simplified ? Icons.expand : Icons.compress;
             this.Location = new Point(this.Location.X + diff.X, this.Location.Y);
         }
     }

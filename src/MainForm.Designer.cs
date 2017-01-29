@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.MainTimer = new System.Windows.Forms.Timer(this.components);
             this.LinkButton = new System.Windows.Forms.Button();
             this.TimeLabel = new System.Windows.Forms.Button();
@@ -90,18 +91,18 @@
             // 
             this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CloseButton.BackColor = System.Drawing.Color.Transparent;
+            this.CloseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.CloseButton.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
             this.CloseButton.FlatAppearance.BorderSize = 0;
             this.CloseButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CloseButton.Font = new System.Drawing.Font("Webdings", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.CloseButton.ForeColor = System.Drawing.Color.White;
-            this.CloseButton.Location = new System.Drawing.Point(140, 0);
+            this.CloseButton.Image = ((System.Drawing.Image)(resources.GetObject("CloseButton.Image")));
+            this.CloseButton.Location = new System.Drawing.Point(144, 0);
             this.CloseButton.Margin = new System.Windows.Forms.Padding(0);
             this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(35, 30);
+            this.CloseButton.Size = new System.Drawing.Size(36, 30);
             this.CloseButton.TabIndex = 12;
-            this.CloseButton.Text = "r";
             this.CloseButton.UseVisualStyleBackColor = false;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
@@ -117,14 +118,13 @@
             this.TopMostCheck.FlatAppearance.BorderSize = 0;
             this.TopMostCheck.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.TopMostCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TopMostCheck.Font = new System.Drawing.Font("Webdings", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.TopMostCheck.ForeColor = System.Drawing.Color.White;
-            this.TopMostCheck.Location = new System.Drawing.Point(70, 0);
+            this.TopMostCheck.Image = ((System.Drawing.Image)(resources.GetObject("TopMostCheck.Image")));
+            this.TopMostCheck.Location = new System.Drawing.Point(72, 0);
             this.TopMostCheck.Margin = new System.Windows.Forms.Padding(0);
             this.TopMostCheck.Name = "TopMostCheck";
-            this.TopMostCheck.Size = new System.Drawing.Size(35, 30);
+            this.TopMostCheck.Size = new System.Drawing.Size(36, 30);
             this.TopMostCheck.TabIndex = 13;
-            this.TopMostCheck.Text = "a";
             this.TopMostCheck.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.TopMostCheck.UseVisualStyleBackColor = false;
             this.TopMostCheck.CheckedChanged += new System.EventHandler(this.TopMostCheck_CheckedChanged);
@@ -137,14 +137,13 @@
             this.CommitButton.FlatAppearance.BorderSize = 0;
             this.CommitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.CommitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CommitButton.Font = new System.Drawing.Font("Webdings", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.CommitButton.ForeColor = System.Drawing.Color.White;
-            this.CommitButton.Location = new System.Drawing.Point(35, 0);
+            this.CommitButton.Image = ((System.Drawing.Image)(resources.GetObject("CommitButton.Image")));
+            this.CommitButton.Location = new System.Drawing.Point(36, 0);
             this.CommitButton.Margin = new System.Windows.Forms.Padding(0);
             this.CommitButton.Name = "CommitButton";
-            this.CommitButton.Size = new System.Drawing.Size(35, 30);
+            this.CommitButton.Size = new System.Drawing.Size(36, 30);
             this.CommitButton.TabIndex = 14;
-            this.CommitButton.Text = "^";
             this.CommitButton.UseVisualStyleBackColor = false;
             this.CommitButton.Click += new System.EventHandler(this.CommitButton_Click_1);
             // 
@@ -156,62 +155,61 @@
             this.SettingsButton.FlatAppearance.BorderSize = 0;
             this.SettingsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.SettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SettingsButton.Font = new System.Drawing.Font("Webdings", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.SettingsButton.ForeColor = System.Drawing.Color.White;
+            this.SettingsButton.Image = ((System.Drawing.Image)(resources.GetObject("SettingsButton.Image")));
             this.SettingsButton.Location = new System.Drawing.Point(0, 0);
             this.SettingsButton.Margin = new System.Windows.Forms.Padding(0);
             this.SettingsButton.Name = "SettingsButton";
-            this.SettingsButton.Size = new System.Drawing.Size(35, 30);
+            this.SettingsButton.Size = new System.Drawing.Size(36, 30);
             this.SettingsButton.TabIndex = 15;
-            this.SettingsButton.Text = "@";
             this.SettingsButton.UseVisualStyleBackColor = false;
             this.SettingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
             // 
             // StartButton
             // 
             this.StartButton.BackColor = System.Drawing.Color.Transparent;
+            this.StartButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.StartButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.StartButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StartButton.Font = new System.Drawing.Font("Webdings", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.StartButton.ForeColor = System.Drawing.Color.White;
+            this.StartButton.Image = ((System.Drawing.Image)(resources.GetObject("StartButton.Image")));
             this.StartButton.Location = new System.Drawing.Point(3, 3);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(47, 47);
             this.StartButton.TabIndex = 1;
-            this.StartButton.Text = "4";
             this.StartButton.UseVisualStyleBackColor = false;
             this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
             // ResetButton
             // 
             this.ResetButton.BackColor = System.Drawing.Color.Transparent;
+            this.ResetButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ResetButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.ResetButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ResetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ResetButton.Font = new System.Drawing.Font("Webdings", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.ResetButton.ForeColor = System.Drawing.Color.White;
+            this.ResetButton.Image = ((System.Drawing.Image)(resources.GetObject("ResetButton.Image")));
             this.ResetButton.Location = new System.Drawing.Point(56, 3);
             this.ResetButton.Name = "ResetButton";
             this.ResetButton.Size = new System.Drawing.Size(47, 47);
             this.ResetButton.TabIndex = 2;
-            this.ResetButton.Text = "9";
             this.ResetButton.UseVisualStyleBackColor = false;
             this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
             // 
             // RunButton
             // 
             this.RunButton.BackColor = System.Drawing.Color.Transparent;
+            this.RunButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.RunButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.RunButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.RunButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RunButton.Font = new System.Drawing.Font("Webdings", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.RunButton.ForeColor = System.Drawing.Color.White;
+            this.RunButton.Image = ((System.Drawing.Image)(resources.GetObject("RunButton.Image")));
             this.RunButton.Location = new System.Drawing.Point(109, 3);
             this.RunButton.Name = "RunButton";
             this.RunButton.Size = new System.Drawing.Size(47, 47);
             this.RunButton.TabIndex = 18;
-            this.RunButton.Text = "~";
             this.RunButton.UseVisualStyleBackColor = false;
             this.RunButton.Click += new System.EventHandler(this.RunButton_Click_1);
             // 
@@ -238,9 +236,9 @@
             this.flowLayoutPanel2.Controls.Add(this.TopMostCheck);
             this.flowLayoutPanel2.Controls.Add(this.SimplifyButton);
             this.flowLayoutPanel2.Controls.Add(this.CloseButton);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(137, 0);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(132, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(175, 30);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(180, 30);
             this.flowLayoutPanel2.TabIndex = 21;
             // 
             // SimplifyButton
@@ -251,14 +249,13 @@
             this.SimplifyButton.FlatAppearance.BorderSize = 0;
             this.SimplifyButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.SimplifyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SimplifyButton.Font = new System.Drawing.Font("Webdings", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.SimplifyButton.ForeColor = System.Drawing.Color.White;
-            this.SimplifyButton.Location = new System.Drawing.Point(105, 0);
+            this.SimplifyButton.Image = ((System.Drawing.Image)(resources.GetObject("SimplifyButton.Image")));
+            this.SimplifyButton.Location = new System.Drawing.Point(108, 0);
             this.SimplifyButton.Margin = new System.Windows.Forms.Padding(0);
             this.SimplifyButton.Name = "SimplifyButton";
-            this.SimplifyButton.Size = new System.Drawing.Size(35, 30);
+            this.SimplifyButton.Size = new System.Drawing.Size(36, 30);
             this.SimplifyButton.TabIndex = 16;
-            this.SimplifyButton.Text = "q";
             this.SimplifyButton.UseVisualStyleBackColor = false;
             this.SimplifyButton.Click += new System.EventHandler(this.SimplifyButton_Click);
             // 

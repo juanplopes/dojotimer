@@ -123,6 +123,17 @@
   <metadata name="BrowseFont.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>142, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="formTitleBar1.TitleIcon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAEGSURBVEhL5ZU9isJAGIaj4k8hCy7YeQU70W22cxHPoRewsPIUFpZW3sPawgt4DKsttojPhG/i
+        5/JFMgkI6gMPgcw78zIkmUQPJY7jCh5Q84s9iYTD5KqyiRZT1Llc+gLNWK7/cQXB+IK9coQWrkDncpkU
+        aLhZR4uJRMrDYgvcKjfYluEXgR11ZXc75VKGy8NiM7RoSOQKN8034I7umczR4gvTrC8I5YhZBTffkS9w
+        x0OoWQUtTHNJQRGY3Mc/1LgzrPiiz4XbKq5Qf9FrbEqkHCz0gRYDieSHSfod936jxQ9aeVNfYJF1/gf9
+        F3yB9TfqoMUQrbxpUmDBYA1PqDnjp0Tehii6ABh9zRif8yL7AAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>49</value>
   </metadata>
