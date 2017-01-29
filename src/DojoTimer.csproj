@@ -182,6 +182,7 @@
     <Content Include="Resources\settings16.png" />
     <Content Include="Resources\terminal.png" />
     <Content Include="Resources\unlocked.png" />
+    <Content Include="Resources\warning.png" />
     <None Include="Resources\pass.wav" />
     <None Include="Resources\fail.wav" />
     <None Include="Resources\play.png" />

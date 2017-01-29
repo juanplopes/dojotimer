@@ -33,6 +33,12 @@ namespace DojoTimer
             }
         }
 
+        public string Text
+        {
+            get { return TitleLabel.Text; }
+            set { TitleLabel.Text = value; }
+        }
+
 
 
         public DraggingHandle BindHandleTo(Form form)

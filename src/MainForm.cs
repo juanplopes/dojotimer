@@ -24,7 +24,7 @@ namespace DojoTimer
         ColorScheme scheme = ColorScheme.Green;
         Semaphore semaphore;
         bool simplified = false;
-        
+
         public MainForm(string path) : this(Options.Load(), path) { }
         public MainForm(Options options, string path)
         {
@@ -67,7 +67,7 @@ namespace DojoTimer
             {
                 Stop();
                 ReallyActivate();
-                if (options.PlayAlarmSound) 
+                if (options.PlayAlarmSound)
                     using (var alarm = Sounds.alarm)
                         new SoundPlayer(alarm).PlaySync();
                 HandleFinish(false);
@@ -91,10 +91,12 @@ namespace DojoTimer
 
         private void SetTransparency()
         {
-            var control = TimeLabel;
             var show = inside || !MainTimer.Enabled;
-            control.FlatAppearance.MouseOverBackColor = Color.FromArgb(show ? 150 : 225, Color.White);
-            control.ForeColor = show ? Color.White : this.BackColor;
+            TimeLabel.FlatAppearance.MouseOverBackColor = Color.FromArgb(show ? 150 : 225, Color.White);
+            TimeLabel.ForeColor = show ? Color.White : this.BackColor;
+
+            var showExc = !inside && !MainTimer.Enabled;
+            ExcLabel1.Visible = showExc;
         }
 
         private void ResetButton_Click(object sender, EventArgs e)
@@ -119,7 +121,7 @@ namespace DojoTimer
             options.Save();
             BindHotKey();
             SetTime();
-			ResetButton.Focus();
+            ResetButton.Focus();
         }
 
         private Options ShowOptionsForm()
@@ -128,7 +130,7 @@ namespace DojoTimer
             scheme.ApplyTo(form);
             bool topmost = this.TopMost;
             this.TopMost = false;
-			form.ShowDialog();
+            form.ShowDialog();
             this.TopMost = topmost;
             return form.Options;
         }
@@ -158,6 +160,7 @@ namespace DojoTimer
             stopwatch.Start();
             MainTimer.Enabled = true;
             StartButton.Image = Icons.pause;
+            UpdateTitle();
         }
 
         private void Stop()
@@ -167,12 +170,21 @@ namespace DojoTimer
             StartButton.Image = Icons.play;
             SetTransparency();
             SetTime();
+            UpdateTitle();
         }
 
         private void Reset()
         {
             stopwatch.Reset();
             Stop();
+        }
+
+        public void UpdateTitle()
+        {
+            if (simplified)
+                TitleBar.Text = MainTimer.Enabled ? "Dojo Running" : "Dojo Stopped";
+            else
+                TitleBar.Text = "DojoTimer";
         }
 
         private void Run()
@@ -203,7 +215,7 @@ namespace DojoTimer
 
         private void RunSound(bool result)
         {
-            if (options.PlayTestResultSound) 
+            if (options.PlayTestResultSound)
                 using (var sound = result ? Sounds.pass : Sounds.fail)
                     new SoundPlayer(sound).PlaySync();
         }
@@ -212,11 +224,13 @@ namespace DojoTimer
         private void MainForm_Activated(object sender, EventArgs e)
         {
             inside = true;
+            SetTransparency();
         }
 
         private void MainForm_Deactivate(object sender, EventArgs e)
         {
             inside = false;
+            SetTransparency();
         }
 
         private void TopMostCheck_CheckedChanged(object sender, EventArgs e)
@@ -276,6 +290,7 @@ namespace DojoTimer
 
             SimplifyButton.Image = simplified ? Icons.expand : Icons.compress;
             this.Location = new Point(this.Location.X + diff.X, this.Location.Y);
+            UpdateTitle();
         }
     }
 }

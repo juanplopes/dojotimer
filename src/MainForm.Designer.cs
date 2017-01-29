@@ -43,6 +43,7 @@
             this.TopFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.SimplifyButton = new System.Windows.Forms.Button();
+            this.ExcLabel1 = new System.Windows.Forms.Label();
             this.TitleBar = new DojoTimer.MainTitleBar();
             this.TopFlowPanel.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -259,6 +260,15 @@
             this.SimplifyButton.UseVisualStyleBackColor = false;
             this.SimplifyButton.Click += new System.EventHandler(this.SimplifyButton_Click);
             // 
+            // ExcLabel1
+            // 
+            this.ExcLabel1.BackColor = System.Drawing.Color.DarkGreen;
+            this.ExcLabel1.Image = ((System.Drawing.Image)(resources.GetObject("ExcLabel1.Image")));
+            this.ExcLabel1.Location = new System.Drawing.Point(109, 7);
+            this.ExcLabel1.Name = "ExcLabel1";
+            this.ExcLabel1.Size = new System.Drawing.Size(17, 15);
+            this.ExcLabel1.TabIndex = 22;
+            // 
             // TitleBar
             // 
             this.TitleBar.BackColor = System.Drawing.Color.DarkGreen;
@@ -275,6 +285,7 @@
             this.BackColor = System.Drawing.Color.Green;
             this.ClientSize = new System.Drawing.Size(312, 111);
             this.ControlBox = false;
+            this.Controls.Add(this.ExcLabel1);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.TopFlowPanel);
             this.Controls.Add(this.LinkButton);
@@ -313,6 +324,7 @@
         private System.Windows.Forms.FlowLayoutPanel TopFlowPanel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Button SimplifyButton;
+        private System.Windows.Forms.Label ExcLabel1;
     }
 }
 
