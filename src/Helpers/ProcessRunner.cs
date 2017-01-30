@@ -50,7 +50,7 @@ namespace DojoTimer.Helpers
                 {
                     if (!process.WaitForExit(timeout))
                     {
-                        process.Kill();
+                        ProcessUtil.KillProcessAndChildren(process.Id);
                         InvokeWrite(string.Format("Error: process timeout ({0}ms)", timeout));
                     }
                 }
@@ -90,7 +90,7 @@ namespace DojoTimer.Helpers
                 argStr += string.Format("\"{0}\" ", arg);
 
             var psi = new ProcessStartInfo();
-            if (KeyboardHooks.IsLinux)
+            if (ProcessUtil.IsLinux)
             {
                 psi.FileName = "/bin/sh";
             }

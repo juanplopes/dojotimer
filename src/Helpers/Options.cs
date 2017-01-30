@@ -65,7 +65,7 @@ namespace DojoTimer.Helpers
             SemaphoreBaudRate = 9600;
             PlayAlarmSound = true;
             PlayTestResultSound = false;
-            CommitScript = KeyboardHooks.IsLinux ?
+            CommitScript = ProcessUtil.IsLinux ?
                 "echo $(date) - $1 e $2 >> dojo.log" :
                 "echo %date% %time% *** %~1 and %~2 >> dojo.log";
             Participants = new string[0];
