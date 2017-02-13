@@ -23,4 +23,4 @@ Run ```build.cmd```
 Run ```xbuild build.xml```
 
 You probably will have to install the most complete Mono version to do that. 
-Or at least the development packages and gdksharp-2.0.
+Or at least the development packages and gtksharp-2.0.
