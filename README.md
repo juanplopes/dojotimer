@@ -1,4 +1,4 @@
-#DojoTimer 
+# DojoTimer 
 
 Download latest version at:
 
@@ -10,15 +10,15 @@ This DojoTimer is as simple as it gets. It becomes red when tests aren't passing
 ![Red DojoTimer](https://github.com/juanplopes/dojotimer/raw/master/doc/red.png) 
 ![Red DojoTimer Small](https://github.com/juanplopes/dojotimer/raw/master/doc/redsmall.png)
 
-##Developing
+## Developing
 
 Clone. Build.
 
-###Build on Windows
+### Build on Windows
 
 Run ```build.cmd```
 
-###Build on Linux
+### Build on Linux
 
 Run ```xbuild build.xml```
 
