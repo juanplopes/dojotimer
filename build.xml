@@ -6,6 +6,7 @@
     <SourceDir>$(MSBuildProjectDirectory)\src\</SourceDir>
     <Configuration>Release</Configuration>
     <Platform>Any CPU</Platform>
+    <TargetFrameworkVersion>4.5</TargetFrameworkVersion>
   </PropertyGroup>
 
   <Import Project="util\msbuild\MSBuild.Community.Tasks.Targets"/>
