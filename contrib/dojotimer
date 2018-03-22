@@ -1,0 +1,18 @@
+#!/bin/bash
+# Helper script to start DojoTimer on Linux.
+#
+# Installation:
+# Copy or symlink this script into a directory in the system PATH. Copy or
+# symlink 'dojotimer.exe' into the same directory. Restart the shell to pick up
+# the change.
+#
+# Usage:
+# Change directory into the directory that contains or will contain the code to
+# be tested. Run:
+#
+#     dojotimer .
+#
+# The '.' at the end tells DojoTimer to track the current directory.
+
+DIR="$(dirname ${BASH_SOURCE[0]})"
+nohup mono "${DIR}/dojotimer.exe" "$@" &>/dev/null &
